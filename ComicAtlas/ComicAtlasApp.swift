@@ -11,7 +11,7 @@ import SwiftUI
 struct ComicAtlasApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignInView(model: SignInViewModel())
         }
     }
 }
