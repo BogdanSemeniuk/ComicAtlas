@@ -29,13 +29,13 @@ struct SignInView: View {
                 label: .Common.emailLabel,
                 text: $model.email,
                 placeholder: .Common.emailPlaceholder,
-                inputError: .value(""))
+                inputError: model.emailError)
             InputSection(
                 label: .Common.passwordLabel,
                 text: $model.password,
                 placeholder: .Common.passwordPlaceholder,
                 isSecure: true,
-                inputError: .value("")
+                inputError: model.passwordError
             )
             ActionButton(
                 title: .SignIn.signInButton,
@@ -47,7 +47,7 @@ struct SignInView: View {
         .padding(Layout.horizontalPadding)
         .background(.white, in: Layout.componentShape)
         .compositingGroup()
-        .shadow(color: .black.opacity(0.1), radius: 10)
+        .appShadow()
         .overlay {
             Layout.componentShape
                 .stroke(Color(.border))

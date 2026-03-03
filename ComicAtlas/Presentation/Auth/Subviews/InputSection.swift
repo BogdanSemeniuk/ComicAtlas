@@ -12,7 +12,7 @@ struct InputSection: View {
     @Binding var text: String
     var placeholder: LocalizedStringResource?
     var isSecure = false
-    var inputError: InputError = .none
+    var inputError = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -31,20 +31,13 @@ struct InputSection: View {
                     placeholder: placeholderText
                 )
             }
-            if case .value(let message) = inputError {
-                ErrorMessage(message: message)
-            }
+            ErrorMessage(message: inputError)
         }
     }
     
     private var placeholderText: String {
         guard let placeholder else { return "" }
         return .init(localized: placeholder)
-    }
-    
-    enum InputError {
-        case value(String)
-        case none
     }
 }
 
@@ -65,7 +58,7 @@ struct InputSection: View {
             label: .Common.emailLabel,
             text: .constant(""),
             placeholder: .Common.emailPlaceholder,
-            inputError: .value("Email is invalid")
+            inputError: "Email is invalid"
         )
     }
 }

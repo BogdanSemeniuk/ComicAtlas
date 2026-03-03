@@ -11,4 +11,6 @@ import Foundation
 class SignInViewModel {
     var email = ""
     var password = ""
+    var emailError = ""
+    var passwordError = ""
 }
