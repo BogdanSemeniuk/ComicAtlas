@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-    @Bindable var model: SignInViewModel
+    @State var model: SignInViewModel
     
     var body: some View {
         VStack {
@@ -39,9 +39,7 @@ struct SignInView: View {
             )
             ActionButton(
                 title: .SignIn.signInButton,
-                action: {
-                    print("Sign in")
-                }
+                action: model.signInAction
             )
         }
         .padding(Layout.horizontalPadding)
@@ -59,19 +57,18 @@ struct SignInView: View {
             Text(.SignIn.signUpPrompt)
                 .fontWeight(.medium)
             Button {
-                
+                model.signUpAction()
             } label: {
                 Text(.SignIn.signUpButton)
                     .fontWeight(.bold)
                     .foregroundStyle(.brandPrimary)
                     .padding(6)
             }
-
         }
         .font(.title3)
     }
 }
 
 #Preview {
-    SignInView(model: .init())
+    SignInView(model: .init(inputValidator: InputValidator()))
 }

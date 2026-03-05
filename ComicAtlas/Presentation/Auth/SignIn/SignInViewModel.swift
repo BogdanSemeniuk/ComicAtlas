@@ -5,12 +5,51 @@
 //  Created by Богдан Семенюк on 02.03.2026.
 //
 
+import Combine
 import Foundation
+import Observation
 
 @Observable
 class SignInViewModel {
-    var email = ""
-    var password = ""
+    var email = "" {
+        didSet { clearErrors() }
+    }
+    var password = "" {
+        didSet { clearErrors() }
+    }
     var emailError = ""
     var passwordError = ""
+    private let inputValidator: InputValidating
+    
+    init(inputValidator: InputValidating) {
+        self.inputValidator = inputValidator
+    }
+    
+    func signInAction() {
+        
+        do {
+            try inputValidator.validateEmail(email)
+            try inputValidator.validatePassword(password)
+            // Sign in request
+        } catch {
+            if let error = error as? ValidationError {
+                if error == .invalidEmail {
+                    emailError = error.localizedDescription
+                } else {
+                    passwordError = error.localizedDescription
+                }
+            } else {
+                // Another error
+            }
+        }
+    }
+    
+    func signUpAction() {
+        
+    }
+    
+    private func clearErrors() {
+        emailError = ""
+        passwordError = ""
+    }
 }
