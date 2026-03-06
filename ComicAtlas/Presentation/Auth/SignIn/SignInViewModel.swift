@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import Observation
 
 @Observable
 class SignInViewModel {
@@ -26,7 +25,6 @@ class SignInViewModel {
     }
     
     func signInAction() {
-        
         do {
             try inputValidator.validateEmail(email)
             try inputValidator.validatePassword(password)
