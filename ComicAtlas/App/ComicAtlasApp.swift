@@ -11,11 +11,10 @@ import SwiftUI
 struct ComicAtlasApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self)
     var delegate
-    @State private var signInViewModel = SignInViewModel(inputValidator: InputValidator())
-    
+
     var body: some Scene {
         WindowGroup {
-            SignInView(model: signInViewModel)
+            RootView()
         }
     }
 }

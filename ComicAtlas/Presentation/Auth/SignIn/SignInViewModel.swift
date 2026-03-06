@@ -18,26 +18,40 @@ class SignInViewModel {
     }
     var emailError = ""
     var passwordError = ""
+    var isLoading = false
+    var isSignInDisabled: Bool {
+        email.isEmpty || password.isEmpty
+    }
+    var error: Error?
     private let inputValidator: InputValidating
+    private let authRepository: AuthRepository
     
-    init(inputValidator: InputValidating) {
+    init(
+        inputValidator: InputValidating,
+        authRepository: AuthRepository
+    ) {
         self.inputValidator = inputValidator
+        self.authRepository = authRepository
     }
     
     func signInAction() {
-        do {
-            try inputValidator.validateEmail(email)
-            try inputValidator.validatePassword(password)
-            // Sign in request
-        } catch {
-            if let error = error as? ValidationError {
+        isLoading = true
+        Task {
+            defer { isLoading = false }
+            do {
+                try inputValidator.validateEmail(email)
+                try inputValidator.validatePassword(password)
+                try await authRepository.signIn(email: email, password: password)
+            } catch {
+                guard let error = error as? ValidationError else {
+                    self.error = error
+                    return
+                }
                 if error == .invalidEmail {
                     emailError = error.localizedDescription
                 } else {
                     passwordError = error.localizedDescription
                 }
-            } else {
-                // Another error
             }
         }
     }

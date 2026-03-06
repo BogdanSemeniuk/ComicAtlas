@@ -21,6 +21,7 @@ struct SignInView: View {
         }
         .padding(.horizontal, Layout.horizontalPadding)
         .background(Color(.background))
+        .errorAlert(error: $model.error)
     }
     
     private var inputs: some View {
@@ -39,6 +40,8 @@ struct SignInView: View {
             )
             ActionButton(
                 title: .SignIn.signInButton,
+                disabled: model.isSignInDisabled,
+                isLoading: model.isLoading,
                 action: model.signInAction
             )
         }
@@ -67,8 +70,4 @@ struct SignInView: View {
         }
         .font(.title3)
     }
-}
-
-#Preview {
-    SignInView(model: .init(inputValidator: InputValidator()))
 }
