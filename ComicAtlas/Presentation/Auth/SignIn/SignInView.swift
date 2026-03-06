@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var model: SignInViewModel
+    @Bindable var model: SignInViewModel
     
     var body: some View {
         VStack {

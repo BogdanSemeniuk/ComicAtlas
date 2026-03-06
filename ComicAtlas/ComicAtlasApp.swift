@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ComicAtlasApp: App {
+    @State private var signInViewModel = SignInViewModel(inputValidator: InputValidator())
+    
     var body: some Scene {
         WindowGroup {
-            SignInView(model: SignInViewModel(inputValidator: InputValidator()))
+            SignInView(model: signInViewModel)
         }
     }
 }

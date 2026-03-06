@@ -77,7 +77,7 @@ Tuist/Dependencies/*
 !Tuist/Dependencies/Lockfiles/
 
 # Firebase / Crashlytics
-GoogleService-Info.plist
+**/GoogleService-Info.plist
 .crashlytics/
 .crashlytics-build/
 
