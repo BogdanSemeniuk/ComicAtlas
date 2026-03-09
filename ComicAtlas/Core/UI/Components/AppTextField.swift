@@ -20,7 +20,7 @@ struct AppTextField: View {
         TextField(
             "",
             text: $text,
-            prompt: Text(placeholder).foregroundColor(.textSecondary)
+            prompt: Text(placeholder).foregroundStyle(.textSecondary)
         )
         .textFieldStyle(
             AppTextFieldStyle(

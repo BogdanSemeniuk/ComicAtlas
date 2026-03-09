@@ -25,13 +25,16 @@ class SignInViewModel {
     var error: Error?
     private let inputValidator: InputValidating
     private let authRepository: AuthRepository
+    let navigation: NavigationHandler
     
     init(
         inputValidator: InputValidating,
-        authRepository: AuthRepository
+        authRepository: AuthRepository,
+        navigation: NavigationHandler
     ) {
         self.inputValidator = inputValidator
         self.authRepository = authRepository
+        self.navigation = navigation
     }
     
     func signInAction() {
@@ -57,7 +60,7 @@ class SignInViewModel {
     }
     
     func signUpAction() {
-        
+        navigation.navigate(to: AuthFlowCoordinator.Route.signUp)
     }
     
     private func clearErrors() {

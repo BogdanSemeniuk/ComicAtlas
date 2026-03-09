@@ -9,15 +9,16 @@ import FirebaseAuth
 import SwiftUI
 
 struct RootView: View {
-    @State private var signInViewModel = SignInViewModel(
-        inputValidator: InputValidator(),
-        authRepository: AuthRepositoryImpl(
-            authService: FirebaseAuthService(authHandler: Auth.auth())
-        )
-    )
+    private let container: AppContainer
+    @State private var authFlow: AuthFlowCoordinator
 
+    init(container: AppContainer = .shared) {
+        self.container = container
+        _authFlow = State(initialValue: AuthFlowCoordinator(container: container))
+    }
+    
     var body: some View {
-        SignInView(model: signInViewModel)
+        authFlow.view
     }
 }
 

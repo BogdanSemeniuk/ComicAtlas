@@ -25,13 +25,13 @@ struct AppSecureTextField: View {
             TextField(
                 "",
                 text: $text,
-                prompt: Text(placeholder).foregroundColor(.textSecondary)
+                prompt: Text(placeholder).foregroundStyle(.textSecondary)
             )
             .opacity(isVisible ? 1 : 0)
             SecureField(
                 "",
                 text: $text,
-                prompt: Text(placeholder).foregroundColor(.textSecondary)
+                prompt: Text(placeholder).foregroundStyle(.textSecondary)
             )
             .opacity(isVisible ? 0 : 1)
         }
