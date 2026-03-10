@@ -5,20 +5,29 @@
 //  Created by Богдан Семенюк on 06.03.2026.
 //
 
-import FirebaseAuth
 import SwiftUI
 
 struct RootView: View {
     private let container: AppContainer
     @State private var authFlow: AuthFlowCoordinator
+    @State private var model: RootViewModel
 
     init(container: AppContainer = .shared) {
         self.container = container
         _authFlow = State(initialValue: AuthFlowCoordinator(container: container))
+        _model = State(initialValue: .init(authRepository: container.resolve()))
     }
     
     var body: some View {
-        authFlow.view
+        if let isAuthenticated = model.isAuthenticated {
+            if isAuthenticated {
+                Text("Home")
+            } else {
+                AuthFlowView(coordinator: authFlow)
+            }
+        } else {
+            EmptyView()
+        }
     }
 }
 

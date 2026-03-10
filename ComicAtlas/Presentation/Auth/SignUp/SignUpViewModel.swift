@@ -1,25 +1,33 @@
 //
-//  SignInViewModel.swift
+//  SignUpViewModel.swift
 //  ComicAtlas
 //
-//  Created by Богдан Семенюк on 02.03.2026.
+//  Created by Богдан Семенюк on 09.03.2026.
 //
 
 import Foundation
 
 @Observable
-class SignInViewModel {
+class SignUpViewModel {
+    var fullName = "" {
+        didSet { clearErrors() }
+    }
     var email = "" {
         didSet { clearErrors() }
     }
     var password = "" {
         didSet { clearErrors() }
     }
+    var confirmPassword = "" {
+        didSet { clearErrors() }
+    }
+    var fullNameError = ""
     var emailError = ""
     var passwordError = ""
+    var confirmPasswordError = ""
     var isLoading = false
     var isSignInDisabled: Bool {
-        email.isEmpty || password.isEmpty
+        email.isEmpty || password.isEmpty || confirmPassword.isEmpty
     }
     var error: Error?
     private let inputValidator: InputValidating
@@ -36,34 +44,43 @@ class SignInViewModel {
         self.navigationHandler = navigationHandler
     }
     
-    func signInAction() {
+    func createAccountAction() {
         isLoading = true
         Task {
             defer { isLoading = false }
             do {
                 try inputValidator.validateEmail(email)
                 try inputValidator.validatePassword(password)
-                try await authRepository.signIn(email: email, password: password)
+                guard password == confirmPassword else { throw ValidationError.passwordsNotMatch }
+                try await authRepository.registerUser(
+                    email: email,
+                    password: password,
+                    name: fullName
+                )
             } catch {
                 guard let error = error as? ValidationError else {
                     self.error = error
                     return
                 }
-                if error == .invalidEmail {
+                switch error {
+                case .invalidEmail:
                     emailError = error.localizedDescription
-                } else {
+                case .passwordsNotMatch:
+                    confirmPasswordError = error.localizedDescription
+                default:
                     passwordError = error.localizedDescription
                 }
             }
         }
     }
     
-    func signUpAction() {
-        navigationHandler.navigate(to: AuthFlowCoordinator.Route.signUp)
+    func signInAction() {
+        navigationHandler.pop()
     }
     
     private func clearErrors() {
         emailError = ""
         passwordError = ""
+        confirmPasswordError = ""
     }
 }

@@ -16,7 +16,7 @@ struct AuthFlowView: View {
                 .navigationDestination(for: AuthFlowCoordinator.Route.self) { route in
                     switch route {
                     case .signUp:
-                        Text("SignUp")
+                        return SignUpView(coordinator: coordinator)
                     }
                 }
         }

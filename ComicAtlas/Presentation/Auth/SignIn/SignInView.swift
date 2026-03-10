@@ -13,11 +13,18 @@ struct SignInView: View {
     var body: some View {
         VStack {
             Spacer()
+            Image(.logo)
+                .resizable()
+                .frame(width: Layout.logoSize, height: Layout.logoSize)
             AuthHeader(title: .SignIn.title, description: .SignIn.description)
             Spacer()
             inputs
             Spacer()
-            signUpPrompt
+            AuthPrompt(
+                description: .SignIn.signUpPrompt,
+                actionLabel: .SignIn.signUpButton,
+                action: model.signUpAction
+            )
         }
         .padding(.horizontal, Layout.horizontalPadding)
         .background(Color(.background))
@@ -53,21 +60,5 @@ struct SignInView: View {
             Layout.componentShape
                 .stroke(Color(.border))
         }
-    }
-    
-    private var signUpPrompt: some View {
-        HStack(spacing: 0) {
-            Text(.SignIn.signUpPrompt)
-                .fontWeight(.medium)
-            Button {
-                model.signUpAction()
-            } label: {
-                Text(.SignIn.signUpButton)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.brandPrimary)
-                    .padding(6)
-            }
-        }
-        .font(.title3)
     }
 }

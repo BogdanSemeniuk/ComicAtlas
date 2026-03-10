@@ -5,10 +5,14 @@
 //  Created by Богдан Семенюк on 06.03.2026.
 //
 
+import Combine
 import Foundation
 
 struct AuthRepositoryImpl: AuthRepository {
     var authService: AuthService
+    var isAuthenticatedPublisher: AnyPublisher<Bool, Never> {
+        authService.isAuthenticatedPublisher
+    }
     
     func signIn(email: String, password: String) async throws {
         try await authService.signIn(email: email, password: password)

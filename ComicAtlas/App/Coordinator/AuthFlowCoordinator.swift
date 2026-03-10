@@ -13,10 +13,7 @@ final class AuthFlowCoordinator {
         case signUp
     }
 
-    var path = NavigationPath()
-    var view: some View {
-        AuthFlowView(coordinator: self)
-    }
+    var path = [Route]()
     
     private(set) var signInVM: SignInViewModel!
     private let container: AppContainer
@@ -29,6 +26,7 @@ final class AuthFlowCoordinator {
 
 extension AuthFlowCoordinator: NavigationHandler {
     func navigate(to route: AnyHashable) {
+        guard let route = route as? Route else { return }
         path.append(route)
     }
     
@@ -39,7 +37,7 @@ extension AuthFlowCoordinator: NavigationHandler {
     }
     
     func popToRoot() {
-        path = NavigationPath()
+        path = []
     }
 }
 
@@ -48,7 +46,15 @@ extension AuthFlowCoordinator {
         .init(
             inputValidator: container.resolve(),
             authRepository: container.resolve(),
-            navigation: self
+            navigationHandler: self
+        )
+    }
+    
+    func makeSignUpViewModel() -> SignUpViewModel {
+        .init(
+            inputValidator: container.resolve(),
+            authRepository: container.resolve(),
+            navigationHandler: self
         )
     }
 }

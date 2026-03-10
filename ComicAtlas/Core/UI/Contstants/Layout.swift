@@ -9,6 +9,7 @@ import SwiftUI
 
 enum Layout {
     static let horizontalPadding: CGFloat = 24
+    static let logoSize: CGFloat = 100
     static var componentShape: some Shape {
         RoundedRectangle(cornerRadius: 12)
     }
