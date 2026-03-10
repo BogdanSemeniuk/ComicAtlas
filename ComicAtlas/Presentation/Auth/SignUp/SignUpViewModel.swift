@@ -32,12 +32,12 @@ class SignUpViewModel {
     var error: Error?
     private let inputValidator: InputValidating
     private let authRepository: AuthRepository
-    private let navigationHandler: NavigationHandler
+    private let navigationHandler: any NavigationHandler
     
     init(
         inputValidator: InputValidating,
         authRepository: AuthRepository,
-        navigationHandler: NavigationHandler
+        navigationHandler: any NavigationHandler
     ) {
         self.inputValidator = inputValidator
         self.authRepository = authRepository

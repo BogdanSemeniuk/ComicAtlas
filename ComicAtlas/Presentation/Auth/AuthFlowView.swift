@@ -12,7 +12,7 @@ struct AuthFlowView: View {
     
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            SignInView(model: coordinator.signInVM)
+            SignInView(model: coordinator.signInViewModel)
                 .navigationDestination(for: AuthFlowCoordinator.Route.self) { route in
                     switch route {
                     case .signUp:

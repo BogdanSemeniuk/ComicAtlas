@@ -7,8 +7,22 @@
 
 import Foundation
 
-protocol NavigationHandler {
+protocol NavigationHandler: AnyObject {
+    associatedtype NavigationRoute: Hashable
+    var path: [NavigationRoute] { get set }
     func navigate(to route: AnyHashable)
     func pop()
     func popToRoot()
+}
+
+extension NavigationHandler {
+    func pop() {
+        if !path.isEmpty {
+            path.removeLast()
+        }
+    }
+    
+    func popToRoot() {
+        path = []
+    }
 }

@@ -15,12 +15,12 @@ final class AuthFlowCoordinator {
 
     var path = [Route]()
     
-    private(set) var signInVM: SignInViewModel!
+    private(set) var signInViewModel: SignInViewModel!
     private let container: AppContainer
     
     init(container: AppContainer) {
         self.container = container
-        self.signInVM = makeSignInViewModel()
+        self.signInViewModel = makeSignInViewModel()
     }
 }
 
@@ -28,16 +28,6 @@ extension AuthFlowCoordinator: NavigationHandler {
     func navigate(to route: AnyHashable) {
         guard let route = route as? Route else { return }
         path.append(route)
-    }
-    
-    func pop() {
-        if !path.isEmpty {
-            path.removeLast()
-        }
-    }
-    
-    func popToRoot() {
-        path = []
     }
 }
 

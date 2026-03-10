@@ -13,6 +13,8 @@ enum SystemImage: String {
     case eyeSlash = "eye.slash"
     case xmarkCircleFill = "xmark.circle.fill"
     case xmark
+    case personRectangle = "person.text.rectangle"
+    case house = "house"
 }
 
 extension Image {
