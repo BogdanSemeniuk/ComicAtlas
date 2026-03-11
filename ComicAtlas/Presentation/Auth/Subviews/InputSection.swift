@@ -23,12 +23,14 @@ struct InputSection: View {
             if isSecure {
                 AppSecureTextField(
                     text: $text,
-                    placeholder: placeholderText
+                    placeholder: placeholderText,
+                    hasError: !inputError.isEmpty
                 )
             } else {
                 AppTextField(
                     text: $text,
-                    placeholder: placeholderText
+                    placeholder: placeholderText,
+                    hasError: !inputError.isEmpty
                 )
             }
             ErrorMessage(message: inputError)

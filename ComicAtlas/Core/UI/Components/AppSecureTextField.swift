@@ -10,7 +10,6 @@ import SwiftUI
 struct AppSecureTextField: View {
     @Binding var text: String
     var placeholder = ""
-    var isFocused = false
     var hasError = false
     var eyeColor = Color(.textPrimary)
     var inputColor = Color(.textPrimary)
