@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AuthFlowView: View {
-    @Bindable var coordinator: AuthFlowCoordinator
+    @State private var coordinator = AuthFlowCoordinator(container: .shared)
     
     var body: some View {
         NavigationStack(path: $coordinator.path) {
@@ -24,5 +24,5 @@ struct AuthFlowView: View {
 }
 
 #Preview {
-    AuthFlowView(coordinator: .init(container: .shared))
+    AuthFlowView()
 }
