@@ -16,9 +16,24 @@
 		F5A756E22F55885A008BB223 /* ComicAtlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicAtlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F553CE352F6463A600989F12 /* Exceptions for "ComicAtlas" folder in "ComicAtlas" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Config/Base.xcconfig,
+				Config/Info.plist,
+				Config/Secrets.xcconfig,
+			);
+			target = F5A756E12F55885A008BB223 /* ComicAtlas */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F5A756E42F55885A008BB223 /* ComicAtlas */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F553CE352F6463A600989F12 /* Exceptions for "ComicAtlas" folder in "ComicAtlas" target */,
+			);
 			path = ComicAtlas;
 			sourceTree = "<group>";
 		};
@@ -180,6 +195,8 @@
 /* Begin XCBuildConfiguration section */
 		F5A756EB2F55885C008BB223 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F5A756E42F55885A008BB223 /* ComicAtlas */;
+			baseConfigurationReferenceRelativePath = Config/Base.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -245,6 +262,8 @@
 		};
 		F5A756EC2F55885C008BB223 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F5A756E42F55885A008BB223 /* ComicAtlas */;
+			baseConfigurationReferenceRelativePath = Config/Base.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -303,6 +322,8 @@
 		};
 		F5A756EE2F55885C008BB223 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F5A756E42F55885A008BB223 /* ComicAtlas */;
+			baseConfigurationReferenceRelativePath = Config/Base.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +334,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ComicAtlas/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +361,8 @@
 		};
 		F5A756EF2F55885C008BB223 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F5A756E42F55885A008BB223 /* ComicAtlas */;
+			baseConfigurationReferenceRelativePath = Config/Base.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -348,6 +372,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ComicAtlas/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

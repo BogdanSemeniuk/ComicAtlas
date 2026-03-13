@@ -101,6 +101,8 @@ Tuist/Dependencies/*
 .idea/
 *.iml
 
+**/Secrets.xcconfig
+
 # SwiftData / Core Data generated files (if any)
 *.sqlite
 *.sqlite-shm

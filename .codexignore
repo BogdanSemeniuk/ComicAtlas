@@ -30,3 +30,6 @@ Preview Content/
 # --- Logs and Temp Files ---
 *.log
 *.tmp
+
+# --- Sensitive data ---
+Secrets.xcconfig

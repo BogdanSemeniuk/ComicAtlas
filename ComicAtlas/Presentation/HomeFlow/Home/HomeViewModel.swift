@@ -11,4 +11,8 @@ import Foundation
 class HomeViewModel {
     var favoriteColor = "Red"
     var colors = ["Red", "Green", "Blue"]
+    
+    func onAppear() {
+        
+    }
 }

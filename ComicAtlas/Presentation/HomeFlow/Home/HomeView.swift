@@ -20,7 +20,7 @@ struct HomeView: View {
                 Text(color).tag(color)
             }
         }
-        // 4. Apply the segmented style.
         .pickerStyle(.segmented)
+        .onAppear(perform: model.onAppear)
     }
 }
