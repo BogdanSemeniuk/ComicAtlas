@@ -77,7 +77,7 @@ Tuist/Dependencies/*
 !Tuist/Dependencies/Lockfiles/
 
 # Firebase / Crashlytics
-GoogleService-Info.plist
+**/GoogleService-Info.plist
 .crashlytics/
 .crashlytics-build/
 
@@ -100,6 +100,8 @@ GoogleService-Info.plist
 .vscode/
 .idea/
 *.iml
+
+**/Secrets.xcconfig
 
 # SwiftData / Core Data generated files (if any)
 *.sqlite

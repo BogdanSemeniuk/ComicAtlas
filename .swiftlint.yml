@@ -1,0 +1,31 @@
+excluded:
+  - Pods
+  - DerivedData
+  - fastlane
+
+disabled_rules:
+  - trailing_whitespace
+
+file_length:
+  warning: 500
+  error: 600
+
+function_body_length:
+  warning: 100
+  error: 150
+
+line_length:
+  warning: 120
+  error: 200
+
+
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - force_cast
+  - attributes
+  - closure_spacing
+  - sorted_imports
+  - implicit_return
+  
+warning_threshold: 15

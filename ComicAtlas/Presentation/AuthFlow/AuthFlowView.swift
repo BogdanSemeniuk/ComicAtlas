@@ -1,0 +1,28 @@
+//
+//  AuthFlowView.swift
+//  ComicAtlas
+//
+//  Created by Богдан Семенюк on 09.03.2026.
+//
+
+import SwiftUI
+
+struct AuthFlowView: View {
+    @State private var coordinator = AuthFlowCoordinator(container: .shared)
+    
+    var body: some View {
+        NavigationStack(path: $coordinator.path) {
+            SignInView(model: coordinator.signInViewModel)
+                .navigationDestination(for: AuthFlowCoordinator.Route.self) { route in
+                    switch route {
+                    case .signUp:
+                        return SignUpView(coordinator: coordinator)
+                    }
+                }
+        }
+    }
+}
+
+#Preview {
+    AuthFlowView()
+}
