@@ -23,7 +23,7 @@ class HomeViewModel {
         Task {
             isLoading = true
             do {
-                characters = try await characterRepository.fetchCharacters(limit: 10, offset: 0)
+                characters = try await characterRepository.fetchCharacters(limit: 50, offset: 0)
             } catch {
                 print(error)
             }

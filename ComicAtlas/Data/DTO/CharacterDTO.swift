@@ -10,9 +10,9 @@ import Foundation
 struct CharacterDTO {
     let id: Int
     let name: String
-    let description: String
-    let aliases: String
-    let realName: String
+    let description: String?
+    let aliases: String?
+    let realName: String?
     let iconUrl: String
     let smallUrl: String
     

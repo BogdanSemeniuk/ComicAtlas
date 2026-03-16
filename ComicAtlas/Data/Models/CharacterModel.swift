@@ -24,9 +24,9 @@ struct CharactersResponse: Decodable {
 struct CharacterModel: Codable, Sendable {
     let id: Int
     let name: String
-    let description: String
-    let aliases: String
-    let realName: String
+    let description: String?
+    let aliases: String?
+    let realName: String?
     let image: ImageModel
     
     enum CodingKeys: String, CodingKey {
