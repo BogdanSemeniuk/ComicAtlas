@@ -12,7 +12,7 @@ private enum Constants {
 }
 
 enum APIEndpoints: Sendable {
-    case characters
+    case characters(limit: Int, offset: Int)
 }
 
 extension APIEndpoints: APIEndpointProtocol {
@@ -43,10 +43,12 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var urlParams: [String: String]? {
         switch self {
-        case .characters:
+        case let .characters(limit, offset):
             [
                 "api_key": AppEnvironment.apiKey,
-                "format": Constants.formatJSON
+                "format": Constants.formatJSON,
+                "limit": String(limit),
+                "offset": String(offset)
             ]
         }
     }

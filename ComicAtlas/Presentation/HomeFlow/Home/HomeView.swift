@@ -8,19 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var model: HomeViewModel
-    
-    init(model: HomeViewModel) {
-        self._model = State(initialValue: model)
-    }
+    @Bindable var model: HomeViewModel
     
     var body: some View {
-        Picker("What is your favorite color?", selection: $model.favoriteColor) {
-            ForEach(model.colors, id: \.self) { color in
-                Text(color).tag(color)
+        VStack {
+            ForEach(model.characters) { character in
+                Text(character.name)
             }
         }
-        .pickerStyle(.segmented)
         .onAppear(perform: model.onAppear)
     }
 }

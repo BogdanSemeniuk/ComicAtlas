@@ -59,9 +59,11 @@ final class AppContainer: Resolving {
 
 extension AppContainer {
     private func registerDependencies() {
+        registerFactory(APIClientProtocol.self, { APIClient() })
         registerFactory(InputValidating.self, { InputValidator() })
         registerFactory(AuthHandler.self, { Auth.auth() })
         registerFactory(AuthService.self, { FirebaseAuthService(authHandler: self.resolve()) })
         registerFactory(AuthRepository.self, { AuthRepositoryImpl(authService: self.resolve()) })
+        registerFactory(CharacterRepository.self, { CharacterRepositoryImpl(api: self.resolve()) })
     }
 }

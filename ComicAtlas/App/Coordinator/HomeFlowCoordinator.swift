@@ -33,6 +33,6 @@ extension HomeFlowCoordinator: NavigationHandler {
 
 extension HomeFlowCoordinator {
     func makeHomeViewModel() -> HomeViewModel {
-        .init()
+        .init(characterRepository: container.resolve())
     }
 }

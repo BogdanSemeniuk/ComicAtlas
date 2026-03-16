@@ -9,10 +9,25 @@ import Foundation
 
 @Observable
 class HomeViewModel {
-    var favoriteColor = "Red"
-    var colors = ["Red", "Green", "Blue"]
+    var isLoading = false
+    var characters = [Character]()
+    private let characterRepository: CharacterRepository
+    
+    init(
+        characterRepository: CharacterRepository,
+    ) {
+        self.characterRepository = characterRepository
+    }
     
     func onAppear() {
-        
+        Task {
+            isLoading = true
+            do {
+                characters = try await characterRepository.fetchCharacters(limit: 10, offset: 0)
+            } catch {
+                print(error)
+            }
+            isLoading = false
+        }
     }
 }
