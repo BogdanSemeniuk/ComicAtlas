@@ -115,4 +115,6 @@ GoogleService-Info.plist
 # Simulator devices backup
 Library/Developer/CoreSimulator/Devices/
 
+Secrets.xcconfig
+
 
