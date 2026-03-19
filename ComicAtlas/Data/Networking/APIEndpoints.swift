@@ -7,12 +7,14 @@ import Foundation
 
 private enum Constants {
     static let charactersPath = "characters/"
+    static let volumesPath = "volumes/"
     static let formatJSON = "json"
     static let contentTypeHeader = "Content-Type"
 }
 
 enum APIEndpoints: Sendable {
     case characters(limit: Int, offset: Int)
+    case volumes(limit: Int, offset: Int)
 }
 
 extension APIEndpoints: APIEndpointProtocol {
@@ -22,7 +24,7 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var method: HTTPMethod {
         switch self {
-        case .characters:
+        case .characters, .volumes:
                 .get
         }
     }
@@ -31,6 +33,8 @@ extension APIEndpoints: APIEndpointProtocol {
         switch self {
         case .characters:
             Constants.charactersPath
+        case .volumes:
+            Constants.volumesPath
         }
     }
     
@@ -43,7 +47,8 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var urlParams: [String: String]? {
         switch self {
-        case let .characters(limit, offset):
+        case let .characters(limit, offset),
+            let .volumes(limit, offset):
             [
                 "api_key": AppEnvironment.apiKey,
                 "format": Constants.formatJSON,
@@ -55,7 +60,7 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var body: NetworkBody? {
         switch self {
-        case .characters:
+        case .characters, .volumes:
             nil
         }
     }

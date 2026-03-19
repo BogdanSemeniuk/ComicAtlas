@@ -34,6 +34,17 @@
         }
       }
     },
+    "issuesCount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d Issues"
+          }
+        }
+      }
+    },
     "nameLabel" : {
       "extractionState" : "manual",
       "localizations" : {

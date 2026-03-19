@@ -33,6 +33,9 @@ extension HomeFlowCoordinator: NavigationHandler {
 
 extension HomeFlowCoordinator {
     func makeHomeViewModel() -> HomeViewModel {
-        .init(characterRepository: container.resolve())
+        .init(
+            characterRepository: container.resolve(),
+            volumesRepository: container.resolve()
+        )
     }
 }
