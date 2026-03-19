@@ -35,7 +35,9 @@ extension HomeFlowCoordinator {
     func makeHomeViewModel() -> HomeViewModel {
         .init(
             characterRepository: container.resolve(),
-            volumesRepository: container.resolve()
+            volumesRepository: container.resolve(),
+            issueRepository: container.resolve(),
+            movieRepository: container.resolve()
         )
     }
 }

@@ -66,5 +66,7 @@ extension AppContainer {
         registerFactory(AuthRepository.self, { AuthRepositoryImpl(authService: self.resolve()) })
         registerFactory(CharacterRepository.self, { CharacterRepositoryImpl(api: self.resolve()) })
         registerFactory(VolumeRepository.self, { VolumeRepositoryImpl(api: self.resolve()) })
+        registerFactory(IssueRepository.self, { IssueRepositoryImpl(api: self.resolve()) })
+        registerFactory(MovieRepository.self, { MovieRepositoryImpl(api: self.resolve()) })
     }
 }

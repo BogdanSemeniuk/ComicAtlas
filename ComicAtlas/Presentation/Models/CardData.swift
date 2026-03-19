@@ -38,4 +38,24 @@ struct CardData: Identifiable {
             .compactMap({ $0 })
             .joined(separator: "\n")
     }
+    
+    init(_ issue: Issue) {
+        self.title = issue.volumeName + " #\(issue.issueNumber)"
+        self.imageURL = issue.smallUrl
+        self.type = .issue
+        self.itemId = issue.id
+        self.id = "\(issue.id)\(type.rawValue)"
+        self.desctiption = issue.coverDate.toDate(format: .yyyyMMdd)?.toString(format: .monthYear)
+    }
+    
+    init(_ movie: Movie) {
+        self.title = movie.name
+        self.imageURL = movie.smallUrl
+        self.type = .movie
+        self.itemId = movie.id
+        self.id = "\(movie.id)\(type.rawValue)"
+        self.desctiption = movie.releaseDate
+            .toDate(format: .yyyyMMddHHmmss)?
+            .toString(format: .monthYear) ?? "" + "\n" + movie.studios.joined(separator: ", ")
+    }
 }

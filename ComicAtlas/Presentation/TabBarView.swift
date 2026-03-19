@@ -27,6 +27,7 @@ struct TabBarView: View {
                 ProfileFlowView()
             }
         }
+        .tint(Color(.brandPrimary))
     }
     
     enum TabItem {
