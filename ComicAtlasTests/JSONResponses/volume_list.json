@@ -1,0 +1,137 @@
+{
+    "error": "OK",
+    "limit": 3,
+    "offset": 10,
+    "number_of_page_results": 3,
+    "number_of_total_results": 154612,
+    "status_code": 1,
+    "results": [
+        {
+            "aliases": null,
+            "api_detail_url": "https://comicvine.gamespot.com/api/volume/4050-816/",
+            "count_of_issues": 73,
+            "date_added": "2008-06-06 11:08:04",
+            "date_last_updated": "2021-02-22 01:19:27",
+            "deck": null,
+            "description": "description",
+            "first_issue": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-152725/",
+                "id": 152725,
+                "name": "Women Warriors Of The Moon",
+                "issue_number": "1"
+            },
+            "id": 816,
+            "image": {
+                "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "original_url": "https://comicvine.gamespot.com/a/uploads/original/11114/111149159/4641116-1441336221-0.jpg.jpg",
+                "image_tags": "All Images"
+            },
+            "last_issue": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-169/",
+                "id": 169,
+                "name": "Cerebex",
+                "issue_number": "73"
+            },
+            "name": "Planet Comics",
+            "publisher": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/publisher/4010-8/",
+                "id": 8,
+                "name": "Fiction House"
+            },
+            "site_detail_url": "https://comicvine.gamespot.com/planet-comics/4050-816/",
+            "start_year": "1940"
+        },
+        {
+            "aliases": null,
+            "api_detail_url": "https://comicvine.gamespot.com/api/volume/4050-832/",
+            "count_of_issues": 38,
+            "date_added": "2008-06-06 11:08:04",
+            "date_last_updated": "2023-05-22 10:25:25",
+            "deck": null,
+            "description": "description",
+            "first_issue": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-119476/",
+                "id": 119476,
+                "name": "Introducing Toro; Sub-Mariner Crashes New York Again",
+                "issue_number": "2"
+            },
+            "id": 832,
+            "image": {
+                "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "original_url": "https://comicvine.gamespot.com/a/uploads/original/0/229/251258-832-119476-1-human-torch-the.jpg",
+                "image_tags": "All Images"
+            },
+            "last_issue": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-1297/",
+                "id": 1297,
+                "name": "The World's End; in Korea; The Octopus-Men; Flame On!",
+                "issue_number": "38"
+            },
+            "name": "The Human Torch",
+            "publisher": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/publisher/4010-31/",
+                "id": 31,
+                "name": "Marvel"
+            },
+            "site_detail_url": "https://comicvine.gamespot.com/the-human-torch/4050-832/",
+            "start_year": "1940"
+        },
+        {
+            "aliases": null,
+            "api_detail_url": "https://comicvine.gamespot.com/api/volume/4050-836/",
+            "count_of_issues": 48,
+            "date_added": "2008-06-06 11:08:04",
+            "date_last_updated": "2018-09-18 08:49:40",
+            "deck": null,
+            "description": "description",
+            "first_issue": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-151505/",
+                "id": 151505,
+                "name": "Volume 1 Number 1",
+                "issue_number": "1"
+            },
+            "id": 836,
+            "image": {
+                "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/2/27783/702894-sm_1.jpg",
+                "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/2/27783/702894-sm_1.jpg",
+                "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/2/27783/702894-sm_1.jpg",
+                "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/2/27783/702894-sm_1.jpg",
+                "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/2/27783/702894-sm_1.jpg",
+                "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/2/27783/702894-sm_1.jpg",
+                "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/2/27783/702894-sm_1.jpg",
+                "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/2/27783/702894-sm_1.jpg",
+                "original_url": "https://comicvine.gamespot.com/a/uploads/original/2/27783/702894-sm_1.jpg",
+                "image_tags": "All Images"
+            },
+            "last_issue": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-251414/",
+                "id": 251414,
+                "name": "Volume 8 Number 6",
+                "issue_number": "48"
+            },
+            "name": "Super-Mystery Comics",
+            "publisher": {
+                "api_detail_url": "https://comicvine.gamespot.com/api/publisher/4010-32/",
+                "id": 32,
+                "name": "Ace Magazines"
+            },
+            "site_detail_url": "https://comicvine.gamespot.com/super-mystery-comics/4050-836/",
+            "start_year": "1940"
+        }
+    ],
+    "version": "1.0"
+}
