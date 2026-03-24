@@ -18,4 +18,13 @@ struct CharacterRepositoryImpl: CharacterRepository {
         .characters
         .map { .init(dto: .init($0)) }
     }
+    
+    func fetchCharacterDetails(id: Int) async throws -> CharacterDetails {
+        let response = try await api.request(
+            APIEndpoints.characterDetails(id: id),
+            as: CharacterDetailsResponse.self
+        )
+        
+        return .init(dto: .init(response.characterDetails))
+    }
 }

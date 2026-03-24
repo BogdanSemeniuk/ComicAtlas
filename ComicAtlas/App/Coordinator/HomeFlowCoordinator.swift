@@ -45,6 +45,7 @@ extension HomeFlowCoordinator {
     func makeCharacterDetailsViewModel(id: Int) -> CharacterDetailsViewModel {
         .init(
             id: id,
+            characterRepository: container.resolve(),
             navigationHandler: self
         )
     }

@@ -15,7 +15,37 @@ struct CharacterDetailsView: View {
     }
     
     var body: some View {
-        Text("CharacterDetailsViewModel")
+        VStack {
+            Text(model.characterDetails?.name ?? "Loading")
+            if let imageURL = model.characterDetails?.iconUrl {
+                image(path: imageURL)
+            }
+        }
+        .onAppear(perform: model.onAppear)
+    }
+    
+    private func image(path: String) -> some View {
+        AsyncImage(url: URL(string: path)) { phase in
+            switch phase {
+            case .empty:
+                ProgressView()
+            case .success(let image):
+                wrappedImage(image)
+            case .failure:
+                wrappedImage()
+            default:
+                Color.red
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: 200)
+        .background(.white)
+    }
+    
+    private func wrappedImage(_ image: Image = Image(.placeholder)) -> some View {
+        image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 

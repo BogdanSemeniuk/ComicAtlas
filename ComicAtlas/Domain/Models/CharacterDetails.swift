@@ -18,14 +18,14 @@ struct CharacterDetails: Identifiable, Hashable {
     let countOfIssueAppearances: Int
     let dateAdded: String
     let deck: String?
-    let firstAppearedInIssueName: String
+    let firstAppearedInIssueName: String?
     let firstAppearedInIssueNumber: String?
     let gender: Int
     let issueCredits: [String]
     let movies: [String]
     let originName: String?
     let powers: [String]
-    let publisherName: String
+    let publisherName: String?
     let realName: String?
     let siteDetailUrl: String
     let teams: [String]

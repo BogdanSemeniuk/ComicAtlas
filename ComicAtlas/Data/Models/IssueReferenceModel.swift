@@ -9,7 +9,7 @@ import Foundation
 
 struct IssueReferenceModel: Codable, Sendable {
     let id: Int
-    let name: String
+    let name: String?
     let issueNumber: String?
 
     enum CodingKeys: String, CodingKey {
