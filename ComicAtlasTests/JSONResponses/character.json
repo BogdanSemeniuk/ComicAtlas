@@ -1,0 +1,215 @@
+{
+    "error": "OK",
+    "limit": 1,
+    "offset": 0,
+    "number_of_page_results": 1,
+    "number_of_total_results": 1,
+    "status_code": 1,
+    "results": {
+        "aliases": "Cletus Kasady\nTanis Nieves\nBen Reilly\nNorrin Radd\nPeter Parker\nJohn Jameson\nSpider-Man\nSpider-Carnage\nThe Spider\nPrick!\nInmate 24739\nGwen Stacy",
+        "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-1490/",
+        "birth": null,
+        "character_enemies": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-183328/",
+                "id": 183328,
+                "name": "Agent Gao",
+                "site_detail_url": "https://comicvine.gamespot.com/agent-gao/4005-183328/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-56692/",
+                "id": 56692,
+                "name": "Alana",
+                "site_detail_url": "https://comicvine.gamespot.com/alana/4005-56692/"
+            }
+        ],
+        "character_friends": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-172326/",
+                "id": 172326,
+                "name": "Arthur Krane",
+                "site_detail_url": "https://comicvine.gamespot.com/arthur-krane/4005-172326/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-14507/",
+                "id": 14507,
+                "name": "Carrion (McBride)",
+                "site_detail_url": "https://comicvine.gamespot.com/carrion-mcbride/4005-14507/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-15683/",
+                "id": 15683,
+                "name": "Chthon",
+                "site_detail_url": "https://comicvine.gamespot.com/chthon/4005-15683/"
+            }
+        ],
+        "count_of_issue_appearances": 769,
+        "creators": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/creator/4040-40650/",
+                "id": 40650,
+                "name": "David Michelinie",
+                "site_detail_url": "https://comicvine.gamespot.com/david-michelinie/4040-40650/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/creator/4040-2123/",
+                "id": 2123,
+                "name": "Mark Bagley",
+                "site_detail_url": "https://comicvine.gamespot.com/mark-bagley/4040-2123/"
+            }
+        ],
+        "date_added": "2008-06-06 11:27:42",
+        "date_last_updated": "2025-08-21 20:11:46",
+        "deck": "Carnage is the offspring of the alien symbiote Venom. It bonded with the crazed serial killer, Cletus Kasady, thus creating one of Spider-Man's most murderous, brutal, and lethal adversaries.",
+        "description": "description",
+        "first_appeared_in_issue": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/first_appeared_in_issue/4000-33983/",
+            "id": 33983,
+            "name": "Gun From The Heart!",
+            "issue_number": "345"
+        },
+        "gender": 1,
+        "id": 1490,
+        "image": {
+            "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "original_url": "https://comicvine.gamespot.com/a/uploads/original/12/124259/8056391-extreme_carnage_alpha_vol_1_1_lee_retailer_shared_exclusive_virgin_variant.jpg",
+            "image_tags": "All Images"
+        },
+        "issue_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-1159638/",
+                "id": 1159638,
+                "name": "Death Spiral, Part 4",
+                "site_detail_url": "https://comicvine.gamespot.com/the-amazing-spider-man-24-death-spiral-part-4/4000-1159638/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-1159231/",
+                "id": 1159231,
+                "name": "Death Spiral, Part 3 of 9",
+                "site_detail_url": "https://comicvine.gamespot.com/venom-255-death-spiral-part-3-of-9/4000-1159231/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-1158149/",
+                "id": 1158149,
+                "name": "Death Spiral: Part 2 of 9",
+                "site_detail_url": "https://comicvine.gamespot.com/the-amazing-spider-man-23-death-spiral-part-2-of-9/4000-1158149/"
+            }
+        ],
+        "issues_died_in": [],
+        "movies": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/movie/4025-2555/",
+                "id": 2555,
+                "name": "Venom: Let There Be Carnage",
+                "site_detail_url": "https://comicvine.gamespot.com/venom-let-there-be-carnage/4025-2555/"
+            }
+        ],
+        "name": "Carnage",
+        "origin": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/origin/4030-3/",
+            "id": 3,
+            "name": "Alien"
+        },
+        "powers": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/power/4035-1/",
+                "id": 1,
+                "name": "Flight"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/power/4035-2/",
+                "id": 2,
+                "name": "Super Strength"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/power/4035-3/",
+                "id": 3,
+                "name": "Super Speed"
+            }
+        ],
+        "publisher": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/publisher/4010-31/",
+            "id": 31,
+            "name": "Marvel"
+        },
+        "real_name": "Carnage",
+        "site_detail_url": "https://comicvine.gamespot.com/carnage/4005-1490/",
+        "story_arc_credits": [],
+        "team_enemies": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-3806/",
+                "id": 3806,
+                "name": "Avengers",
+                "site_detail_url": "https://comicvine.gamespot.com/avengers/4060-3806/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-43574/",
+                "id": 43574,
+                "name": "Cloak and Dagger",
+                "site_detail_url": "https://comicvine.gamespot.com/cloak-and-dagger/4060-43574/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-55443/",
+                "id": 55443,
+                "name": "Federal Bureau of Investigation",
+                "site_detail_url": "https://comicvine.gamespot.com/federal-bureau-of-investigation/4060-55443/"
+            }
+        ],
+        "team_friends": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-40421/",
+                "id": 40421,
+                "name": "Illuminati",
+                "site_detail_url": "https://comicvine.gamespot.com/illuminati/4060-40421/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-55703/",
+                "id": 55703,
+                "name": "The Five Symbiotes",
+                "site_detail_url": "https://comicvine.gamespot.com/the-five-symbiotes/4060-55703/"
+            }
+        ],
+        "teams": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-3806/",
+                "id": 3806,
+                "name": "Avengers",
+                "site_detail_url": "https://comicvine.gamespot.com/avengers/4060-3806/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-11439/",
+                "id": 11439,
+                "name": "Frightful Four",
+                "site_detail_url": "https://comicvine.gamespot.com/frightful-four/4060-11439/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-40429/",
+                "id": 40429,
+                "name": "Sinister Six",
+                "site_detail_url": "https://comicvine.gamespot.com/sinister-six/4060-40429/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-56880/",
+                "id": 56880,
+                "name": "Symbiotes",
+                "site_detail_url": "https://comicvine.gamespot.com/symbiotes/4060-56880/"
+            }
+        ],
+        "volume_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/volume/4050-42411/",
+                "id": 42411,
+                "name": "Homem-Aranha Kids",
+                "site_detail_url": "https://comicvine.gamespot.com/homem-aranha-kids/4050-42411/"
+            }
+        ]
+    },
+    "version": "1.0"
+}
