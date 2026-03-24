@@ -20,7 +20,7 @@ struct AuthRepositoryImpl: AuthRepository {
     
     func registerUser(email: String, password: String, name: String) async throws -> UserInfo {
         let user = try await authService.registerUser(email: email, password: password, name: name)
-        return .init(dto: FirebaseUserDTO(user))
+        return .init(dto: user)
     }
     
     func signOut() throws {
