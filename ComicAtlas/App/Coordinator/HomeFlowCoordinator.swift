@@ -10,7 +10,7 @@ import Foundation
 @Observable
 final class HomeFlowCoordinator {
     enum Route: Hashable {
-        case details
+        case character(id: Int)
     }
 
     var path = [Route]()
@@ -37,7 +37,15 @@ extension HomeFlowCoordinator {
             characterRepository: container.resolve(),
             volumesRepository: container.resolve(),
             issueRepository: container.resolve(),
-            movieRepository: container.resolve()
+            movieRepository: container.resolve(),
+            navigationHandler: self
+        )
+    }
+    
+    func makeCharacterDetailsViewModel(id: Int) -> CharacterDetailsViewModel {
+        .init(
+            id: id,
+            navigationHandler: self
         )
     }
 }

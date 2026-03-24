@@ -25,17 +25,20 @@ class HomeViewModel {
     private let volumesRepository: VolumeRepository
     private let issuesRepository: IssueRepository
     private let moviesRepository: MovieRepository
+    private let navigationHandler: any NavigationHandler
     
     init(
         characterRepository: CharacterRepository,
         volumesRepository: VolumeRepository,
         issueRepository: IssueRepository,
-        movieRepository: MovieRepository
+        movieRepository: MovieRepository,
+        navigationHandler: any NavigationHandler
     ) {
         self.characterRepository = characterRepository
         self.volumesRepository = volumesRepository
         self.issuesRepository = issueRepository
         self.moviesRepository = movieRepository
+        self.navigationHandler = navigationHandler
     }
     
     func onAppear() {
@@ -43,80 +46,110 @@ class HomeViewModel {
     }
     
     func onAppear(card: CardData) {
-        var isLastCard = false
-        switch card.type {
-        case .character:
-            isLastCard = card.itemId == characters.last?.id
-        case .volume:
-            isLastCard = card.itemId == volumes.last?.id
-        case .issue:
-            isLastCard = card.itemId == issues.last?.id
-        case .movie:
-            isLastCard = card.itemId == movies.last?.id
-        }
-        guard isLastCard else { return }
+        guard isLastCard(card) else { return }
         fetchData()
     }
     
+    func selectCard(withData cardData: CardData) {
+        navigationHandler.navigate(to: HomeFlowCoordinator.Route.character(id: cardData.itemId))
+    }
+    
     private func fetchData() {
+        guard !isLoading else { return }
         isLoading = true
         Task {
+            defer { isLoading = false }
             do {
-                switch pickerSelection {
-                case .character:
-                    let result = try await characterRepository.fetchCharacters(limit: limit, offset: characters.count)
-                    characters.append(contentsOf: result)
-                    cardsData = characters.map { .init($0) }
-                case .volume:
-                    let result = try await volumesRepository.fetchVolumes(limit: limit, offset: volumes.count)
-                    volumes.append(contentsOf: result)
-                    cardsData = volumes.map { .init($0) }
-                case .issue:
-                    let result = try await issuesRepository.fetchIssues(limit: limit, offset: issues.count)
-                    issues.append(contentsOf: result)
-                    cardsData = issues.map { .init($0) }
-                case .movie:
-                    let result = try await moviesRepository.fetchMovies(limit: limit, offset: movies.count)
-                    movies.append(contentsOf: result)
-                    cardsData = movies.map { .init($0) }
-                }
+                try await fetchSelectedData()
             } catch {
                 print(error)
             }
-            isLoading = false
         }
     }
     
     private func pickerSelectionDidChange() {
-        switch pickerSelection {
+        cardsData = cachedCardsData(for: pickerSelection)
+        guard cardsData.isEmpty else { return }
+        fetchData()
+    }
+    
+    private func fetchSelectedData() async throws {
+        switch SelectionState(pickerSelection) {
         case .character:
-            if characters.isEmpty {
-                cardsData = []
-                fetchData()
-            } else {
-                cardsData = characters.map { .init($0) }
-            }
+            let result = try await characterRepository.fetchCharacters(
+                limit: limit,
+                offset: characters.count
+            )
+            characters.append(contentsOf: result)
         case .volume:
-            if volumes.isEmpty {
-                cardsData = []
-                fetchData()
-            } else {
-                cardsData = volumes.map { .init($0) }
-            }
+            let result = try await volumesRepository.fetchVolumes(
+                limit: limit,
+                offset: volumes.count
+            )
+            volumes.append(contentsOf: result)
         case .issue:
-            if issues.isEmpty {
-                cardsData = []
-                fetchData()
-            } else {
-                cardsData = issues.map { .init($0) }
-            }
+            let result = try await issuesRepository.fetchIssues(
+                limit: limit,
+                offset: issues.count
+            )
+            issues.append(contentsOf: result)
         case .movie:
-            if movies.isEmpty {
-                cardsData = []
-                fetchData()
-            } else {
-                cardsData = movies.map { .init($0) }
+            let result = try await moviesRepository.fetchMovies(
+                limit: limit,
+                offset: movies.count
+            )
+            movies.append(contentsOf: result)
+        }
+        
+        cardsData = cachedCardsData(for: pickerSelection)
+    }
+    
+    private func cachedCardsData(for selection: CollectionItem) -> [CardData] {
+        switch SelectionState(selection) {
+        case .character:
+            characters.map { .init($0) }
+        case .volume:
+            volumes.map { .init($0) }
+        case .issue:
+            issues.map { .init($0) }
+        case .movie:
+            movies.map { .init($0) }
+        }
+    }
+    
+    private func isLastCard(_ card: CardData) -> Bool {
+        switch SelectionState(card.type) {
+        case .character:
+            card.itemId == characters.last?.id
+        case .volume:
+            card.itemId == volumes.last?.id
+        case .issue:
+            card.itemId == issues.last?.id
+        case .movie:
+            card.itemId == movies.last?.id
+        }
+    }
+}
+
+extension HomeViewModel {
+    private enum SelectionState {
+        case character
+        case volume
+        case issue
+        case movie
+        
+        init(_ item: CollectionItem) {
+            switch item {
+            case .character:
+                self = .character
+            case .volume:
+                self = .volume
+            case .issue:
+                self = .issue
+            case .movie:
+                self = .movie
             }
         }
+        
     }
 }

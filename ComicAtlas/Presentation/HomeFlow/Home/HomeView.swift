@@ -34,6 +34,9 @@ struct HomeView: View {
             LazyVStack(spacing: 0) {
                 ForEach(model.cardsData) { cardData in
                     tableCrad(cardData)
+                        .onTapGesture {
+                            model.selectCard(withData: cardData)
+                        }
                         .onAppear {
                             model.onAppear(card: cardData)
                         }
@@ -50,6 +53,9 @@ struct HomeView: View {
             ], alignment: .center, spacing: 10) {
                 ForEach(model.cardsData) { cardData in
                     characterCard(cardData)
+                        .onTapGesture {
+                            model.selectCard(withData: cardData)
+                        }
                         .onAppear {
                             model.onAppear(card: cardData)
                         }
@@ -67,6 +73,7 @@ struct HomeView: View {
             title(text: cardData.title)
                 .padding()
         }
+        .contentShape(.rect)
         .background(Color(.background))
         .clipShape(Layout.componentShape)
         .overlay {
@@ -94,6 +101,7 @@ struct HomeView: View {
         .overlay(alignment: .bottom) {
             Divider()
         }
+        .contentShape(.rect)
     }
     
     // MARK: - UI Components

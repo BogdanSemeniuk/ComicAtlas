@@ -15,8 +15,10 @@ struct HomeFlowView: View {
             HomeView(model: coordinator.homeViewModel)
                 .navigationDestination(for: HomeFlowCoordinator.Route.self) { route in
                     switch route {
-                    case .details:
-                        return Text("details")
+                    case .character(let id):
+                        CharacterDetailsView(
+                            viewModel: coordinator.makeCharacterDetailsViewModel(id: id)
+                        )
                     }
                 }
         }
