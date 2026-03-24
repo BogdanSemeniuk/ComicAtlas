@@ -63,7 +63,7 @@ extension AppContainer {
         registerFactory(InputValidating.self, { InputValidator() })
         registerFactory(AuthHandler.self, { Auth.auth() })
         registerFactory(FirebaseAuthAdapter.self, { FirebaseAuthAdapterImpl(authHandler: self.resolve()) })
-        registerFactory(AuthService.self, { FirebaseAuthService(authProxy: self.resolve()) })
+        registerFactory(AuthService.self, { FirebaseAuthService(firebaseAdapter: self.resolve()) })
         registerFactory(AuthRepository.self, { AuthRepositoryImpl(authService: self.resolve()) })
         registerFactory(CharacterRepository.self, { CharacterRepositoryImpl(api: self.resolve()) })
         registerFactory(VolumeRepository.self, { VolumeRepositoryImpl(api: self.resolve()) })

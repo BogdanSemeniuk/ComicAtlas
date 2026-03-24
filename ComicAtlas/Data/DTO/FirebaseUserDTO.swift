@@ -11,7 +11,9 @@ struct FirebaseUserDTO {
     let uid: String
     let email: String?
     let displayName: String?
-    
+}
+
+extension FirebaseUserDTO {
     init(_ user: User) {
         self.uid = user.uid
         self.email = user.email
