@@ -68,7 +68,7 @@ struct HomeView: View {
     // MARK: - Cards
     private func characterCard(_ cardData: CardData) -> some View {
         VStack(spacing: 0) {
-            image(path: cardData.imageURL)
+            RemoteImage(path: cardData.imageURL)
             Divider()
             title(text: cardData.title)
                 .padding()
@@ -85,7 +85,7 @@ struct HomeView: View {
     
     func tableCrad(_ cardData: CardData) -> some View {
         HStack(alignment: .top, spacing: 10) {
-            image(path: cardData.imageURL)
+            RemoteImage(path: cardData.imageURL)
                 .frame(width: 150)
             VStack(alignment: .leading, spacing: 10) {
                 title(text: cardData.title)
@@ -105,24 +105,6 @@ struct HomeView: View {
     }
     
     // MARK: - UI Components
-    private func image(path: String) -> some View {
-        AsyncImage(url: URL(string: path)) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                wrappedImage(image)
-            case .failure:
-                wrappedImage()
-            default:
-                Color.red
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 200)
-        .background(.white)
-    }
-    
     private func title(text: String) -> some View {
         Text(text)
             .font(.title2.weight(.semibold))
@@ -130,12 +112,6 @@ struct HomeView: View {
             .minimumScaleFactor(0.5)
             .foregroundStyle(.textPrimary)
             .frame(maxWidth: .infinity, alignment: .leading)
-    }
-    
-    private func wrappedImage(_ image: Image = Image(.placeholder)) -> some View {
-        image
-            .resizable()
-            .aspectRatio(contentMode: .fit)
     }
 }
 

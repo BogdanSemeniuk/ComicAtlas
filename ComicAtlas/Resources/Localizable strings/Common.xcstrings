@@ -34,6 +34,17 @@
         }
       }
     },
+    "female" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Female"
+          }
+        }
+      }
+    },
     "issuesCount" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,6 +52,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%d Issues"
+          }
+        }
+      }
+    },
+    "male" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Male"
           }
         }
       }
@@ -78,6 +100,17 @@
         }
       }
     },
+    "openOnWeb" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open on web"
+          }
+        }
+      }
+    },
     "passwordLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -96,6 +129,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter your password"
+          }
+        }
+      }
+    },
+    "publisherLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publisher"
           }
         }
       }

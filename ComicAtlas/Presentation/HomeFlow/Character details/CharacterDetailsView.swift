@@ -15,37 +15,89 @@ struct CharacterDetailsView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(model.characterDetails?.name ?? "Loading")
-            if let imageURL = model.characterDetails?.iconUrl {
-                image(path: imageURL)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                if let character = model.characterDetails {
+                    header(for: character)
+                    subheader(for: character)
+                }
             }
+            .padding()
+            .frame(maxWidth: .infinity)
         }
+        .background(Color(.background))
         .onAppear(perform: model.onAppear)
     }
     
-    private func image(path: String) -> some View {
-        AsyncImage(url: URL(string: path)) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                wrappedImage(image)
-            case .failure:
-                wrappedImage()
-            default:
-                Color.red
-            }
+    @ViewBuilder
+    private func subheader(for character: CharacterDetails) -> some View {
+        if let deck = character.deck {
+            Text(deck)
+                .font(.body).fontWeight(.semibold)
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 200)
-        .background(.white)
     }
     
-    private func wrappedImage(_ image: Image = Image(.placeholder)) -> some View {
-        image
-            .resizable()
-            .aspectRatio(contentMode: .fit)
+    private func header(for character: CharacterDetails) -> some View {
+        VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                RemoteImage(
+                    path: character.smallUrl,
+                    backgroundColor: .clear
+                )
+                .frame(width: 150)
+                .overlay {
+                    Layout.componentShape
+                        .stroke(Color(.border))
+                }
+                VStack(alignment: .leading, spacing: 16) {
+                    headerTitle(character.name)
+                    headerInfo(for: character)
+                }
+            }
+        }
+        .foregroundStyle(Color(.textSecondary))
+    }
+    
+    private func headerTitle(_ title: String) -> some View {
+        Text(title)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.title.bold())
+            .foregroundStyle(Color(.textPrimary))
+    }
+    
+    private func headerInfo(for character: CharacterDetails) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if character.countOfIssueAppearances > 0 {
+                HStack {
+                    Text(.CharacterDetails.appearsInLabel)
+                    LinkText(
+                        destination: .init(safeString: character.siteDetailUrl)
+                        .appending(pathComponent: .issues),
+                        resource: .Common.issuesCount(Int32(character.countOfIssueAppearances)))
+                }
+            }
+            if let gender = Gender(rawValue: character.gender)?.description {
+                infoItem(.CharacterDetails.genderLabel, value: gender)
+            }
+            if let originName = character.originName {
+                infoItem(.CharacterDetails.characterTypeLabel, value: originName)
+            }
+            if let publisherName = character.publisherName {
+                infoItem(.Common.publisherLabel, value: publisherName)
+            }
+            LinkText(destination: .init(safeString: character.siteDetailUrl),
+                     resource: .Common.openOnWeb)
+        }
+        .font(.default)
+    }
+    
+    private func infoItem(_ label: LocalizedStringResource, value: String) -> some View {
+        HStack(alignment: .center) {
+            Text(label)
+                .fontWeight(.bold)
+                .frame(width: 90, alignment: .leading)
+            Text(value)
+        }
     }
 }
 
@@ -53,6 +105,6 @@ struct CharacterDetailsView: View {
     CharacterDetailsView(
         viewModel: HomeFlowCoordinator(
             container: .shared
-        ).makeCharacterDetailsViewModel(id: 0)
+        ).makeCharacterDetailsViewModel(id: 1490)
     )
 }
