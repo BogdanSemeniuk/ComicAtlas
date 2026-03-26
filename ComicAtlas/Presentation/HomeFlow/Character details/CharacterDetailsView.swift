@@ -20,6 +20,7 @@ struct CharacterDetailsView: View {
                 if let character = model.characterDetails {
                     header(for: character)
                     subheader(for: character)
+                    description()
                 }
             }
             .padding()
@@ -27,13 +28,26 @@ struct CharacterDetailsView: View {
         }
         .background(Color(.background))
         .onAppear(perform: model.onAppear)
+        
+    }
+    
+    @ViewBuilder
+    private func description() -> some View {
+        if let html = model.htmlContent {
+            AppWebView(
+                html: html,
+                webViewHeight: model.webViewHeight,
+                onTapLink: { model.linkAction(url: $0) },
+                contentHeightCompletion: { model.webViewContentHeightDidChange($0) }
+            )
+        }
     }
     
     @ViewBuilder
     private func subheader(for character: CharacterDetails) -> some View {
         if let deck = character.deck {
             Text(deck)
-                .font(.body).fontWeight(.semibold)
+                .font(.body.weight(.semibold))
         }
     }
     
@@ -94,7 +108,7 @@ struct CharacterDetailsView: View {
     private func infoItem(_ label: LocalizedStringResource, value: String) -> some View {
         HStack(alignment: .center) {
             Text(label)
-                .fontWeight(.bold)
+                .bold()
                 .frame(width: 90, alignment: .leading)
             Text(value)
         }

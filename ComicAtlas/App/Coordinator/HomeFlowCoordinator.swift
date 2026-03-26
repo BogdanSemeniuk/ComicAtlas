@@ -46,6 +46,7 @@ extension HomeFlowCoordinator {
         .init(
             id: id,
             characterRepository: container.resolve(),
+            htmlDecorator: container.resolve(),
             navigationHandler: self
         )
     }

@@ -26,7 +26,13 @@ struct HomeView: View {
                 CollectionPicker(selected: $model.pickerSelection)
             }
         }
-        .onAppear(perform: model.onAppear)
+        .onFirstAppear(model.onFirstAppear)
+        .overlay {
+            if model.isLoading {
+                ProgressView()
+                    .controlSize(.large)
+            }
+        }
     }
     
     private var table: some View {

@@ -41,7 +41,7 @@ class HomeViewModel {
         self.navigationHandler = navigationHandler
     }
     
-    func onAppear() {
+    func onFirstAppear() {
         fetchData()
     }
     
