@@ -58,6 +58,7 @@ extension HomeFlowCoordinator {
             id: id,
             issueRepository: container.resolve(),
             characterRepository: container.resolve(),
+            volumeRepository: container.resolve(),
             htmlDecorator: container.resolve(),
             navigationHandler: self
         )

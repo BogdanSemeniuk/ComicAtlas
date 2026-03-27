@@ -29,6 +29,7 @@ final class IssueDetailsViewModel {
     private let id: Int
     private let issueRepository: IssueRepository
     private let characterRepository: CharacterRepository
+    private let volumeRepository: VolumeRepository
     private let htmlDecorator: any HTMLFormatting
     private let navigationHandler: any NavigationHandler
     
@@ -36,12 +37,14 @@ final class IssueDetailsViewModel {
         id: Int,
         issueRepository: IssueRepository,
         characterRepository: CharacterRepository,
+        volumeRepository: VolumeRepository,
         htmlDecorator: any HTMLFormatting,
         navigationHandler: any NavigationHandler
     ) {
         self.id = id
         self.issueRepository = issueRepository
         self.characterRepository = characterRepository
+        self.volumeRepository = volumeRepository
         self.htmlDecorator = htmlDecorator
         self.navigationHandler = navigationHandler
     }

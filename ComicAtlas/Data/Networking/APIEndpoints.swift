@@ -10,6 +10,7 @@ private enum Constants {
     static let charactersPath = "characters/"
     static let characterDetailsPathPrefix = "character/4005-"
     static let issueDetailsPathPrefix = "issue/4000-"
+    static let volumeDetailsPathPrefix = "volume/4050-"
     static let volumesPath = "volumes/"
     static let issuesPath = "issues/"
     static let moviesPath = "movies/"
@@ -21,6 +22,7 @@ enum APIEndpoints: Sendable {
     case characters(limit: Int, offset: Int)
     case characterDetails(id: Int)
     case issueDetails(id: Int)
+    case volumeDetails(id: Int)
     case volumes(limit: Int, offset: Int)
     case issues(limit: Int, offset: Int)
     case movies(limit: Int, offset: Int)
@@ -33,7 +35,7 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var method: HTTPMethod {
         switch self {
-        case .characters, .characterDetails, .issueDetails, .volumes, .issues, .movies:
+        case .characters, .characterDetails, .issueDetails, .volumeDetails, .volumes, .issues, .movies:
                 .get
         }
     }
@@ -46,6 +48,8 @@ extension APIEndpoints: APIEndpointProtocol {
             "\(Constants.characterDetailsPathPrefix)\(id)/"
         case let .issueDetails(id):
             "\(Constants.issueDetailsPathPrefix)\(id)/"
+        case let .volumeDetails(id):
+            "\(Constants.volumeDetailsPathPrefix)\(id)/"
         case .volumes:
             Constants.volumesPath
         case .issues:
@@ -74,7 +78,7 @@ extension APIEndpoints: APIEndpointProtocol {
                 "limit": String(limit),
                 "offset": String(offset)
             ]
-        case .characterDetails, .issueDetails:
+        case .characterDetails, .issueDetails, .volumeDetails:
             [
                 "api_key": AppEnvironment.apiKey,
                 "format": Constants.formatJSON
@@ -84,7 +88,7 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var body: NetworkBody? {
         switch self {
-        case .characters, .characterDetails, .issueDetails, .volumes, .issues, .movies:
+        case .characters, .characterDetails, .issueDetails, .volumeDetails, .volumes, .issues, .movies:
             nil
         }
     }

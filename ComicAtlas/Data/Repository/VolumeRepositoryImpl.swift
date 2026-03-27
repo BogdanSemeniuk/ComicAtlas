@@ -18,4 +18,13 @@ struct VolumeRepositoryImpl: VolumeRepository {
         .volumes
         .map { .init(dto: .init($0)) }
     }
+
+    func fetchVolumeDetails(id: Int) async throws -> VolumeDetails {
+        let response = try await api.request(
+            APIEndpoints.volumeDetails(id: id),
+            as: VolumeDetailsResponse.self
+        )
+
+        return .init(dto: .init(response.volumeDetails))
+    }
 }

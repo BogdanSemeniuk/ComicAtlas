@@ -1,0 +1,579 @@
+{
+    "error": "OK",
+    "limit": 1,
+    "offset": 0,
+    "number_of_page_results": 1,
+    "number_of_total_results": 1,
+    "status_code": 1,
+    "results": {
+        "aliases": null,
+        "api_detail_url": "https://comicvine.gamespot.com/api/volume/4050-22248/",
+        "characters": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-38823/",
+                "id": 38823,
+                "name": "Rulah",
+                "site_detail_url": "https://comicvine.gamespot.com/rulah/4005-38823/",
+                "count": "12"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109361/",
+                "id": 109361,
+                "name": "Tombo",
+                "site_detail_url": "https://comicvine.gamespot.com/tombo/4005-109361/",
+                "count": "7"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-63407/",
+                "id": 63407,
+                "name": "Pussy Katnip",
+                "site_detail_url": "https://comicvine.gamespot.com/pussy-katnip/4005-63407/",
+                "count": "4"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109363/",
+                "id": 109363,
+                "name": "Saber",
+                "site_detail_url": "https://comicvine.gamespot.com/saber/4005-109363/",
+                "count": "2"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-110201/",
+                "id": 110201,
+                "name": "Senor Tamale",
+                "site_detail_url": "https://comicvine.gamespot.com/senor-tamale/4005-110201/",
+                "count": "2"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109712/",
+                "id": 109712,
+                "name": "Masta",
+                "site_detail_url": "https://comicvine.gamespot.com/masta/4005-109712/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-113840/",
+                "id": 113840,
+                "name": "The Prophet",
+                "site_detail_url": "https://comicvine.gamespot.com/the-prophet/4005-113840/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-113837/",
+                "id": 113837,
+                "name": "Jackalle",
+                "site_detail_url": "https://comicvine.gamespot.com/jackalle/4005-113837/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-113833/",
+                "id": 113833,
+                "name": "Jack O'Neil",
+                "site_detail_url": "https://comicvine.gamespot.com/jack-o-neil/4005-113833/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-113829/",
+                "id": 113829,
+                "name": "Joppa",
+                "site_detail_url": "https://comicvine.gamespot.com/joppa/4005-113829/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-113697/",
+                "id": 113697,
+                "name": "Mr. Walch",
+                "site_detail_url": "https://comicvine.gamespot.com/mr-walch/4005-113697/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-112330/",
+                "id": 112330,
+                "name": "Lucy Troller",
+                "site_detail_url": "https://comicvine.gamespot.com/lucy-troller/4005-112330/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109722/",
+                "id": 109722,
+                "name": "Kutabba",
+                "site_detail_url": "https://comicvine.gamespot.com/kutabba/4005-109722/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109721/",
+                "id": 109721,
+                "name": "Zenpha",
+                "site_detail_url": "https://comicvine.gamespot.com/zenpha/4005-109721/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109715/",
+                "id": 109715,
+                "name": "Zandu",
+                "site_detail_url": "https://comicvine.gamespot.com/zandu/4005-109715/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109714/",
+                "id": 109714,
+                "name": "Ben Hanley",
+                "site_detail_url": "https://comicvine.gamespot.com/ben-hanley/4005-109714/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109713/",
+                "id": 109713,
+                "name": "Vladgott",
+                "site_detail_url": "https://comicvine.gamespot.com/vladgott/4005-109713/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109706/",
+                "id": 109706,
+                "name": "Nurla",
+                "site_detail_url": "https://comicvine.gamespot.com/nurla/4005-109706/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109626/",
+                "id": 109626,
+                "name": "The Great Sandrow",
+                "site_detail_url": "https://comicvine.gamespot.com/the-great-sandrow/4005-109626/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109597/",
+                "id": 109597,
+                "name": "Circo",
+                "site_detail_url": "https://comicvine.gamespot.com/circo/4005-109597/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109466/",
+                "id": 109466,
+                "name": "Miss Hogge",
+                "site_detail_url": "https://comicvine.gamespot.com/miss-hogge/4005-109466/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-109464/",
+                "id": 109464,
+                "name": "Commissioner Blodgett",
+                "site_detail_url": "https://comicvine.gamespot.com/commissioner-blodgett/4005-109464/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-102260/",
+                "id": 102260,
+                "name": "Li'l Pan",
+                "site_detail_url": "https://comicvine.gamespot.com/lil-pan/4005-102260/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-86076/",
+                "id": 86076,
+                "name": "Cosmo Cat",
+                "site_detail_url": "https://comicvine.gamespot.com/cosmo-cat/4005-86076/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-76518/",
+                "id": 76518,
+                "name": "Black Fury",
+                "site_detail_url": "https://comicvine.gamespot.com/black-fury/4005-76518/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-46165/",
+                "id": 46165,
+                "name": "Joan Mason",
+                "site_detail_url": "https://comicvine.gamespot.com/joan-mason/4005-46165/",
+                "count": "1"
+            }
+        ],
+        "count_of_issues": 18,
+        "date_added": "2008-07-17 03:19:46",
+        "date_last_updated": "2018-08-23 17:04:51",
+        "deck": null,
+        "description": "<p>Rulah, Jungle Goddess was a fictional character that appeared in comic books published by Fox Feature Syndicate. She first appeared in the Zoot Comics #7 (June 1947). The artist generally credited with creating Rulah is Matt Baker, although Jack Kamen and Graham</p><p>Ingels were also associated with her.</p><p>Rulah was Fox Feature's response to Sheena, Queen of the Jungle. Her real name was given variously as either Jane Dodge (Zoot #7) or Joan Grayson (Rulah, Jungle Goddess #20). In the latter version, Rulah is a young aviatrix on a solo flight over Africa when her plane loses control and crashes. She replaces her clothes (which were destroyed in the crash) with a bikini made from the skin of a dead giraffe. Soon afterwards, Rulah saves a local tribe from an evil woman; the grateful tribespeople declare her queen. Rulah decides to remain in the jungle as its protector. Rulah is often accompanied by her pet panther Saber. Her boyfriend, Tim Pointer, is introduced in issue #20.</p><p>Rulah appeared in each issue of Zoot Comics after issue #7. By issue #20, Zoot was retitled Rulah, Jungle Goddess. Rulah also appeared in All Top Comics, alongside Dagar, the Desert Hawk and the Blue Beetle. Rulah's last appearance in her own title was issue #27 (June 1949); the comic became a romance title and was renamed I Loved. All Top was canceled in July 1949.</p><p>After the demise of Fox Feature Syndicate, some of Rulah adventures were reprinted without permission by Star Comics (no relation to the Marvel Comics imprint), and I. W. Publications, under the Super Comics and Skywald Comics lines. The last original story featuring Rulah is 'Clash of Gods', written by Enrico Teodorani and drawn by Antonio Conversano, published in 2004 by AC Comics in Femforce # 129.</p><h4>Collected Editions</h4><ul><li><a href=\"/roy-thomas-presents-rulah-jungle-goddess-1-volume-/4000-482246/\" data-ref-id=\"4000-482246\">Roy Thomas Presents Rulah: Jungle Goddess Volume One</a> (#7-16)</li><li><a href=\"https://comicvine.gamespot.com/gwandanaland-comics-1429-werthams-weapons-volume-7/4000-680642/\">Wertham's Weapons: Volume 7</a> (#14)</li></ul>",
+        "first_issue": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163594/",
+            "id": 163594,
+            "name": null,
+            "issue_number": "1"
+        },
+        "id": 22248,
+        "image": {
+            "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/2/27783/872183-zoot_1.jpg",
+            "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/2/27783/872183-zoot_1.jpg",
+            "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/2/27783/872183-zoot_1.jpg",
+            "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/2/27783/872183-zoot_1.jpg",
+            "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/2/27783/872183-zoot_1.jpg",
+            "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/2/27783/872183-zoot_1.jpg",
+            "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/2/27783/872183-zoot_1.jpg",
+            "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/2/27783/872183-zoot_1.jpg",
+            "original_url": "https://comicvine.gamespot.com/a/uploads/original/2/27783/872183-zoot_1.jpg",
+            "image_tags": "All Images"
+        },
+        "issues": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133735/",
+                "id": 133735,
+                "name": "The Purple Plague",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-11-the-purple-plague/4000-133735/",
+                "issue_number": "11"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133781/",
+                "id": 133781,
+                "name": "Rulah, Jungle Goddess",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-7-rulah-jungle-goddess/4000-133781/",
+                "issue_number": "7"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133782/",
+                "id": 133782,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-8/4000-133782/",
+                "issue_number": "8"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133783/",
+                "id": 133783,
+                "name": "Fangs of the Black Fury",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-9-fangs-of-the-black-fury/4000-133783/",
+                "issue_number": "9"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133784/",
+                "id": 133784,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-10/4000-133784/",
+                "issue_number": "10"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133785/",
+                "id": 133785,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-12/4000-133785/",
+                "issue_number": "12"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133786/",
+                "id": 133786,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-13-a/4000-133786/",
+                "issue_number": "13 [A]"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133787/",
+                "id": 133787,
+                "name": "Pearls of Patmos",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-14-a-pearls-of-patmos/4000-133787/",
+                "issue_number": "14 [A]"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133788/",
+                "id": 133788,
+                "name": "The Mad Sandrow",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-16-the-mad-sandrow/4000-133788/",
+                "issue_number": "16"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133789/",
+                "id": 133789,
+                "name": "Death Dancers",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-15-death-dancers/4000-133789/",
+                "issue_number": "15"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163594/",
+                "id": 163594,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-1/4000-163594/",
+                "issue_number": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163595/",
+                "id": 163595,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-2/4000-163595/",
+                "issue_number": "2"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163596/",
+                "id": 163596,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-3/4000-163596/",
+                "issue_number": "3"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163597/",
+                "id": 163597,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-4/4000-163597/",
+                "issue_number": "4"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163598/",
+                "id": 163598,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-5/4000-163598/",
+                "issue_number": "5"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-163599/",
+                "id": 163599,
+                "name": "",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-6/4000-163599/",
+                "issue_number": "6"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-408034/",
+                "id": 408034,
+                "name": "Knave of Scarlet",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-14-b-knave-of-scarlet/4000-408034/",
+                "issue_number": "14 [B]"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-469706/",
+                "id": 469706,
+                "name": "Satan's Satyrs; The Golden Lake; Harem of Horror",
+                "site_detail_url": "https://comicvine.gamespot.com/zoot-comics-13-b-satans-satyrs-the-golden-lake-har/4000-469706/",
+                "issue_number": "13 [B]"
+            }
+        ],
+        "last_issue": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-133788/",
+            "id": 133788,
+            "name": "The Mad Sandrow",
+            "issue_number": "16"
+        },
+        "locations": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-41183/",
+                "id": 41183,
+                "name": "New York City",
+                "site_detail_url": "https://comicvine.gamespot.com/new-york-city/4020-41183/",
+                "count": "2"
+            }
+        ],
+        "name": "Zoot Comics",
+        "objects": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-38823/",
+                "id": 38823,
+                "name": "Rulah",
+                "site_detail_url": "https://comicvine.gamespot.com/rulah/4005-38823/",
+                "count": "12"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109361/",
+                "id": 109361,
+                "name": "Tombo",
+                "site_detail_url": "https://comicvine.gamespot.com/tombo/4005-109361/",
+                "count": "7"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-63407/",
+                "id": 63407,
+                "name": "Pussy Katnip",
+                "site_detail_url": "https://comicvine.gamespot.com/pussy-katnip/4005-63407/",
+                "count": "4"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109363/",
+                "id": 109363,
+                "name": "Saber",
+                "site_detail_url": "https://comicvine.gamespot.com/saber/4005-109363/",
+                "count": "2"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-110201/",
+                "id": 110201,
+                "name": "Senor Tamale",
+                "site_detail_url": "https://comicvine.gamespot.com/senor-tamale/4005-110201/",
+                "count": "2"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109712/",
+                "id": 109712,
+                "name": "Masta",
+                "site_detail_url": "https://comicvine.gamespot.com/masta/4005-109712/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-113840/",
+                "id": 113840,
+                "name": "The Prophet",
+                "site_detail_url": "https://comicvine.gamespot.com/the-prophet/4005-113840/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-113837/",
+                "id": 113837,
+                "name": "Jackalle",
+                "site_detail_url": "https://comicvine.gamespot.com/jackalle/4005-113837/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-113833/",
+                "id": 113833,
+                "name": "Jack O'Neil",
+                "site_detail_url": "https://comicvine.gamespot.com/jack-o-neil/4005-113833/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-113829/",
+                "id": 113829,
+                "name": "Joppa",
+                "site_detail_url": "https://comicvine.gamespot.com/joppa/4005-113829/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-113697/",
+                "id": 113697,
+                "name": "Mr. Walch",
+                "site_detail_url": "https://comicvine.gamespot.com/mr-walch/4005-113697/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-112330/",
+                "id": 112330,
+                "name": "Lucy Troller",
+                "site_detail_url": "https://comicvine.gamespot.com/lucy-troller/4005-112330/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109722/",
+                "id": 109722,
+                "name": "Kutabba",
+                "site_detail_url": "https://comicvine.gamespot.com/kutabba/4005-109722/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109721/",
+                "id": 109721,
+                "name": "Zenpha",
+                "site_detail_url": "https://comicvine.gamespot.com/zenpha/4005-109721/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109715/",
+                "id": 109715,
+                "name": "Zandu",
+                "site_detail_url": "https://comicvine.gamespot.com/zandu/4005-109715/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109714/",
+                "id": 109714,
+                "name": "Ben Hanley",
+                "site_detail_url": "https://comicvine.gamespot.com/ben-hanley/4005-109714/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109713/",
+                "id": 109713,
+                "name": "Vladgott",
+                "site_detail_url": "https://comicvine.gamespot.com/vladgott/4005-109713/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109706/",
+                "id": 109706,
+                "name": "Nurla",
+                "site_detail_url": "https://comicvine.gamespot.com/nurla/4005-109706/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109626/",
+                "id": 109626,
+                "name": "The Great Sandrow",
+                "site_detail_url": "https://comicvine.gamespot.com/the-great-sandrow/4005-109626/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109597/",
+                "id": 109597,
+                "name": "Circo",
+                "site_detail_url": "https://comicvine.gamespot.com/circo/4005-109597/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109466/",
+                "id": 109466,
+                "name": "Miss Hogge",
+                "site_detail_url": "https://comicvine.gamespot.com/miss-hogge/4005-109466/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-109464/",
+                "id": 109464,
+                "name": "Commissioner Blodgett",
+                "site_detail_url": "https://comicvine.gamespot.com/commissioner-blodgett/4005-109464/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-102260/",
+                "id": 102260,
+                "name": "Li'l Pan",
+                "site_detail_url": "https://comicvine.gamespot.com/lil-pan/4005-102260/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-86076/",
+                "id": 86076,
+                "name": "Cosmo Cat",
+                "site_detail_url": "https://comicvine.gamespot.com/cosmo-cat/4005-86076/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-76518/",
+                "id": 76518,
+                "name": "Black Fury",
+                "site_detail_url": "https://comicvine.gamespot.com/black-fury/4005-76518/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4005-46165/",
+                "id": 46165,
+                "name": "Joan Mason",
+                "site_detail_url": "https://comicvine.gamespot.com/joan-mason/4005-46165/",
+                "count": "1"
+            }
+        ],
+        "people": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-49436/",
+                "id": 49436,
+                "name": "Victor Fox",
+                "site_detail_url": "https://comicvine.gamespot.com/victor-fox/4040-49436/",
+                "count": "2"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-27899/",
+                "id": 27899,
+                "name": "Matt Baker",
+                "site_detail_url": "https://comicvine.gamespot.com/matt-baker/4040-27899/",
+                "count": "1"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-40057/",
+                "id": 40057,
+                "name": "Jack Kamen",
+                "site_detail_url": "https://comicvine.gamespot.com/jack-kamen/4040-40057/",
+                "count": "1"
+            }
+        ],
+        "publisher": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/publisher/4010-18/",
+            "id": 18,
+            "name": "Fox Comics (US)"
+        },
+        "site_detail_url": "https://comicvine.gamespot.com/zoot-comics/4050-22248/",
+        "start_year": "1946"
+    },
+    "version": "1.0"
+}
