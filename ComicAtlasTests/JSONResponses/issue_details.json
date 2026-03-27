@@ -1,0 +1,357 @@
+{
+    "error": "OK",
+    "limit": 1,
+    "offset": 0,
+    "number_of_page_results": 1,
+    "number_of_total_results": 1,
+    "status_code": 1,
+    "results": {
+        "aliases": null,
+        "api_detail_url": "https://comicvine.gamespot.com/api/issue/4000-39743/",
+        "associated_images": [],
+        "character_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-5556/",
+                "id": 5556,
+                "name": "Alfred Pennyworth",
+                "site_detail_url": "https://comicvine.gamespot.com/alfred-pennyworth/4005-5556/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-6129/",
+                "id": 6129,
+                "name": "Bane",
+                "site_detail_url": "https://comicvine.gamespot.com/bane/4005-6129/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-1699/",
+                "id": 1699,
+                "name": "Batman",
+                "site_detail_url": "https://comicvine.gamespot.com/batman/4005-1699/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-1698/",
+                "id": 1698,
+                "name": "Catwoman",
+                "site_detail_url": "https://comicvine.gamespot.com/catwoman/4005-1698/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-1691/",
+                "id": 1691,
+                "name": "Dick Grayson",
+                "site_detail_url": "https://comicvine.gamespot.com/dick-grayson/4005-1691/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3727/",
+                "id": 3727,
+                "name": "James Gordon",
+                "site_detail_url": "https://comicvine.gamespot.com/james-gordon/4005-3727/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-6849/",
+                "id": 6849,
+                "name": "Jason Todd",
+                "site_detail_url": "https://comicvine.gamespot.com/jason-todd/4005-6849/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-12834/",
+                "id": 12834,
+                "name": "Jean-Paul Valley",
+                "site_detail_url": "https://comicvine.gamespot.com/jean-paul-valley/4005-12834/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-32672/",
+                "id": 32672,
+                "name": "Joe Chill",
+                "site_detail_url": "https://comicvine.gamespot.com/joe-chill/4005-32672/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-1702/",
+                "id": 1702,
+                "name": "Joker",
+                "site_detail_url": "https://comicvine.gamespot.com/joker/4005-1702/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3725/",
+                "id": 3725,
+                "name": "Killer Croc",
+                "site_detail_url": "https://comicvine.gamespot.com/killer-croc/4005-3725/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3740/",
+                "id": 3740,
+                "name": "Leslie Thompkins",
+                "site_detail_url": "https://comicvine.gamespot.com/leslie-thompkins/4005-3740/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3603/",
+                "id": 3603,
+                "name": "Martha Wayne",
+                "site_detail_url": "https://comicvine.gamespot.com/martha-wayne/4005-3603/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-4885/",
+                "id": 4885,
+                "name": "Penguin",
+                "site_detail_url": "https://comicvine.gamespot.com/penguin/4005-4885/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-1697/",
+                "id": 1697,
+                "name": "Poison Ivy",
+                "site_detail_url": "https://comicvine.gamespot.com/poison-ivy/4005-1697/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-40816/",
+                "id": 40816,
+                "name": "Ra's al Ghul",
+                "site_detail_url": "https://comicvine.gamespot.com/ras-al-ghul/4005-40816/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3718/",
+                "id": 3718,
+                "name": "Riddler",
+                "site_detail_url": "https://comicvine.gamespot.com/riddler/4005-3718/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3726/",
+                "id": 3726,
+                "name": "Scarecrow",
+                "site_detail_url": "https://comicvine.gamespot.com/scarecrow/4005-3726/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-19346/",
+                "id": 19346,
+                "name": "Sensei",
+                "site_detail_url": "https://comicvine.gamespot.com/sensei/4005-19346/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3602/",
+                "id": 3602,
+                "name": "Thomas Wayne",
+                "site_detail_url": "https://comicvine.gamespot.com/thomas-wayne/4005-3602/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-9290/",
+                "id": 9290,
+                "name": "Tim Drake",
+                "site_detail_url": "https://comicvine.gamespot.com/tim-drake/4005-9290/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-5555/",
+                "id": 5555,
+                "name": "Two-Face",
+                "site_detail_url": "https://comicvine.gamespot.com/two-face/4005-5555/"
+            }
+        ],
+        "character_died_in": [],
+        "concept_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/concept/4015-56363/",
+                "id": 56363,
+                "name": "Robin",
+                "site_detail_url": "https://comicvine.gamespot.com/robin/4015-56363/"
+            }
+        ],
+        "cover_date": "1994-10-31",
+        "date_added": "2008-06-06 11:09:11",
+        "date_last_updated": "2018-04-26 16:08:39",
+        "deck": null,
+        "description": "<p>After the ramifications of Zero Hour, <a href=\"/batman/4005-1699/\" data-ref-id=\"4005-1699\"> Batman</a> gets back to doing what he does best: hunt criminals. A summons from <a href=\"/james-gordon/4005-3727/\" data-ref-id=\"4005-3727\">Commissioner Gordon</a> has Batman, with Tim Drake’s help, hunt down a mugger who has killed three people so far. While traversing Gotham City as both the Batman and as Matches Malone, Batman flashed back on his history. He relives his early live at the Manor, his meeting of <a href=\"/alfred/4005-5556/\" data-ref-id=\"4005-5556\"> Alfred</a>, his discovery of the <a href=\"/batcave/4020-31340/\" data-ref-id=\"4020-31340\"> Batcave</a>, the death of his parents, his meeting <a href=\"/leslie-thompkins/4005-3740/\" data-ref-id=\"4005-3740\"> Leslie Thompkins</a>, his education abroad, the creation of Batman, his rogues gallery, the history of the <a href=\"/robin/4005-1687/\" data-ref-id=\"4005-1687\"> Robins</a>, and the <a href=\"/knightfall/4045-40761/\" data-ref-id=\"4045-40761\"> Knightfall</a>. In the end, Batman finds the mugger and saves the life of a father and son.</p><p><strong>Notes:</strong></p><ul><li>A <a href=\"/zero-hour/4045-40782/\" data-ref-id=\"4045-40782\"> Zero Month</a> crossover issue.</li><li>Continued in <em><a href=\"https://www.comicvine.com/batman-shadow-of-the-bat-0-untitled/4000-39845/\" data-ref-id=\"4000-39845\">Shadow of the Bat #0</a></em>.</li><li>All of Batman's Villains have cameo flashback appearances.</li></ul>",
+        "first_appearance_characters": null,
+        "first_appearance_concepts": null,
+        "first_appearance_locations": null,
+        "first_appearance_objects": null,
+        "first_appearance_storyarcs": null,
+        "first_appearance_teams": null,
+        "has_staff_review": false,
+        "id": 39743,
+        "image": {
+            "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/0/4/35591-796-39743-1-batman.jpg",
+            "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/0/4/35591-796-39743-1-batman.jpg",
+            "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/0/4/35591-796-39743-1-batman.jpg",
+            "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/0/4/35591-796-39743-1-batman.jpg",
+            "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/35591-796-39743-1-batman.jpg",
+            "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/0/4/35591-796-39743-1-batman.jpg",
+            "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/0/4/35591-796-39743-1-batman.jpg",
+            "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/0/4/35591-796-39743-1-batman.jpg",
+            "original_url": "https://comicvine.gamespot.com/a/uploads/original/0/4/35591-796-39743-1-batman.jpg",
+            "image_tags": "All Images"
+        },
+        "issue_number": "0",
+        "location_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-31340/",
+                "id": 31340,
+                "name": "Batcave",
+                "site_detail_url": "https://comicvine.gamespot.com/batcave/4020-31340/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55715/",
+                "id": 55715,
+                "name": "Crime Alley",
+                "site_detail_url": "https://comicvine.gamespot.com/crime-alley/4020-55715/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-23611/",
+                "id": 23611,
+                "name": "Gotham City",
+                "site_detail_url": "https://comicvine.gamespot.com/gotham-city/4020-23611/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55767/",
+                "id": 55767,
+                "name": "Wayne Manor",
+                "site_detail_url": "https://comicvine.gamespot.com/wayne-manor/4020-55767/"
+            }
+        ],
+        "name": "Creature of the Night",
+        "object_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-56652/",
+                "id": 56652,
+                "name": "Bat-Rope",
+                "site_detail_url": "https://comicvine.gamespot.com/bat-rope/4055-56652/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-55819/",
+                "id": 55819,
+                "name": "Bat-Signal",
+                "site_detail_url": "https://comicvine.gamespot.com/bat-signal/4055-55819/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-55745/",
+                "id": 55745,
+                "name": "Bat-Suit",
+                "site_detail_url": "https://comicvine.gamespot.com/bat-suit/4055-55745/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-57354/",
+                "id": 57354,
+                "name": "Batcomputer",
+                "site_detail_url": "https://comicvine.gamespot.com/batcomputer/4055-57354/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-41463/",
+                "id": 41463,
+                "name": "Batmobile",
+                "site_detail_url": "https://comicvine.gamespot.com/batmobile/4055-41463/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-57738/",
+                "id": 57738,
+                "name": "Giant Joker Playing Card",
+                "site_detail_url": "https://comicvine.gamespot.com/giant-joker-playing-card/4055-57738/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-46369/",
+                "id": 46369,
+                "name": "Utility Belt",
+                "site_detail_url": "https://comicvine.gamespot.com/utility-belt/4055-46369/"
+            }
+        ],
+        "person_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-30188/",
+                "id": 30188,
+                "name": "Adrienne Roy",
+                "site_detail_url": "https://comicvine.gamespot.com/adrienne-roy/4040-30188/",
+                "role": "colorist"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-13665/",
+                "id": 13665,
+                "name": "Bob LeRose",
+                "site_detail_url": "https://comicvine.gamespot.com/bob-lerose/4040-13665/",
+                "role": "colorist, cover"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-60391/",
+                "id": 60391,
+                "name": "Curtis King Jr.",
+                "site_detail_url": "https://comicvine.gamespot.com/curtis-king-jr/4040-60391/",
+                "role": "editor, cover"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-40861/",
+                "id": 40861,
+                "name": "Dennis O'Neil",
+                "site_detail_url": "https://comicvine.gamespot.com/dennis-oneil/4040-40861/",
+                "role": "editor"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-42016/",
+                "id": 42016,
+                "name": "Doug Moench",
+                "site_detail_url": "https://comicvine.gamespot.com/doug-moench/4040-42016/",
+                "role": "writer"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-1669/",
+                "id": 1669,
+                "name": "Joe Rubinstein",
+                "site_detail_url": "https://comicvine.gamespot.com/joe-rubinstein/4040-1669/",
+                "role": "inker"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-94349/",
+                "id": 94349,
+                "name": "John Wren",
+                "site_detail_url": "https://comicvine.gamespot.com/john-wren/4040-94349/",
+                "role": "editor, cover"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-45110/",
+                "id": 45110,
+                "name": "Jordan B. Gorfinkel",
+                "site_detail_url": "https://comicvine.gamespot.com/jordan-b-gorfinkel/4040-45110/",
+                "role": "editor"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-3015/",
+                "id": 3015,
+                "name": "Ken Bruzenak",
+                "site_detail_url": "https://comicvine.gamespot.com/ken-bruzenak/4040-3015/",
+                "role": "letterer"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/person/4040-4676/",
+                "id": 4676,
+                "name": "Mike Manley",
+                "site_detail_url": "https://comicvine.gamespot.com/mike-manley/4040-4676/",
+                "role": "artist, penciler, inker, cover"
+            }
+        ],
+        "site_detail_url": "https://comicvine.gamespot.com/batman-0-creature-of-the-night/4000-39743/",
+        "store_date": null,
+        "story_arc_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/story_arc/4045-40782/",
+                "id": 40782,
+                "name": "\"DC Universe\" Zero Hour",
+                "site_detail_url": "https://comicvine.gamespot.com/dc-universe-zero-hour/4045-40782/"
+            }
+        ],
+        "team_credits": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-56496/",
+                "id": 56496,
+                "name": "Batman and Robin",
+                "site_detail_url": "https://comicvine.gamespot.com/batman-and-robin/4060-56496/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-58724/",
+                "id": 58724,
+                "name": "Wayne Family",
+                "site_detail_url": "https://comicvine.gamespot.com/wayne-family/4060-58724/"
+            }
+        ],
+        "team_disbanded_in": [],
+        "volume": {
+            "api_detail_url": "https://comicvine.gamespot.com/api/volume/4050-796/",
+            "id": 796,
+            "name": "Batman",
+            "site_detail_url": "https://comicvine.gamespot.com/batman/4050-796/"
+        }
+    },
+    "version": "1.0"
+}
