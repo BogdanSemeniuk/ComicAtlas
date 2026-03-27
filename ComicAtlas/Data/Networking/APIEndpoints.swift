@@ -6,6 +6,7 @@
 import Foundation
 
 private enum Constants {
+    static let apiPath = "/api"
     static let charactersPath = "characters/"
     static let characterDetailsPathPrefix = "character/4005-"
     static let issueDetailsPathPrefix = "issue/4000-"
@@ -27,7 +28,7 @@ enum APIEndpoints: Sendable {
 
 extension APIEndpoints: APIEndpointProtocol {
     var baseURL: String {
-        AppEnvironment.baseURL
+        AppEnvironment.baseURL.appending(Constants.apiPath)
     }
     
     var method: HTTPMethod {

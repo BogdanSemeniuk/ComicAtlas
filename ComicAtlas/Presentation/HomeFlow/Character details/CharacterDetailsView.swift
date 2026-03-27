@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CharacterDetailsView: View {
     @State private var model: CharacterDetailsViewModel
+    @Environment(\.openURL) private var openURL
     
     init(viewModel: CharacterDetailsViewModel) {
         _model = State(initialValue: viewModel)
@@ -28,7 +29,6 @@ struct CharacterDetailsView: View {
             .frame(maxWidth: .infinity)
         }
         .background(Color(.background))
-        .onAppear(perform: model.onAppear)
         .overlay {
             if model.isLoading {
                 ProgressView()
@@ -36,6 +36,13 @@ struct CharacterDetailsView: View {
             }
         }
         .animation(.smooth, value: model.characterDetails)
+        .onAppear(perform: model.onAppear)
+        .onReceive(model.linkActions) { linkHandlingInfo in
+            openURL(
+                linkHandlingInfo.url,
+                prefersInApp: linkHandlingInfo.handleInApp
+            )
+        }
     }
     
     private func issues(for character: CharacterDetails) -> some View {

@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Combine
+
+typealias LinkHandlingInfo = (url: URL, handleInApp: Bool)
 
 @Observable
 class CharacterDetailsViewModel {
@@ -15,6 +18,8 @@ class CharacterDetailsViewModel {
     var htmlContent: String?
     var issuesImages = [String]()
     var webViewHeight: CGFloat = 200
+    var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkActionsPublisher.eraseToAnyPublisher() }
+    private var linkActionsPublisher: PassthroughSubject<LinkHandlingInfo, Never> = .init()
     private let id: Int
     private let characterRepository: CharacterRepository
     private let issueRepository: IssueRepository
@@ -41,6 +46,15 @@ class CharacterDetailsViewModel {
     }
     
     func linkAction(url: URL) {
+        guard url.scheme == nil else {
+            linkActionsPublisher.send((url: url, handleInApp: true))
+            return
+        }
+        linkActionsPublisher
+            .send(
+                (url: URL(safeString: AppEnvironment.baseURL).appending(path: url.absoluteString),
+                 handleInApp: false)
+            )
     }
     
     func webViewContentHeightDidChange(_ height: CGFloat) {
@@ -48,7 +62,6 @@ class CharacterDetailsViewModel {
     }
     
     func fetchCharacterDetails() {
-        guard !isLoading else { return }
         isLoading = true
         
         Task {
