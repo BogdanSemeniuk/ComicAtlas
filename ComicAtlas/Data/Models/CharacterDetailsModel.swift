@@ -37,7 +37,7 @@ struct CharacterDetailsModel: Codable, Sendable {
     let image: ImageModel
     let issueCredits: [ReferenceModel]
     let movies: [ReferenceModel]
-    let origin: ReferenceModel
+    let origin: ReferenceModel?
     let powers: [ReferenceModel]
     let publisher: ReferenceModel
     let realName: String?

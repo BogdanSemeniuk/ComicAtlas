@@ -20,6 +20,7 @@ struct CharacterDetailsView: View {
                 if let character = model.characterDetails {
                     header(for: character)
                     subheader(for: character)
+                    issues(for: character)
                     description()
                 }
             }
@@ -28,11 +29,36 @@ struct CharacterDetailsView: View {
         }
         .background(Color(.background))
         .onAppear(perform: model.onAppear)
-        
+        .overlay {
+            if model.isLoading {
+                ProgressView()
+                    .controlSize(.large)
+            }
+        }
+        .animation(.smooth, value: model.characterDetails)
     }
     
-    private var issues: some View {
-        EmptyView()
+    private func issues(for character: CharacterDetails) -> some View {
+        VStack(alignment: .leading) {
+            Divider()
+            HStack {
+                Text(.CharacterDetails.appearsInLabel)
+                LinkText(
+                    destination: .init(safeString: character.siteDetailUrl)
+                    .appending(pathComponent: .issues),
+                    resource: .Common.issuesCount(Int32(character.countOfIssueAppearances))
+                )
+            }
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(model.issuesImages, id: \.self) { path in
+                        RemoteImage(path: path)
+                            .frame(width: 150)
+                    }
+                }
+            }
+            Divider()
+        }
     }
     
     @ViewBuilder
@@ -85,15 +111,6 @@ struct CharacterDetailsView: View {
     
     private func headerInfo(for character: CharacterDetails) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            if character.countOfIssueAppearances > 0 {
-                HStack {
-                    Text(.CharacterDetails.appearsInLabel)
-                    LinkText(
-                        destination: .init(safeString: character.siteDetailUrl)
-                        .appending(pathComponent: .issues),
-                        resource: .Common.issuesCount(Int32(character.countOfIssueAppearances)))
-                }
-            }
             if let gender = Gender(rawValue: character.gender)?.description {
                 infoItem(.CharacterDetails.genderLabel, value: gender)
             }

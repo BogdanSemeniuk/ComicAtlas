@@ -18,4 +18,13 @@ struct IssueRepositoryImpl: IssueRepository {
         .issues
         .map { .init(dto: .init($0)) }
     }
+
+    func fetchIssueDetails(id: Int) async throws -> IssueDetails {
+        let response = try await api.request(
+            APIEndpoints.issueDetails(id: id),
+            as: IssueDetailsResponse.self
+        )
+
+        return .init(dto: .init(response.issueDetails))
+    }
 }

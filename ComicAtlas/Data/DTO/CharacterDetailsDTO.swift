@@ -49,7 +49,7 @@ struct CharacterDetailsDTO {
         self.gender = details.gender
         self.issueCredits = details.issueCredits.map { .init($0) }
         self.movies = details.movies.compactMap(\.name)
-        self.originName = details.origin.name
+        self.originName = details.origin?.name
         self.powers = details.powers.compactMap(\.name)
         self.publisherName = details.publisher.name
         self.realName = details.realName

@@ -13,20 +13,24 @@ class CharacterDetailsViewModel {
     var characterDetails: CharacterDetails?
     var error: Error?
     var htmlContent: String?
-    var webViewHeight: CGFloat = 500
+    var issuesImages = [String]()
+    var webViewHeight: CGFloat = 200
     private let id: Int
     private let characterRepository: CharacterRepository
+    private let issueRepository: IssueRepository
     private let htmlDecorator: any HTMLFormatting
     private let navigationHandler: any NavigationHandler
     
     init(
         id: Int,
         characterRepository: CharacterRepository,
+        issueRepository: IssueRepository,
         htmlDecorator: any HTMLFormatting,
         navigationHandler: any NavigationHandler
     ) {
         self.id = id
         self.characterRepository = characterRepository
+        self.issueRepository = issueRepository
         self.htmlDecorator = htmlDecorator
         self.navigationHandler = navigationHandler
     }
@@ -52,17 +56,29 @@ class CharacterDetailsViewModel {
             
             do {
                 characterDetails = try await characterRepository.fetchCharacterDetails(id: id)
+                issuesImages = try await fetchIssuesImages()
                 guard let description = characterDetails?.description else { return }
                 htmlContent = htmlDecorator.decorate(html: description, fontSize: 16)
-                fetchIssuesImages()
             } catch {
                 self.error = error
             }
         }
     }
     
-    private func fetchIssuesImages() {
-        guard let characterDetails else { return }
-        
+    private func fetchIssuesImages() async throws -> [String] {
+        guard let characterDetails else { return [] }
+        return try await withThrowingTaskGroup(of: String.self) { [weak self] group in
+            guard let self else { return [] }
+            for issueCredit in characterDetails.issueCredits.prefix(5) {
+                group.addTask {
+                    try await self.issueRepository.fetchIssueDetails(id: issueCredit.id).smallUrl
+                }
+            }
+            var images = [String]()
+            for try await image in group {
+                images.append(image)
+            }
+            return images
+        }
     }
 }

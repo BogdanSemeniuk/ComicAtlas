@@ -8,6 +8,7 @@ import Foundation
 private enum Constants {
     static let charactersPath = "characters/"
     static let characterDetailsPathPrefix = "character/4005-"
+    static let issueDetailsPathPrefix = "issue/4000-"
     static let volumesPath = "volumes/"
     static let issuesPath = "issues/"
     static let moviesPath = "movies/"
@@ -18,6 +19,7 @@ private enum Constants {
 enum APIEndpoints: Sendable {
     case characters(limit: Int, offset: Int)
     case characterDetails(id: Int)
+    case issueDetails(id: Int)
     case volumes(limit: Int, offset: Int)
     case issues(limit: Int, offset: Int)
     case movies(limit: Int, offset: Int)
@@ -30,7 +32,7 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var method: HTTPMethod {
         switch self {
-        case .characters, .characterDetails, .volumes, .issues, .movies:
+        case .characters, .characterDetails, .issueDetails, .volumes, .issues, .movies:
                 .get
         }
     }
@@ -41,6 +43,8 @@ extension APIEndpoints: APIEndpointProtocol {
             Constants.charactersPath
         case let .characterDetails(id):
             "\(Constants.characterDetailsPathPrefix)\(id)/"
+        case let .issueDetails(id):
+            "\(Constants.issueDetailsPathPrefix)\(id)/"
         case .volumes:
             Constants.volumesPath
         case .issues:
@@ -69,7 +73,7 @@ extension APIEndpoints: APIEndpointProtocol {
                 "limit": String(limit),
                 "offset": String(offset)
             ]
-        case .characterDetails:
+        case .characterDetails, .issueDetails:
             [
                 "api_key": AppEnvironment.apiKey,
                 "format": Constants.formatJSON
@@ -79,7 +83,7 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var body: NetworkBody? {
         switch self {
-        case .characters, .characterDetails, .volumes, .issues, .movies:
+        case .characters, .characterDetails, .issueDetails, .volumes, .issues, .movies:
             nil
         }
     }
