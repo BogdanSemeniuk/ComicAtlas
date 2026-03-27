@@ -21,7 +21,7 @@ struct CharacterDetailsDTO {
     let firstAppearedInIssueName: String?
     let firstAppearedInIssueNumber: String?
     let gender: Int
-    let issueCredits: [String]
+    let issueCredits: [ReferenceDTO]
     let movies: [String]
     let originName: String?
     let powers: [String]
@@ -47,7 +47,7 @@ struct CharacterDetailsDTO {
         self.firstAppearedInIssueName = details.firstAppearedInIssue.name
         self.firstAppearedInIssueNumber = details.firstAppearedInIssue.issueNumber
         self.gender = details.gender
-        self.issueCredits = details.issueCredits.compactMap(\.name)
+        self.issueCredits = details.issueCredits.map { .init($0) }
         self.movies = details.movies.compactMap(\.name)
         self.originName = details.origin.name
         self.powers = details.powers.compactMap(\.name)

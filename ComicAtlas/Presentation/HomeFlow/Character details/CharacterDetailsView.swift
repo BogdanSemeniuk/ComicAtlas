@@ -31,6 +31,10 @@ struct CharacterDetailsView: View {
         
     }
     
+    private var issues: some View {
+        EmptyView()
+    }
+    
     @ViewBuilder
     private func description() -> some View {
         if let html = model.htmlContent {

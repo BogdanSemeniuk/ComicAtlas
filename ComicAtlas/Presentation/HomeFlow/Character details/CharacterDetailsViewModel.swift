@@ -54,9 +54,15 @@ class CharacterDetailsViewModel {
                 characterDetails = try await characterRepository.fetchCharacterDetails(id: id)
                 guard let description = characterDetails?.description else { return }
                 htmlContent = htmlDecorator.decorate(html: description, fontSize: 16)
+                fetchIssuesImages()
             } catch {
                 self.error = error
             }
         }
+    }
+    
+    private func fetchIssuesImages() {
+        guard let characterDetails else { return }
+        
     }
 }

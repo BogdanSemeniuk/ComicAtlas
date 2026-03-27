@@ -21,7 +21,7 @@ struct CharacterDetails: Identifiable, Hashable {
     let firstAppearedInIssueName: String?
     let firstAppearedInIssueNumber: String?
     let gender: Int
-    let issueCredits: [String]
+    let issueCredits: [Reference]
     let movies: [String]
     let originName: String?
     let powers: [String]
@@ -47,7 +47,7 @@ struct CharacterDetails: Identifiable, Hashable {
         self.firstAppearedInIssueName = dto.firstAppearedInIssueName
         self.firstAppearedInIssueNumber = dto.firstAppearedInIssueNumber
         self.gender = dto.gender
-        self.issueCredits = dto.issueCredits
+        self.issueCredits = dto.issueCredits.map { .init(dto: $0) }
         self.movies = dto.movies
         self.originName = dto.originName
         self.powers = dto.powers
