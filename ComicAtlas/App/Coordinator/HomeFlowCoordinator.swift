@@ -11,6 +11,7 @@ import Foundation
 final class HomeFlowCoordinator {
     enum Route: Hashable {
         case character(id: Int)
+        case issue(id: Int)
     }
 
     var path = [Route]()
@@ -47,6 +48,16 @@ extension HomeFlowCoordinator {
             id: id,
             characterRepository: container.resolve(),
             issueRepository: container.resolve(),
+            htmlDecorator: container.resolve(),
+            navigationHandler: self
+        )
+    }
+    
+    func makeIssueDetailsViewModel(id: Int) -> IssueDetailsViewModel {
+        .init(
+            id: id,
+            issueRepository: container.resolve(),
+            characterRepository: container.resolve(),
             htmlDecorator: container.resolve(),
             navigationHandler: self
         )

@@ -51,7 +51,14 @@ class HomeViewModel {
     }
     
     func selectCard(withData cardData: CardData) {
-        navigationHandler.navigate(to: HomeFlowCoordinator.Route.character(id: cardData.itemId))
+        switch cardData.type {
+        case .character:
+            navigationHandler.navigate(to: HomeFlowCoordinator.Route.character(id: cardData.itemId))
+        case .issue:
+            navigationHandler.navigate(to: HomeFlowCoordinator.Route.issue(id: cardData.itemId))
+        case .volume, .movie:
+            break
+        }
     }
     
     private func fetchData() {

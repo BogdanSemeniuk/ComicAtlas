@@ -19,6 +19,10 @@ struct HomeFlowView: View {
                         CharacterDetailsView(
                             viewModel: coordinator.makeCharacterDetailsViewModel(id: id)
                         )
+                    case .issue(let id):
+                        IssueDetailsView(
+                            viewModel: coordinator.makeIssueDetailsViewModel(id: id)
+                        )
                     }
                 }
         }

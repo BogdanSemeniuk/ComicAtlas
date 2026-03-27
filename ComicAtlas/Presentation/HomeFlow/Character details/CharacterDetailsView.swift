@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CharacterDetailsView: View {
     @State private var model: CharacterDetailsViewModel
-    @Environment(\.openURL) private var openURL
+    @Environment(\.openURL)
+    private var openURL
     
     init(viewModel: CharacterDetailsViewModel) {
         _model = State(initialValue: viewModel)
@@ -119,27 +120,18 @@ struct CharacterDetailsView: View {
     private func headerInfo(for character: CharacterDetails) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             if let gender = Gender(rawValue: character.gender)?.description {
-                infoItem(.CharacterDetails.genderLabel, value: gender)
+                InfoItem(label: .CharacterDetails.genderLabel, value: gender)
             }
             if let originName = character.originName {
-                infoItem(.CharacterDetails.characterTypeLabel, value: originName)
+                InfoItem(label: .CharacterDetails.characterTypeLabel, value: originName)
             }
             if let publisherName = character.publisherName {
-                infoItem(.Common.publisherLabel, value: publisherName)
+                InfoItem(label: .Common.publisherLabel, value: publisherName)
             }
             LinkText(destination: .init(safeString: character.siteDetailUrl),
                      resource: .Common.openOnWeb)
         }
         .font(.default)
-    }
-    
-    private func infoItem(_ label: LocalizedStringResource, value: String) -> some View {
-        HStack(alignment: .center) {
-            Text(label)
-                .bold()
-                .frame(width: 90, alignment: .leading)
-            Text(value)
-        }
     }
 }
 
