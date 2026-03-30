@@ -39,7 +39,11 @@ struct HomeView: View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(model.cardsData) { cardData in
-                    tableCrad(cardData)
+                    TableCard(cardData: cardData)
+                        .padding()
+                        .overlay(alignment: .bottom) {
+                            Divider()
+                        }
                         .onTapGesture {
                             model.selectCard(withData: cardData)
                         }
@@ -76,7 +80,7 @@ struct HomeView: View {
         VStack(spacing: 0) {
             RemoteImage(path: cardData.imageURL)
             Divider()
-            title(text: cardData.title)
+            CardTitle(text: cardData.title)
                 .padding()
         }
         .contentShape(.rect)
@@ -87,37 +91,6 @@ struct HomeView: View {
                 .stroke(.border)
         }
         .appShadow()
-    }
-    
-    func tableCrad(_ cardData: CardData) -> some View {
-        HStack(alignment: .top, spacing: 10) {
-            RemoteImage(path: cardData.imageURL)
-                .frame(width: 150)
-            VStack(alignment: .leading, spacing: 10) {
-                title(text: cardData.title)
-                if let desctiption = cardData.desctiption {
-                    Text(desctiption)
-                        .font(.headline.weight(.semibold))
-                        .foregroundStyle(Color(.textSecondary))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-            }
-        }
-        .padding()
-        .overlay(alignment: .bottom) {
-            Divider()
-        }
-        .contentShape(.rect)
-    }
-    
-    // MARK: - UI Components
-    private func title(text: String) -> some View {
-        Text(text)
-            .font(.title2.weight(.semibold))
-            .lineLimit(2)
-            .minimumScaleFactor(0.5)
-            .foregroundStyle(.textPrimary)
-            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

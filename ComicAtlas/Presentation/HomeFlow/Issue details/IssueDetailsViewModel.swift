@@ -8,9 +8,9 @@
 import Combine
 import SwiftUI
 
-@MainActor
 @Observable
 final class IssueDetailsViewModel {
+    typealias NetworkingResult = ([CharacterPreview], VolumeDetails)
     struct CharacterPreview: Identifiable, Hashable {
         let id: Int
         let name: String
@@ -19,6 +19,7 @@ final class IssueDetailsViewModel {
     
     var isLoading = false
     var issueDetails: IssueDetails?
+    var volumeDetails: VolumeDetails?
     var error: Error?
     var htmlContent: String?
     var characterPreviews = [CharacterPreview]()
@@ -78,14 +79,23 @@ final class IssueDetailsViewModel {
             defer { isLoading = false }
             
             do {
-                issueDetails = try await issueRepository.fetchIssueDetails(id: id)
-                characterPreviews = try await fetchCharacterPreviews()
-                guard let description = issueDetails?.description else { return }
+                let issueDetails = try await issueRepository.fetchIssueDetails(id: id)
+                async let characterPreviews = fetchCharacterPreviews()
+                async let volumeDetails = fetchVolumeDetails(for: issueDetails)
+                let result: NetworkingResult = try await (characterPreviews, volumeDetails)
+                self.issueDetails = issueDetails
+                self.characterPreviews = result.0
+                self.volumeDetails = result.1
+                guard let description = self.issueDetails?.description else { return }
                 htmlContent = htmlDecorator.decorate(html: description, fontSize: 16)
             } catch {
                 self.error = error
             }
         }
+    }
+    
+    private func fetchVolumeDetails(for issue: IssueDetails) async throws -> VolumeDetails {
+        try await volumeRepository.fetchVolumeDetails(id: issue.volume.id)
     }
     
     private func fetchCharacterPreviews() async throws -> [CharacterPreview] {

@@ -11,7 +11,6 @@ struct VolumeDetails: Identifiable, Hashable {
     let id: Int
     let name: String
     let aliases: String?
-    let characters: [Reference]
     let countOfIssues: Int
     let deck: String?
     let description: String?
@@ -23,12 +22,15 @@ struct VolumeDetails: Identifiable, Hashable {
     let startYear: String
     let iconUrl: String
     let smallUrl: String
+    
+    var issuesCountDescription: String {
+        return String(localized: .Common.issuesCount(Int32(countOfIssues)))
+    }
 
     init(dto: VolumeDetailsDTO) {
         self.id = dto.id
         self.name = dto.name
         self.aliases = dto.aliases
-        self.characters = dto.characters.map { .init(dto: $0) }
         self.countOfIssues = dto.countOfIssues
         self.deck = dto.deck
         self.description = dto.description

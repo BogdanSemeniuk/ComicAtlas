@@ -23,6 +23,7 @@ struct IssueDetailsView: View {
                 if let issue = model.issueDetails {
                     header(for: issue)
                     deck(for: issue)
+                    volume()
                     characters()
                     description()
                 }
@@ -72,6 +73,20 @@ struct IssueDetailsView: View {
         if let deck = issue.deck {
             Text(deck)
                 .font(.body.weight(.semibold))
+        }
+    }
+    
+    @ViewBuilder
+    private func volume() -> some View {
+        if let volumeDetails = model.volumeDetails {
+            VStack(alignment: .leading, spacing: 12) {
+                Divider()
+                Text(.IssueDetails.volumeLabel)
+                    .font(.title3.bold())
+                    .foregroundStyle(Color(.textPrimary))
+                TableCard(cardData: .init(volumeDetails))
+                Divider()
+            }
         }
     }
     
@@ -169,6 +184,6 @@ private struct CharacterPreviewCard: View {
     IssueDetailsView(
         viewModel: HomeFlowCoordinator(
             container: .shared
-        ).makeIssueDetailsViewModel(id: 39743)
+        ).makeIssueDetailsViewModel(id: 163596)
     )
 }

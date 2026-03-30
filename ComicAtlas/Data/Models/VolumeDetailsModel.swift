@@ -25,7 +25,6 @@ struct VolumeDetailsModel: Codable, Sendable {
     let id: Int
     let name: String
     let aliases: String?
-    let characters: [ReferenceModel]
     let countOfIssues: Int
     let deck: String?
     let description: String?
@@ -41,7 +40,6 @@ struct VolumeDetailsModel: Codable, Sendable {
         case id
         case name
         case aliases
-        case characters
         case countOfIssues = "count_of_issues"
         case deck
         case description

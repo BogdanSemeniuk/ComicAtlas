@@ -11,7 +11,6 @@ struct VolumeDetailsDTO {
     let id: Int
     let name: String
     let aliases: String?
-    let characters: [ReferenceDTO]
     let countOfIssues: Int
     let deck: String?
     let description: String?
@@ -28,7 +27,6 @@ struct VolumeDetailsDTO {
         self.id = volumeDetails.id
         self.name = volumeDetails.name
         self.aliases = volumeDetails.aliases
-        self.characters = volumeDetails.characters.map { .init($0) }
         self.countOfIssues = volumeDetails.countOfIssues
         self.deck = volumeDetails.deck
         self.description = volumeDetails.description

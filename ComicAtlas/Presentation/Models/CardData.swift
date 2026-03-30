@@ -39,6 +39,21 @@ struct CardData: Identifiable {
             .joined(separator: "\n")
     }
     
+    init(_ volume: VolumeDetails) {
+        self.title = volume.name
+        self.imageURL = volume.smallUrl
+        self.type = .volume
+        self.itemId = volume.id
+        self.id = "\(volume.id)\(type.rawValue)"
+        self.desctiption = [
+            volume.startYear,
+            volume.publisher.name,
+            volume.issuesCountDescription
+        ]
+            .compactMap({ $0 })
+            .joined(separator: "\n")
+    }
+    
     init(_ issue: Issue) {
         self.title = issue.volumeName + " #\(issue.issueNumber)"
         self.imageURL = issue.smallUrl
