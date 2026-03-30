@@ -15,13 +15,13 @@ class HomeViewModel {
             pickerSelectionDidChange()
         }
     }
-    var pendingScrollTargetID: Int?
+    var pendingScrollTargetID: String?
     var cardsData = [CardData]()
     private var characters = [Character]()
     private var volumes = [Volume]()
     private var issues = [Issue]()
     private var movies = [Movie]()
-    private var rememberedScrollTargetIDs = [CollectionItem: Int]()
+    private var rememberedScrollTargetIDs = [CollectionItem: String]()
     private let limit = 20
     private let characterRepository: CharacterRepository
     private let volumesRepository: VolumeRepository
@@ -52,7 +52,7 @@ class HomeViewModel {
         fetchData()
     }
 
-    func visibleItemsDidChange(_ identifiers: [Int]) {
+    func visibleItemsDidChange(_ identifiers: [String]) {
         guard let identifier = identifiers.first else { return }
         rememberedScrollTargetIDs[pickerSelection] = identifier
     }

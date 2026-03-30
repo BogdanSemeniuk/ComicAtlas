@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Bindable var model: HomeViewModel
-    @State private var scrollPositionID: Int?
+    @State private var scrollPositionID: String?
     
     var body: some View {
         ZStack {
@@ -24,7 +24,7 @@ struct HomeView: View {
             }
             .defaultScrollAnchor(.top)
             .scrollPosition(id: $scrollPositionID)
-            .onScrollTargetVisibilityChange(idType: Int.self) { identifiers in
+            .onScrollTargetVisibilityChange(idType: String.self) { identifiers in
                 model.visibleItemsDidChange(identifiers)
             }
             .onChange(of: model.pendingScrollTargetID) { _, newValue in
@@ -62,7 +62,7 @@ struct HomeView: View {
                     .onAppear {
                         model.onAppear(card: cardData)
                     }
-                    .id(cardData.itemId)
+                    .id(cardData.id)
             }
         }
         .scrollTargetLayout()
@@ -81,7 +81,7 @@ struct HomeView: View {
                     .onAppear {
                         model.onAppear(card: cardData)
                     }
-                    .id(cardData.itemId)
+                    .id(cardData.id)
             }
         }
         .padding()
