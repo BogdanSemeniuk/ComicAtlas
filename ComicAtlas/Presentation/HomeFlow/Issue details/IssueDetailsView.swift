@@ -71,8 +71,7 @@ struct IssueDetailsView: View {
     @ViewBuilder
     private func deck(for issue: IssueDetails) -> some View {
         if let deck = issue.deck {
-            Text(deck)
-                .font(.body.weight(.semibold))
+            Deck(text: deck)
         }
     }
     

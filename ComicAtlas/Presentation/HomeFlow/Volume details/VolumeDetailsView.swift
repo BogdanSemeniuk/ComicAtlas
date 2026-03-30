@@ -70,9 +70,7 @@ struct VolumeDetailsView: View {
     @ViewBuilder
     private func deck(for volume: VolumeDetails) -> some View {
         if let deck = volume.deck {
-            Text(deck)
-                .font(.body)
-                .bold()
+            Deck(text: deck)
         }
     }
 

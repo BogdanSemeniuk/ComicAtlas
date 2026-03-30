@@ -16,6 +16,7 @@ struct AuthPrompt: View {
         HStack(spacing: 0) {
             Text(description)
                 .fontWeight(.medium)
+                .foregroundStyle(Color(.textSecondary))
             Button {
                 action()
             } label: {

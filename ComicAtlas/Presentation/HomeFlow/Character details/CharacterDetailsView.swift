@@ -51,6 +51,7 @@ struct CharacterDetailsView: View {
             Divider()
             HStack {
                 Text(.CharacterDetails.appearsInLabel)
+                    .foregroundStyle(Color(.textSecondary))
                 LinkText(
                     destination: .init(safeString: character.siteDetailUrl)
                     .appending(pathComponent: .issues),
@@ -87,8 +88,7 @@ struct CharacterDetailsView: View {
     @ViewBuilder
     private func subheader(for character: CharacterDetails) -> some View {
         if let deck = character.deck {
-            Text(deck)
-                .font(.body.weight(.semibold))
+            Deck(text: deck)
         }
     }
     

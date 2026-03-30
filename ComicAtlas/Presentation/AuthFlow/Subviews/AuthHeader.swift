@@ -15,6 +15,7 @@ struct AuthHeader: View {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .foregroundStyle(Color(.textPrimary))
             Text(description)
                 .font(.title2)
                 .fontWeight(.semibold)
