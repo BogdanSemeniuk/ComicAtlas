@@ -89,6 +89,10 @@ final class IssueDetailsViewModel {
         }
     }
     
+    func openVolume(id: Int) {
+        navigationHandler.navigate(to: HomeFlowCoordinator.NavigationRoute.volume(id: id))
+    }
+    
     private func fetchVolumeDetails(for issue: IssueDetails) async throws -> VolumeDetails {
         try await volumeRepository.fetchVolumeDetails(id: issue.volume.id)
     }

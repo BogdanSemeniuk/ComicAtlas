@@ -59,9 +59,12 @@ struct CharacterDetailsView: View {
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(model.issuesImages, id: \.self) { path in
-                        RemoteImage(path: path)
+                    ForEach(model.issuePreviews, id: \.self) { preview in
+                        RemoteImage(path: preview.imagePath)
                             .frame(width: 150)
+                            .onTapGesture {
+                                model.openIssue(id: preview.id)
+                            }
                     }
                 }
             }

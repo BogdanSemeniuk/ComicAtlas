@@ -85,6 +85,9 @@ struct IssueDetailsView: View {
                     .font(.title3.bold())
                     .foregroundStyle(Color(.textPrimary))
                 TableCard(cardData: .init(volumeDetails))
+                    .onTapGesture {
+                        model.openVolume(id: volumeDetails.id)
+                    }
                 Divider()
             }
         }
