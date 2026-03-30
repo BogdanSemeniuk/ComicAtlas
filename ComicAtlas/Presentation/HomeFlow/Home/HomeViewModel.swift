@@ -12,11 +12,13 @@ class HomeViewModel {
     var isLoading = false
     var pickerSelection: CollectionItem = .character {
         didSet {
+            fetchingTask?.cancel()
             pickerSelectionDidChange()
         }
     }
     var pendingScrollTargetID: String?
     var cardsData = [CardData]()
+    private var fetchingTask: Task<Void, Never>?
     private var characters = [Character]()
     private var volumes = [Volume]()
     private var issues = [Issue]()
@@ -75,10 +77,10 @@ class HomeViewModel {
     }
     
     private func fetchData() {
-        guard !isLoading else { return }
         isLoading = true
-        Task {
+        fetchingTask = Task {
             defer { isLoading = false }
+
             do {
                 try await fetchSelectedData()
             } catch {
@@ -103,24 +105,28 @@ class HomeViewModel {
                 limit: limit,
                 offset: characters.count
             )
+            guard !Task.isCancelled else { return }
             characters.append(contentsOf: result)
         case .volume:
             let result = try await volumesRepository.fetchVolumes(
                 limit: limit,
                 offset: volumes.count
             )
+            guard !Task.isCancelled else { return }
             volumes.append(contentsOf: result)
         case .issue:
             let result = try await issuesRepository.fetchIssues(
                 limit: limit,
                 offset: issues.count
             )
+            guard !Task.isCancelled else { return }
             issues.append(contentsOf: result)
         case .movie:
             let result = try await moviesRepository.fetchMovies(
                 limit: limit,
                 offset: movies.count
             )
+            guard !Task.isCancelled else { return }
             movies.append(contentsOf: result)
         }
         
