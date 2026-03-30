@@ -9,15 +9,28 @@ import SwiftUI
 
 struct HomeView: View {
     @Bindable var model: HomeViewModel
+    @State private var scrollPositionID: Int?
     
     var body: some View {
         ZStack {
             Color(.background)
                 .ignoresSafeArea()
-            if model.pickerSelection == .character {
-                charactersGrid
-            } else {
-                table
+            ScrollView {
+                if model.pickerSelection == .character {
+                    charactersGrid
+                } else {
+                    table
+                }
+            }
+            .defaultScrollAnchor(.top)
+            .scrollPosition(id: $scrollPositionID)
+            .onScrollTargetVisibilityChange(idType: Int.self) { identifiers in
+                model.visibleItemsDidChange(identifiers)
+            }
+            .onChange(of: model.pendingScrollTargetID) { _, newValue in
+                guard let newValue else { return }
+                scrollPositionID = newValue
+                model.didRestoreScrollPosition()
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -36,43 +49,43 @@ struct HomeView: View {
     }
     
     private var table: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
-                ForEach(model.cardsData) { cardData in
-                    TableCard(cardData: cardData)
-                        .padding()
-                        .overlay(alignment: .bottom) {
-                            Divider()
-                        }
-                        .onTapGesture {
-                            model.selectCard(withData: cardData)
-                        }
-                        .onAppear {
-                            model.onAppear(card: cardData)
-                        }
-                }
+        LazyVStack(spacing: 0) {
+            ForEach(model.cardsData) { cardData in
+                TableCard(cardData: cardData)
+                    .padding()
+                    .overlay(alignment: .bottom) {
+                        Divider()
+                    }
+                    .onTapGesture {
+                        model.selectCard(withData: cardData)
+                    }
+                    .onAppear {
+                        model.onAppear(card: cardData)
+                    }
+                    .id(cardData.itemId)
             }
         }
+        .scrollTargetLayout()
     }
     
     private var charactersGrid: some View {
-        ScrollView(.vertical) {
-            LazyVGrid(columns: [
-                GridItem(.flexible(minimum: 50, maximum: .infinity)),
-                GridItem(.flexible(minimum: 50, maximum: .infinity))
-            ], alignment: .center, spacing: 10) {
-                ForEach(model.cardsData) { cardData in
-                    characterCard(cardData)
-                        .onTapGesture {
-                            model.selectCard(withData: cardData)
-                        }
-                        .onAppear {
-                            model.onAppear(card: cardData)
-                        }
-                }
+        LazyVGrid(columns: [
+            GridItem(.flexible(minimum: 50, maximum: .infinity)),
+            GridItem(.flexible(minimum: 50, maximum: .infinity))
+        ], alignment: .center, spacing: 10) {
+            ForEach(model.cardsData) { cardData in
+                characterCard(cardData)
+                    .onTapGesture {
+                        model.selectCard(withData: cardData)
+                    }
+                    .onAppear {
+                        model.onAppear(card: cardData)
+                    }
+                    .id(cardData.itemId)
             }
-            .padding()
         }
+        .padding()
+        .scrollTargetLayout()
     }
     
     // MARK: - Cards

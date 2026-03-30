@@ -15,11 +15,13 @@ class HomeViewModel {
             pickerSelectionDidChange()
         }
     }
+    var pendingScrollTargetID: Int?
     var cardsData = [CardData]()
     private var characters = [Character]()
     private var volumes = [Volume]()
     private var issues = [Issue]()
     private var movies = [Movie]()
+    private var rememberedScrollTargetIDs = [CollectionItem: Int]()
     private let limit = 20
     private let characterRepository: CharacterRepository
     private let volumesRepository: VolumeRepository
@@ -48,6 +50,15 @@ class HomeViewModel {
     func onAppear(card: CardData) {
         guard isLastCard(card) else { return }
         fetchData()
+    }
+
+    func visibleItemsDidChange(_ identifiers: [Int]) {
+        guard let identifier = identifiers.first else { return }
+        rememberedScrollTargetIDs[pickerSelection] = identifier
+    }
+
+    func didRestoreScrollPosition() {
+        pendingScrollTargetID = nil
     }
     
     func selectCard(withData cardData: CardData) {
@@ -78,8 +89,11 @@ class HomeViewModel {
     
     private func pickerSelectionDidChange() {
         cardsData = cachedCardsData(for: pickerSelection)
-        guard cardsData.isEmpty else { return }
-        fetchData()
+        if cardsData.isEmpty {
+            fetchData()
+        } else {
+            pendingScrollTargetID = rememberedScrollTargetIDs[pickerSelection]
+        }
     }
     
     private func fetchSelectedData() async throws {
@@ -159,6 +173,5 @@ extension HomeViewModel {
                 self = .movie
             }
         }
-        
     }
 }
