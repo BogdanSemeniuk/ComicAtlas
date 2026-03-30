@@ -54,9 +54,11 @@ class HomeViewModel {
         switch cardData.type {
         case .character:
             navigationHandler.navigate(to: HomeFlowCoordinator.Route.character(id: cardData.itemId))
+        case .volume:
+            navigationHandler.navigate(to: HomeFlowCoordinator.Route.volume(id: cardData.itemId))
         case .issue:
             navigationHandler.navigate(to: HomeFlowCoordinator.Route.issue(id: cardData.itemId))
-        case .volume, .movie:
+        case .movie:
             break
         }
     }

@@ -102,19 +102,12 @@ struct CharacterDetailsView: View {
                         .stroke(Color(.border))
                 }
                 VStack(alignment: .leading, spacing: 16) {
-                    headerTitle(character.name)
+                    HeaderTitle(text: character.name)
                     headerInfo(for: character)
                 }
             }
         }
         .foregroundStyle(Color(.textSecondary))
-    }
-    
-    private func headerTitle(_ title: String) -> some View {
-        Text(title)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.title.bold())
-            .foregroundStyle(Color(.textPrimary))
     }
     
     private func headerInfo(for character: CharacterDetails) -> some View {

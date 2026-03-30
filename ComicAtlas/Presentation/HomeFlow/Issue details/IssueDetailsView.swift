@@ -61,7 +61,7 @@ struct IssueDetailsView: View {
             }
             
             VStack(alignment: .leading, spacing: 16) {
-                headerTitle(issueTitle(for: issue))
+                HeaderTitle(text: issue.title)
                 headerInfo(for: issue)
             }
         }
@@ -127,13 +127,6 @@ struct IssueDetailsView: View {
         }
     }
     
-    private func headerTitle(_ title: String) -> some View {
-        Text(title)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.title.bold())
-            .foregroundStyle(Color(.textPrimary))
-    }
-    
     private func headerInfo(for issue: IssueDetails) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             if let name = issue.name {
@@ -151,15 +144,10 @@ struct IssueDetailsView: View {
         }
         .font(.default)
     }
-    
-    private func issueTitle(for issue: IssueDetails) -> String {
-        let volumeName = issue.volume.name ?? ""
-        return "\(volumeName) #\(issue.issueNumber)"
-    }
 }
 
 private struct CharacterPreviewCard: View {
-    let character: IssueDetailsViewModel.CharacterPreview
+    let character: ItemPreview
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -171,7 +159,7 @@ private struct CharacterPreviewCard: View {
                         .stroke(Color(.border))
                 }
             
-            Text(character.name)
+            Text(character.title)
                 .font(.headline)
                 .foregroundStyle(Color(.textPrimary))
                 .frame(width: 100, alignment: .leading)

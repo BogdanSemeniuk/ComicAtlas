@@ -26,6 +26,11 @@ struct IssueDetails: Identifiable, Hashable {
     let volume: Reference
     let iconUrl: String
     let smallUrl: String
+    
+    var title: String {
+        let volumeName = volume.name ?? ""
+        return "\(volumeName) #\(issueNumber)"
+    }
 
     init(dto: IssueDetailsDTO) {
         self.id = dto.id

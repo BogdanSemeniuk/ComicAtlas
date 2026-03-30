@@ -11,6 +11,7 @@ import Foundation
 final class HomeFlowCoordinator {
     enum Route: Hashable {
         case character(id: Int)
+        case volume(id: Int)
         case issue(id: Int)
     }
 
@@ -59,6 +60,16 @@ extension HomeFlowCoordinator {
             issueRepository: container.resolve(),
             characterRepository: container.resolve(),
             volumeRepository: container.resolve(),
+            htmlDecorator: container.resolve(),
+            navigationHandler: self
+        )
+    }
+
+    func makeVolumeDetailsViewModel(id: Int) -> VolumeDetailsViewModel {
+        .init(
+            id: id,
+            volumeRepository: container.resolve(),
+            issueRepository: container.resolve(),
             htmlDecorator: container.resolve(),
             navigationHandler: self
         )

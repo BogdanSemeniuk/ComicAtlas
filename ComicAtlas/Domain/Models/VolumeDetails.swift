@@ -24,7 +24,7 @@ struct VolumeDetails: Identifiable, Hashable {
     let smallUrl: String
     
     var issuesCountDescription: String {
-        return String(localized: .Common.issuesCount(Int32(countOfIssues)))
+        String(localized: .Common.issuesCount(Int32(countOfIssues)))
     }
 
     init(dto: VolumeDetailsDTO) {

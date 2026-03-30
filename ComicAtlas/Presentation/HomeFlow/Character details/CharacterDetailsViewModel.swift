@@ -5,8 +5,8 @@
 //  Created by Богдан Семенюк on 24.03.2026.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 typealias LinkHandlingInfo = (url: URL, handleInApp: Bool)
 

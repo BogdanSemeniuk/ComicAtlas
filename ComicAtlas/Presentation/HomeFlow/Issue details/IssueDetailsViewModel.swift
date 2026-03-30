@@ -10,19 +10,14 @@ import SwiftUI
 
 @Observable
 final class IssueDetailsViewModel {
-    typealias NetworkingResult = ([CharacterPreview], VolumeDetails)
-    struct CharacterPreview: Identifiable, Hashable {
-        let id: Int
-        let name: String
-        let imagePath: String
-    }
+    typealias NetworkingResult = ([ItemPreview], VolumeDetails)
     
     var isLoading = false
     var issueDetails: IssueDetails?
     var volumeDetails: VolumeDetails?
     var error: Error?
     var htmlContent: String?
-    var characterPreviews = [CharacterPreview]()
+    var characterPreviews = [ItemPreview]()
     var webViewHeight: CGFloat = 200
     var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkActionsPublisher.eraseToAnyPublisher() }
     
@@ -98,10 +93,10 @@ final class IssueDetailsViewModel {
         try await volumeRepository.fetchVolumeDetails(id: issue.volume.id)
     }
     
-    private func fetchCharacterPreviews() async throws -> [CharacterPreview] {
+    private func fetchCharacterPreviews() async throws -> [ItemPreview] {
         guard let issueDetails else { return [] }
         
-        return try await withThrowingTaskGroup(of: CharacterPreview.self) { [weak self] group in
+        return try await withThrowingTaskGroup(of: ItemPreview.self) { [weak self] group in
             guard let self else { return [] }
             
             for character in issueDetails.characterCredits {
@@ -109,13 +104,13 @@ final class IssueDetailsViewModel {
                     let characterDetails = try await self.characterRepository.fetchCharacterDetails(id: character.id)
                     return .init(
                         id: character.id,
-                        name: characterDetails.name,
+                        title: characterDetails.name,
                         imagePath: characterDetails.iconUrl
                     )
                 }
             }
             
-            var characters = [CharacterPreview]()
+            var characters = [ItemPreview]()
             for try await character in group {
                 characters.append(character)
             }

@@ -5,6 +5,7 @@ excluded:
 
 disabled_rules:
   - trailing_whitespace
+  - nesting
 
 file_length:
   warning: 500
