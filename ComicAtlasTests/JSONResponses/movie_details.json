@@ -1,0 +1,485 @@
+{
+    "error": "OK",
+    "limit": 1,
+    "offset": 0,
+    "number_of_page_results": 1,
+    "number_of_total_results": 1,
+    "status_code": 1,
+    "results": {
+        "api_detail_url": "https://comicvine.gamespot.com/api/movie/4025-1/",
+        "box_office_revenue": "107509799",
+        "budget": "130000000",
+        "characters": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-10775/",
+                "id": 10775,
+                "name": "Andy Warhol",
+                "site_detail_url": "https://comicvine.gamespot.com/andy-warhol/4005-10775/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-66041/",
+                "id": 66041,
+                "name": "Bernard",
+                "site_detail_url": "https://comicvine.gamespot.com/bernard/4005-66041/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-63731/",
+                "id": 63731,
+                "name": "Big Figure",
+                "site_detail_url": "https://comicvine.gamespot.com/big-figure/4005-63731/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-67078/",
+                "id": 67078,
+                "name": "Bubastis",
+                "site_detail_url": "https://comicvine.gamespot.com/bubastis/4005-67078/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-44240/",
+                "id": 44240,
+                "name": "Captain Metropolis",
+                "site_detail_url": "https://comicvine.gamespot.com/captain-metropolis/4005-44240/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-58762/",
+                "id": 58762,
+                "name": "David Bowie",
+                "site_detail_url": "https://comicvine.gamespot.com/david-bowie/4005-58762/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-69696/",
+                "id": 69696,
+                "name": "Detective Fine",
+                "site_detail_url": "https://comicvine.gamespot.com/detective-fine/4005-69696/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-37547/",
+                "id": 37547,
+                "name": "Dick Cavett",
+                "site_detail_url": "https://comicvine.gamespot.com/dick-cavett/4005-37547/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-18494/",
+                "id": 18494,
+                "name": "Dollar Bill",
+                "site_detail_url": "https://comicvine.gamespot.com/dollar-bill/4005-18494/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-70383/",
+                "id": 70383,
+                "name": "Doug Roth",
+                "site_detail_url": "https://comicvine.gamespot.com/doug-roth/4005-70383/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-66893/",
+                "id": 66893,
+                "name": "Dr. Malcolm Long",
+                "site_detail_url": "https://comicvine.gamespot.com/dr-malcolm-long/4005-66893/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-40527/",
+                "id": 40527,
+                "name": "Dr. Manhattan",
+                "site_detail_url": "https://comicvine.gamespot.com/dr-manhattan/4005-40527/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-39742/",
+                "id": 39742,
+                "name": "Fidel Castro",
+                "site_detail_url": "https://comicvine.gamespot.com/fidel-castro/4005-39742/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-67315/",
+                "id": 67315,
+                "name": "Gerald Grice",
+                "site_detail_url": "https://comicvine.gamespot.com/gerald-grice/4005-67315/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-68800/",
+                "id": 68800,
+                "name": "Happy Harry",
+                "site_detail_url": "https://comicvine.gamespot.com/happy-harry/4005-68800/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-70384/",
+                "id": 70384,
+                "name": "Hector Godfrey",
+                "site_detail_url": "https://comicvine.gamespot.com/hector-godfrey/4005-70384/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-35627/",
+                "id": 35627,
+                "name": "Henry Kissinger",
+                "site_detail_url": "https://comicvine.gamespot.com/henry-kissinger/4005-35627/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-44796/",
+                "id": 44796,
+                "name": "Hooded Justice",
+                "site_detail_url": "https://comicvine.gamespot.com/hooded-justice/4005-44796/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-39247/",
+                "id": 39247,
+                "name": "Jackie Kennedy",
+                "site_detail_url": "https://comicvine.gamespot.com/jackie-kennedy/4005-39247/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-67458/",
+                "id": 67458,
+                "name": "Janey Slater",
+                "site_detail_url": "https://comicvine.gamespot.com/janey-slater/4005-67458/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-33077/",
+                "id": 33077,
+                "name": "John F. Kennedy",
+                "site_detail_url": "https://comicvine.gamespot.com/john-f-kennedy/4005-33077/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-68151/",
+                "id": 68151,
+                "name": "Lawrence",
+                "site_detail_url": "https://comicvine.gamespot.com/lawrence/4005-68151/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-16933/",
+                "id": 16933,
+                "name": "Leonid Brezhnev",
+                "site_detail_url": "https://comicvine.gamespot.com/leonid-brezhnev/4005-16933/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3603/",
+                "id": 3603,
+                "name": "Martha Wayne",
+                "site_detail_url": "https://comicvine.gamespot.com/martha-wayne/4005-3603/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-68152/",
+                "id": 68152,
+                "name": "Michael",
+                "site_detail_url": "https://comicvine.gamespot.com/michael/4005-68152/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-20185/",
+                "id": 20185,
+                "name": "Mick Jagger",
+                "site_detail_url": "https://comicvine.gamespot.com/mick-jagger/4005-20185/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-45913/",
+                "id": 45913,
+                "name": "Moloch the Mystic",
+                "site_detail_url": "https://comicvine.gamespot.com/moloch-the-mystic/4005-45913/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-29808/",
+                "id": 29808,
+                "name": "Mothman",
+                "site_detail_url": "https://comicvine.gamespot.com/mothman/4005-29808/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3058/",
+                "id": 3058,
+                "name": "Neil Armstrong",
+                "site_detail_url": "https://comicvine.gamespot.com/neil-armstrong/4005-3058/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-43224/",
+                "id": 43224,
+                "name": "Nite Owl (Dreiberg)",
+                "site_detail_url": "https://comicvine.gamespot.com/nite-owl-dreiberg/4005-43224/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-60465/",
+                "id": 60465,
+                "name": "Nite Owl (Mason)",
+                "site_detail_url": "https://comicvine.gamespot.com/nite-owl-mason/4005-60465/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-43221/",
+                "id": 43221,
+                "name": "Ozymandias",
+                "site_detail_url": "https://comicvine.gamespot.com/ozymandias/4005-43221/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-185016/",
+                "id": 185016,
+                "name": "Pat Buchanan",
+                "site_detail_url": "https://comicvine.gamespot.com/pat-buchanan/4005-185016/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-13426/",
+                "id": 13426,
+                "name": "Richard Nixon",
+                "site_detail_url": "https://comicvine.gamespot.com/richard-nixon/4005-13426/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-40444/",
+                "id": 40444,
+                "name": "Rorschach",
+                "site_detail_url": "https://comicvine.gamespot.com/rorschach/4005-40444/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-60464/",
+                "id": 60464,
+                "name": "Sally Jupiter",
+                "site_detail_url": "https://comicvine.gamespot.com/sally-jupiter/4005-60464/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-69650/",
+                "id": 69650,
+                "name": "Seymour",
+                "site_detail_url": "https://comicvine.gamespot.com/seymour/4005-69650/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-35807/",
+                "id": 35807,
+                "name": "Silhouette",
+                "site_detail_url": "https://comicvine.gamespot.com/silhouette/4005-35807/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-44239/",
+                "id": 44239,
+                "name": "Silk Spectre",
+                "site_detail_url": "https://comicvine.gamespot.com/silk-spectre/4005-44239/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-91362/",
+                "id": 91362,
+                "name": "Sylvia Kovacs",
+                "site_detail_url": "https://comicvine.gamespot.com/sylvia-kovacs/4005-91362/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-19924/",
+                "id": 19924,
+                "name": "Ted Koppel",
+                "site_detail_url": "https://comicvine.gamespot.com/ted-koppel/4005-19924/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-44193/",
+                "id": 44193,
+                "name": "The Comedian",
+                "site_detail_url": "https://comicvine.gamespot.com/the-comedian/4005-44193/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-3602/",
+                "id": 3602,
+                "name": "Thomas Wayne",
+                "site_detail_url": "https://comicvine.gamespot.com/thomas-wayne/4005-3602/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/character/4005-67457/",
+                "id": 67457,
+                "name": "Wally Weaver",
+                "site_detail_url": "https://comicvine.gamespot.com/wally-weaver/4005-67457/"
+            }
+        ],
+        "concepts": [],
+        "date_added": "2009-07-08 10:55:50",
+        "date_last_updated": "2024-06-15 07:36:26",
+        "deck": "Adaptation of Moore and Gibbons' seminal miniseries.",
+        "description": "<p>The Watchmen, follows a group of retired superheros, as they attempt to foil a plot to kill off masked superheroes. As they race to find the killer, the Doomsday clock draws closer to Nuclear War. Soon they find themselves entangled in a web of lies and deceit, that just might save humanity, but at what cost. And just how far will they go to save the world?</p>",
+        "distributor": null,
+        "has_staff_review": null,
+        "id": 1,
+        "image": {
+            "icon_url": "https://comicvine.gamespot.com/a/uploads/square_avatar/0/42/868515-watchmen_final_poster.jpg",
+            "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/0/42/868515-watchmen_final_poster.jpg",
+            "screen_url": "https://comicvine.gamespot.com/a/uploads/screen_medium/0/42/868515-watchmen_final_poster.jpg",
+            "screen_large_url": "https://comicvine.gamespot.com/a/uploads/screen_kubrick/0/42/868515-watchmen_final_poster.jpg",
+            "small_url": "https://comicvine.gamespot.com/a/uploads/scale_small/0/42/868515-watchmen_final_poster.jpg",
+            "super_url": "https://comicvine.gamespot.com/a/uploads/scale_large/0/42/868515-watchmen_final_poster.jpg",
+            "thumb_url": "https://comicvine.gamespot.com/a/uploads/scale_avatar/0/42/868515-watchmen_final_poster.jpg",
+            "tiny_url": "https://comicvine.gamespot.com/a/uploads/square_mini/0/42/868515-watchmen_final_poster.jpg",
+            "original_url": "https://comicvine.gamespot.com/a/uploads/original/0/42/868515-watchmen_final_poster.jpg",
+            "image_tags": "All Images,Watchmen"
+        },
+        "locations": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55914/",
+                "id": 55914,
+                "name": "Afghanistan",
+                "site_detail_url": "https://comicvine.gamespot.com/afghanistan/4020-55914/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55940/",
+                "id": 55940,
+                "name": "Antarctica",
+                "site_detail_url": "https://comicvine.gamespot.com/antarctica/4020-55940/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55716/",
+                "id": 55716,
+                "name": "California",
+                "site_detail_url": "https://comicvine.gamespot.com/california/4020-55716/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55706/",
+                "id": 55706,
+                "name": "European Russia",
+                "site_detail_url": "https://comicvine.gamespot.com/european-russia/4020-55706/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-56499/",
+                "id": 56499,
+                "name": "Happy Harry's Bar and Grill",
+                "site_detail_url": "https://comicvine.gamespot.com/happy-harrys-bar-and-grill/4020-56499/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-63573/",
+                "id": 63573,
+                "name": "Karnak",
+                "site_detail_url": "https://comicvine.gamespot.com/karnak/4020-63573/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-56019/",
+                "id": 56019,
+                "name": "Los Angeles",
+                "site_detail_url": "https://comicvine.gamespot.com/los-angeles/4020-56019/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-57225/",
+                "id": 57225,
+                "name": "Manhattan",
+                "site_detail_url": "https://comicvine.gamespot.com/manhattan/4020-57225/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55781/",
+                "id": 55781,
+                "name": "Mars",
+                "site_detail_url": "https://comicvine.gamespot.com/mars/4020-55781/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-41183/",
+                "id": 41183,
+                "name": "New York City",
+                "site_detail_url": "https://comicvine.gamespot.com/new-york-city/4020-41183/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-56310/",
+                "id": 56310,
+                "name": "New York State",
+                "site_detail_url": "https://comicvine.gamespot.com/new-york-state/4020-56310/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-42072/",
+                "id": 42072,
+                "name": "The Moon",
+                "site_detail_url": "https://comicvine.gamespot.com/the-moon/4020-42072/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-57398/",
+                "id": 57398,
+                "name": "The Soviet Union",
+                "site_detail_url": "https://comicvine.gamespot.com/the-soviet-union/4020-57398/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-55927/",
+                "id": 55927,
+                "name": "Vietnam",
+                "site_detail_url": "https://comicvine.gamespot.com/vietnam/4020-55927/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/location/4020-58146/",
+                "id": 58146,
+                "name": "World Trade Center",
+                "site_detail_url": "https://comicvine.gamespot.com/world-trade-center/4020-58146/"
+            }
+        ],
+        "name": "Watchmen",
+        "objects": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-56068/",
+                "id": 56068,
+                "name": "Archimedes",
+                "site_detail_url": "https://comicvine.gamespot.com/archimedes/4055-56068/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-56039/",
+                "id": 56039,
+                "name": "Comedian's Smiley Clip",
+                "site_detail_url": "https://comicvine.gamespot.com/comedians-smiley-clip/4055-56039/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-57319/",
+                "id": 57319,
+                "name": "Rorschach's Journal",
+                "site_detail_url": "https://comicvine.gamespot.com/rorschachs-journal/4055-57319/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/object/4055-56043/",
+                "id": 56043,
+                "name": "Under the Hood",
+                "site_detail_url": "https://comicvine.gamespot.com/under-the-hood/4055-56043/"
+            }
+        ],
+        "producers": null,
+        "rating": "R",
+        "release_date": "2024-06-15 07:36:26",
+        "runtime": "162",
+        "site_detail_url": "https://comicvine.gamespot.com/watchmen/4025-1/",
+        "studios": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/studio/4010-10/",
+                "id": 10,
+                "name": "DC Comics",
+                "site_detail_url": "https://comicvine.gamespot.com/dc-comics/4010-10/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/studio/4010-4615/",
+                "id": 4615,
+                "name": "Paramount Pictures",
+                "site_detail_url": "https://comicvine.gamespot.com/paramount-pictures/4010-4615/"
+            }
+        ],
+        "teams": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-57677/",
+                "id": 57677,
+                "name": "Knot Tops",
+                "site_detail_url": "https://comicvine.gamespot.com/knot-tops/4060-57677/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-55987/",
+                "id": 55987,
+                "name": "Minutemen",
+                "site_detail_url": "https://comicvine.gamespot.com/minutemen/4060-55987/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-57310/",
+                "id": 57310,
+                "name": "New York Police Department",
+                "site_detail_url": "https://comicvine.gamespot.com/new-york-police-department/4060-57310/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-44415/",
+                "id": 44415,
+                "name": "United States Army",
+                "site_detail_url": "https://comicvine.gamespot.com/united-states-army/4060-44415/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-58432/",
+                "id": 58432,
+                "name": "Vietcong",
+                "site_detail_url": "https://comicvine.gamespot.com/vietcong/4060-58432/"
+            },
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/team/4060-40393/",
+                "id": 40393,
+                "name": "Watchmen",
+                "site_detail_url": "https://comicvine.gamespot.com/watchmen/4060-40393/"
+            }
+        ],
+        "total_revenue": "185258983",
+        "writers": [
+            {
+                "api_detail_url": "https://comicvine.gamespot.com/api/writer/4040-111154/",
+                "id": 111154,
+                "name": "Alex Tse",
+                "site_detail_url": "https://comicvine.gamespot.com/alex-tse/4040-111154/"
+            }
+        ]
+    },
+    "version": "1.0"
+}
