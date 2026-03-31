@@ -16,13 +16,13 @@ final class VolumeDetailsViewModel {
     var htmlContent: String?
     var issuePreviews = [ItemPreview]()
     var webViewHeight: CGFloat = 200
-    var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkActionsPublisher.eraseToAnyPublisher() }
-
-    private var linkActionsPublisher: PassthroughSubject<LinkHandlingInfo, Never> = .init()
+    var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkRouter.linkActions }
+    
     private let id: Int
     private let volumeRepository: VolumeRepository
     private let issueRepository: IssueRepository
     private let htmlDecorator: any HTMLFormatting
+    private let linkRouter: any LinkRouting
     private let navigationHandler: any NavigationHandler
 
     init(
@@ -30,12 +30,14 @@ final class VolumeDetailsViewModel {
         volumeRepository: VolumeRepository,
         issueRepository: IssueRepository,
         htmlDecorator: any HTMLFormatting,
+        linkRouter: any LinkRouting,
         navigationHandler: any NavigationHandler
     ) {
         self.id = id
         self.volumeRepository = volumeRepository
         self.issueRepository = issueRepository
         self.htmlDecorator = htmlDecorator
+        self.linkRouter = linkRouter
         self.navigationHandler = navigationHandler
     }
 
@@ -44,22 +46,12 @@ final class VolumeDetailsViewModel {
         fetchVolumeDetails()
     }
 
-    func linkAction(url: URL) {
-        guard url.scheme == nil else {
-            linkActionsPublisher.send((url: url, handleInApp: true))
-            return
-        }
-
-        linkActionsPublisher.send(
-            (
-                url: URL(safeString: AppEnvironment.baseURL).appending(path: url.absoluteString),
-                handleInApp: false
-            )
-        )
-    }
-
     func openIssueDetails(id: Int) {
         navigationHandler.navigate(to: HomeFlowCoordinator.Route.issue(id: id))
+    }
+
+    func linkAction(url: URL) {
+        linkRouter.route(url: url)
     }
 
     func webViewContentHeightDidChange(_ height: CGFloat) {

@@ -60,6 +60,7 @@ final class AppContainer: Resolving {
 extension AppContainer {
     private func registerDependencies() {
         registerFactory(HTMLFormatting.self, { HTMLDecorator() })
+        registerFactory(LinkRouting.self, { LinkRouter() })
         registerFactory(APIClientProtocol.self, { APIClient() })
         registerFactory(InputValidating.self, { InputValidator() })
         registerFactory(AuthHandler.self, { Auth.auth() })

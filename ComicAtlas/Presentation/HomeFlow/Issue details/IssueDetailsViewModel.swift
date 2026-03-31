@@ -19,14 +19,14 @@ final class IssueDetailsViewModel {
     var htmlContent: String?
     var characterPreviews = [ItemPreview]()
     var webViewHeight: CGFloat = 200
-    var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkActionsPublisher.eraseToAnyPublisher() }
+    var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkRouter.linkActions }
     
-    private var linkActionsPublisher: PassthroughSubject<LinkHandlingInfo, Never> = .init()
     private let id: Int
     private let issueRepository: IssueRepository
     private let characterRepository: CharacterRepository
     private let volumeRepository: VolumeRepository
     private let htmlDecorator: any HTMLFormatting
+    private let linkRouter: any LinkRouting
     private let navigationHandler: any NavigationHandler
     
     init(
@@ -35,6 +35,7 @@ final class IssueDetailsViewModel {
         characterRepository: CharacterRepository,
         volumeRepository: VolumeRepository,
         htmlDecorator: any HTMLFormatting,
+        linkRouter: any LinkRouting,
         navigationHandler: any NavigationHandler
     ) {
         self.id = id
@@ -42,6 +43,7 @@ final class IssueDetailsViewModel {
         self.characterRepository = characterRepository
         self.volumeRepository = volumeRepository
         self.htmlDecorator = htmlDecorator
+        self.linkRouter = linkRouter
         self.navigationHandler = navigationHandler
     }
     
@@ -50,22 +52,13 @@ final class IssueDetailsViewModel {
         fetchIssueDetails()
     }
     
-    func linkAction(url: URL) {
-        guard url.scheme == nil else {
-            linkActionsPublisher.send((url: url, handleInApp: true))
-            return
-        }
-        linkActionsPublisher.send(
-            (
-                url: URL(safeString: AppEnvironment.baseURL).appending(path: url.absoluteString),
-                handleInApp: false
-            )
-        )
-    }
-    
     func characterAction(character: ItemPreview) {
         guard let sitePath = character.sitePath else { return }
-        linkActionsPublisher.send((url: .init(safeString: sitePath), handleInApp: false))
+        linkRouter.route(url: .init(safeString: sitePath))
+    }
+
+    func linkAction(url: URL) {
+        linkRouter.route(url: url)
     }
     
     func webViewContentHeightDidChange(_ height: CGFloat) {

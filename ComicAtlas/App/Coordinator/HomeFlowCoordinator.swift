@@ -51,6 +51,7 @@ extension HomeFlowCoordinator {
             characterRepository: container.resolve(),
             issueRepository: container.resolve(),
             htmlDecorator: container.resolve(),
+            linkRouter: container.resolve(),
             navigationHandler: self
         )
     }
@@ -62,6 +63,7 @@ extension HomeFlowCoordinator {
             characterRepository: container.resolve(),
             volumeRepository: container.resolve(),
             htmlDecorator: container.resolve(),
+            linkRouter: container.resolve(),
             navigationHandler: self
         )
     }
@@ -72,6 +74,7 @@ extension HomeFlowCoordinator {
             volumeRepository: container.resolve(),
             issueRepository: container.resolve(),
             htmlDecorator: container.resolve(),
+            linkRouter: container.resolve(),
             navigationHandler: self
         )
     }
@@ -81,7 +84,8 @@ extension HomeFlowCoordinator {
             id: id,
             movieRepository: container.resolve(),
             characterRepository: container.resolve(),
-            htmlDecorator: container.resolve()
+            htmlDecorator: container.resolve(),
+            linkRouter: container.resolve()
         )
     }
 }
