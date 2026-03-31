@@ -18,4 +18,13 @@ struct MovieRepositoryImpl: MovieRepository {
         .movies
         .map { .init(dto: .init($0)) }
     }
+
+    func fetchMovieDetails(id: Int) async throws -> MovieDetails {
+        let response = try await api.request(
+            APIEndpoints.movieDetails(id: id),
+            as: MovieDetailsResponse.self
+        )
+
+        return .init(dto: .init(response.movieDetails))
+    }
 }
