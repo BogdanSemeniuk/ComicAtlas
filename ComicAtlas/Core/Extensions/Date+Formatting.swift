@@ -11,6 +11,7 @@ enum DateFormat: String {
     case yyyyMMdd = "yyyy-MM-dd"
     case yyyyMMddHHmmss = "yyyy-MM-dd HH:mm:ss"
     case monthYear = "MMMM yyyy"
+    case year = "yyyy"
 }
 
 extension DateFormatter {

@@ -95,25 +95,11 @@ struct IssueDetailsView: View {
     @ViewBuilder
     private func characters() -> some View {
         if !model.characterPreviews.isEmpty {
-            VStack(alignment: .leading, spacing: 12) {
-                Divider()
-                
-                Text(.IssueDetails.charactersSubtitle)
-                    .font(.title3.bold())
-                    .foregroundStyle(Color(.textPrimary))
-                
-                LazyVGrid(columns: [
-                    GridItem(.flexible(minimum: 50, maximum: .infinity)),
-                    GridItem(.flexible(minimum: 50, maximum: .infinity)),
-                    GridItem(.flexible(minimum: 50, maximum: .infinity))
-                ], alignment: .center, spacing: 10) {
-                    ForEach(model.characterPreviews) { characterPreview in
-                        CharacterPreviewCard(character: characterPreview)
-                    }
-                }
-                
-                Divider()
-            }
+            CharactersSection(
+                title: .IssueDetails.charactersSubtitle,
+                previews: model.characterPreviews,
+                onTap: model.characterAction
+            )
         }
     }
     
@@ -145,28 +131,6 @@ struct IssueDetailsView: View {
             )
         }
         .font(.default)
-    }
-}
-
-private struct CharacterPreviewCard: View {
-    let character: ItemPreview
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            RemoteImage(path: character.imagePath, height: 80)
-                .frame(width: 80)
-                .clipShape(Layout.componentShape)
-                .overlay {
-                    Layout.componentShape
-                        .stroke(Color(.border))
-                }
-            
-            Text(character.title)
-                .font(.headline)
-                .foregroundStyle(Color(.textPrimary))
-                .frame(width: 100, alignment: .leading)
-                .lineLimit(2)
-        }
     }
 }
 

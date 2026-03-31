@@ -14,21 +14,25 @@ final class MovieDetailsViewModel {
     var movieDetails: MovieDetails?
     var error: Error?
     var htmlContent: String?
+    var characterPreviews = [ItemPreview]()
     var webViewHeight: CGFloat = 200
     var linkActions: AnyPublisher<LinkHandlingInfo, Never> { linkActionsPublisher.eraseToAnyPublisher() }
 
     private var linkActionsPublisher: PassthroughSubject<LinkHandlingInfo, Never> = .init()
     private let id: Int
     private let movieRepository: MovieRepository
+    private let characterRepository: CharacterRepository
     private let htmlDecorator: any HTMLFormatting
 
     init(
         id: Int,
         movieRepository: MovieRepository,
+        characterRepository: CharacterRepository,
         htmlDecorator: any HTMLFormatting
     ) {
         self.id = id
         self.movieRepository = movieRepository
+        self.characterRepository = characterRepository
         self.htmlDecorator = htmlDecorator
     }
 
@@ -50,6 +54,11 @@ final class MovieDetailsViewModel {
             )
         )
     }
+    
+    func characterAction(character: ItemPreview) {
+        guard let sitePath = character.sitePath else { return }
+        linkActionsPublisher.send((url: .init(safeString: sitePath), handleInApp: false))
+    }
 
     func webViewContentHeightDidChange(_ height: CGFloat) {
         webViewHeight = height
@@ -64,6 +73,7 @@ final class MovieDetailsViewModel {
             do {
                 let movieDetails = try await movieRepository.fetchMovieDetails(id: id)
                 self.movieDetails = movieDetails
+                self.characterPreviews = try await fetchCharacterPreviews(for: movieDetails)
 
                 guard let description = movieDetails.description else { return }
                 htmlContent = htmlDecorator.decorate(html: description, fontSize: 16)
@@ -74,7 +84,7 @@ final class MovieDetailsViewModel {
     }
 
     func formattedReleaseDate(for movie: MovieDetails) -> String {
-        movie.releaseDate.toDate(format: .yyyyMMddHHmmss)?.formatted(date: .long, time: .omitted)
+        movie.releaseDate.toDate(format: .year)?.formatted(date: .long, time: .omitted)
         ?? movie.releaseDate
     }
 
@@ -104,5 +114,29 @@ final class MovieDetailsViewModel {
             .presentation(.narrow)
             .precision(.fractionLength(0))
         )
+    }
+
+    private func fetchCharacterPreviews(for movie: MovieDetails) async throws -> [ItemPreview] {
+        try await withThrowingTaskGroup(of: ItemPreview.self) { [weak self] group in
+            guard let self else { return [] }
+
+            for character in movie.characters {
+                group.addTask {
+                    let characterDetails = try await self.characterRepository.fetchCharacterDetails(id: character.id)
+                    return .init(
+                        id: character.id,
+                        title: characterDetails.name,
+                        imagePath: characterDetails.iconUrl,
+                        sitePath: characterDetails.siteDetailUrl
+                    )
+                }
+            }
+
+            var previews = [ItemPreview]()
+            for try await preview in group {
+                previews.append(preview)
+            }
+            return previews
+        }
     }
 }

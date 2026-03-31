@@ -11,4 +11,5 @@ struct ItemPreview: Identifiable, Hashable {
     let id: Int
     let title: String
     let imagePath: String
+    var sitePath: String? = nil
 }

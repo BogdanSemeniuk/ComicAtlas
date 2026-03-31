@@ -63,6 +63,11 @@ final class IssueDetailsViewModel {
         )
     }
     
+    func characterAction(character: ItemPreview) {
+        guard let sitePath = character.sitePath else { return }
+        linkActionsPublisher.send((url: .init(safeString: sitePath), handleInApp: false))
+    }
+    
     func webViewContentHeightDidChange(_ height: CGFloat) {
         webViewHeight = height
     }
@@ -109,7 +114,8 @@ final class IssueDetailsViewModel {
                     return .init(
                         id: character.id,
                         title: characterDetails.name,
-                        imagePath: characterDetails.iconUrl
+                        imagePath: characterDetails.iconUrl,
+                        sitePath: characterDetails.siteDetailUrl
                     )
                 }
             }

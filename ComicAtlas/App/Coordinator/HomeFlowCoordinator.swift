@@ -80,6 +80,7 @@ extension HomeFlowCoordinator {
         .init(
             id: id,
             movieRepository: container.resolve(),
+            characterRepository: container.resolve(),
             htmlDecorator: container.resolve()
         )
     }

@@ -23,7 +23,7 @@ struct MovieDetailsView: View {
                 if let movie = model.movieDetails {
                     header(for: movie)
                     deck(for: movie)
-                    actors(for: movie)
+                    characters()
                     description()
                 }
             }
@@ -75,32 +75,13 @@ struct MovieDetailsView: View {
     }
 
     @ViewBuilder
-    private func actors(for movie: MovieDetails) -> some View {
-        if !movie.characters.isEmpty {
-            VStack(alignment: .leading, spacing: 12) {
-                Divider()
-
-                Text(.MovieDetails.actorsLabel)
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(Color(.textPrimary))
-
-                LazyVStack(alignment: .leading, spacing: 8) {
-                    ForEach(movie.characters) { character in
-                        if let name = character.name, let siteDetailUrl = character.siteDetailUrl {
-                            LinkText(
-                                destination: .init(safeString: siteDetailUrl),
-                                text: name
-                            )
-                        } else if let name = character.name {
-                            Text(name)
-                                .foregroundStyle(Color(.textPrimary))
-                        }
-                    }
-                }
-
-                Divider()
-            }
+    private func characters() -> some View {
+        if !model.characterPreviews.isEmpty {
+            CharactersSection(
+                title: .MovieDetails.charactersLabel,
+                previews: model.characterPreviews,
+                onTap: model.characterAction
+            )
         }
     }
 
