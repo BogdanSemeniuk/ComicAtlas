@@ -8,9 +8,10 @@
 import Foundation
 
 struct MovieDetails: Identifiable, Hashable {
+    let characters: [Reference]
     let id: Int
     let name: String
-    let budget: String
+    let budget: String?
     let deck: String?
     let description: String?
     let producers: [Reference]
@@ -25,6 +26,7 @@ struct MovieDetails: Identifiable, Hashable {
     let smallUrl: String
 
     init(dto: MovieDetailsDTO) {
+        self.characters = dto.characters.map { .init(dto: $0) }
         self.id = dto.id
         self.name = dto.name
         self.budget = dto.budget

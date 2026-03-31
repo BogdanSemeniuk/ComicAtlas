@@ -72,7 +72,7 @@ class HomeViewModel {
         case .issue:
             navigationHandler.navigate(to: HomeFlowCoordinator.Route.issue(id: cardData.itemId))
         case .movie:
-            break
+            navigationHandler.navigate(to: HomeFlowCoordinator.Route.movie(id: cardData.itemId))
         }
     }
     

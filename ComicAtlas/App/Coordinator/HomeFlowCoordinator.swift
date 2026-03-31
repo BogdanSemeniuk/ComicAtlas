@@ -13,6 +13,7 @@ final class HomeFlowCoordinator {
         case character(id: Int)
         case volume(id: Int)
         case issue(id: Int)
+        case movie(id: Int)
     }
 
     var path = [Route]()
@@ -72,6 +73,14 @@ extension HomeFlowCoordinator {
             issueRepository: container.resolve(),
             htmlDecorator: container.resolve(),
             navigationHandler: self
+        )
+    }
+
+    func makeMovieDetailsViewModel(id: Int) -> MovieDetailsViewModel {
+        .init(
+            id: id,
+            movieRepository: container.resolve(),
+            htmlDecorator: container.resolve()
         )
     }
 }

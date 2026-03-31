@@ -22,9 +22,10 @@ struct MovieDetailsResponse: Decodable {
 }
 
 struct MovieDetailsModel: Codable, Sendable {
+    let characters: [ReferenceModel]?
     let id: Int
     let name: String
-    let budget: String
+    let budget: String?
     let deck: String?
     let description: String?
     let image: ImageModel
@@ -33,11 +34,12 @@ struct MovieDetailsModel: Codable, Sendable {
     let releaseDate: String
     let runtime: String
     let siteDetailUrl: String
-    let studios: [ReferenceModel]
+    let studios: [ReferenceModel]?
     let totalRevenue: String?
-    let writers: [ReferenceModel]
+    let writers: [ReferenceModel]?
 
     enum CodingKeys: String, CodingKey {
+        case characters
         case id
         case name
         case budget
