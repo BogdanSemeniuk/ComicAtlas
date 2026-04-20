@@ -34,7 +34,7 @@ struct VolumeDetailsModel: Codable, Sendable {
     let lastIssue: IssueReferenceModel?
     let publisher: ReferenceModel
     let siteDetailUrl: String
-    let startYear: String
+    let startYear: String?
 
     enum CodingKeys: String, CodingKey {
         case id

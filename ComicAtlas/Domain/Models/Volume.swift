@@ -15,7 +15,7 @@ struct Volume: Identifiable, Hashable {
     let smallUrl: String
     let countOfIssues: Int?
     let publisherName: String?
-    let startYear: String
+    let startYear: String?
     var issuesCountDescription: String? {
         guard let countOfIssues else { return nil }
         return String(localized: .Common.issuesCount(Int32(countOfIssues)))

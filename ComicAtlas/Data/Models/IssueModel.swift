@@ -28,7 +28,7 @@ struct IssueModel: Codable, Sendable {
     let issueNumber: String
     let image: ImageModel
     let volume: VolumeShortModel
-    let coverDate: String
+    let coverDate: String?
 
     enum CodingKeys: String, CodingKey {
         case id

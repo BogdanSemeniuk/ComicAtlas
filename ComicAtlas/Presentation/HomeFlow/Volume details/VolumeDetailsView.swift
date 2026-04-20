@@ -118,7 +118,9 @@ struct VolumeDetailsView: View {
     private func headerInfo(for volume: VolumeDetails) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             InfoItem(label: .VolumeDetails.nameLabel, value: volume.name)
-            InfoItem(label: .VolumeDetails.yearLabel, value: volume.startYear)
+            if let startYear = volume.startYear {
+                InfoItem(label: .VolumeDetails.yearLabel, value: startYear)
+            }
             InfoItem(label: .VolumeDetails.issuesLabel, value: volume.issuesCountDescription)
             if let publisherName = volume.publisher.name {
                 InfoItem(label: .Common.publisherLabel, value: publisherName)

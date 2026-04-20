@@ -15,7 +15,7 @@ struct Issue: Identifiable, Hashable {
     let iconUrl: String
     let smallUrl: String
     let volumeName: String
-    let coverDate: String
+    let coverDate: String?
 
     init(dto: IssueDTO) {
         self.id = dto.id

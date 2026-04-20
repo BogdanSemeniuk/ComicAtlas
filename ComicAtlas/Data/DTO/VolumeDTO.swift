@@ -15,13 +15,13 @@ struct VolumeDTO {
     let smallUrl: String
     let countOfIssues: Int?
     let publisherName: String?
-    let startYear: String
+    let startYear: String?
     
     init(_ volume: VolumeModel) {
         self.id = volume.id
         self.name = volume.name
         self.description = volume.description
-        self.publisherName = volume.publisher.name
+        self.publisherName = volume.publisher?.name
         self.countOfIssues = volume.countOfIssues
         self.iconUrl = volume.image.smallUrl
         self.smallUrl = volume.image.smallUrl

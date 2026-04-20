@@ -7,16 +7,18 @@
 
 import Foundation
 
-enum CollectionItem: String, CaseIterable {
+protocol CollectionItemRepresentable: CustomStringConvertible, CaseIterable, Hashable, Identifiable {}
+
+enum CollectionItem: String, CollectionItemRepresentable {
     case character, volume, issue, movie
 }
 
-extension CollectionItem: CustomStringConvertible {
+extension CollectionItem {
     var description: String {
         self.rawValue.capitalized + "s"
     }
 }
 
-extension CollectionItem: Identifiable {
+extension CollectionItem {
     var id: Self { self }
 }

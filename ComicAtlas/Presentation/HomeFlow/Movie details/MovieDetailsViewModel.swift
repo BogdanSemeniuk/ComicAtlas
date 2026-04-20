@@ -75,8 +75,8 @@ final class MovieDetailsViewModel {
         }
     }
 
-    func formattedReleaseDate(for movie: MovieDetails) -> String {
-        movie.releaseDate.toDate(format: .year)?.formatted(date: .long, time: .omitted)
+    func formattedReleaseDate(for movie: MovieDetails) -> String? {
+        movie.releaseDate?.toDate(format: .year)?.formatted(date: .long, time: .omitted)
         ?? movie.releaseDate
     }
 

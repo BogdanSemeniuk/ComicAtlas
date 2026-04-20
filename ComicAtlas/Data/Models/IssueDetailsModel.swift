@@ -26,7 +26,7 @@ struct IssueDetailsModel: Codable, Sendable {
     let name: String?
     let description: String?
     let characterCredits: [ReferenceModel]
-    let coverDate: String
+    let coverDate: String?
     let deck: String?
     let image: ImageModel
     let issueNumber: String

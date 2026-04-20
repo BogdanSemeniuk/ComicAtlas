@@ -35,10 +35,11 @@ struct HomeView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                CollectionPicker(selected: $model.pickerSelection)
+            ToolbarItem(placement: .topBarTrailing) {
+                ToolbarPicker(pickerSelection: $model.pickerSelection)
             }
         }
+        
         .onFirstAppear(model.onFirstAppear)
         .overlay {
             if model.isLoading {

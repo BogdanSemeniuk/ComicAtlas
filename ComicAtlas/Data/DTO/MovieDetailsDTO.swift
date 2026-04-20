@@ -16,7 +16,7 @@ struct MovieDetailsDTO {
     let description: String?
     let producers: [ReferenceDTO]
     let rating: String
-    let releaseDate: String
+    let releaseDate: String?
     let runtime: String
     let siteDetailUrl: String
     let studios: [ReferenceDTO]

@@ -19,7 +19,7 @@ struct VolumeDetails: Identifiable, Hashable {
     let lastIssue: IssueReference?
     let publisher: Reference
     let siteDetailUrl: String
-    let startYear: String
+    let startYear: String?
     let iconUrl: String
     let smallUrl: String
     

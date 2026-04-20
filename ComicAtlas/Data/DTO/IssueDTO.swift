@@ -15,7 +15,7 @@ struct IssueDTO {
     let iconUrl: String
     let smallUrl: String
     let volumeName: String
-    let coverDate: String
+    let coverDate: String?
 
     init(_ issue: IssueModel) {
         self.id = issue.id

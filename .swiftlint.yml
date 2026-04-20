@@ -6,6 +6,7 @@ excluded:
 disabled_rules:
   - trailing_whitespace
   - nesting
+  - implicit_optional_initialization
 
 file_length:
   warning: 500

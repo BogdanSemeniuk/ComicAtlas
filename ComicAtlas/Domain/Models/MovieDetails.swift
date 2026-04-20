@@ -16,7 +16,7 @@ struct MovieDetails: Identifiable, Hashable {
     let description: String?
     let producers: [Reference]
     let rating: String
-    let releaseDate: String
+    let releaseDate: String?
     let runtime: String
     let siteDetailUrl: String
     let studios: [Reference]

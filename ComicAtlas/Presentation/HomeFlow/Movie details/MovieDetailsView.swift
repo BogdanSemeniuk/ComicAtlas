@@ -99,10 +99,9 @@ struct MovieDetailsView: View {
 
     private func headerInfo(for movie: MovieDetails) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            InfoItem(
-                label: .MovieDetails.releaseDateLabel,
-                value: model.formattedReleaseDate(for: movie)
-            )
+            if let releaseDate = model.formattedReleaseDate(for: movie) {
+                InfoItem(label: .MovieDetails.releaseDateLabel, value: releaseDate)
+            }
             InfoItem(label: .MovieDetails.ratingLabel, value: movie.rating)
 
             let studios = model.studiosText(for: movie)

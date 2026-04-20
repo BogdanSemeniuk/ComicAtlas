@@ -27,8 +27,8 @@ struct VolumeModel: Codable, Sendable {
     let description: String?
     let countOfIssues: Int?
     let image: ImageModel
-    let publisher: ReferenceModel
-    let startYear: String
+    let publisher: ReferenceModel?
+    let startYear: String?
     
     enum CodingKeys: String, CodingKey {
         case id

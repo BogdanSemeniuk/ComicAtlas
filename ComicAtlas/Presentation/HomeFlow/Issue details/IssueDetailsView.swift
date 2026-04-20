@@ -124,7 +124,9 @@ struct IssueDetailsView: View {
                 InfoItem(label: .IssueDetails.volumeLabel, value: volumeName)
             }
             InfoItem(label: .IssueDetails.issueLabel, value: issue.issueNumber)
-            InfoItem(label: .IssueDetails.coverLabel, value: issue.coverDate)
+            if let coverDate = issue.coverDate {
+                InfoItem(label: .IssueDetails.coverLabel, value: coverDate)
+            }
             LinkText(
                 destination: .init(safeString: issue.siteDetailUrl),
                 resource: .Common.openOnWeb

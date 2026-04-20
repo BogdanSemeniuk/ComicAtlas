@@ -12,7 +12,7 @@ struct IssueDetailsDTO {
     let name: String?
     let description: String?
     let characterCredits: [ReferenceDTO]
-    let coverDate: String
+    let coverDate: String?
     let deck: String?
     let issueNumber: String
     let locationCredits: [ReferenceDTO]

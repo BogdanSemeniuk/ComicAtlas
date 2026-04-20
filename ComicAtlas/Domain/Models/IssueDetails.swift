@@ -12,7 +12,7 @@ struct IssueDetails: Identifiable, Hashable {
     let name: String?
     let description: String?
     let characterCredits: [Reference]
-    let coverDate: String
+    let coverDate: String?
     let deck: String?
     let issueNumber: String
     let locationCredits: [Reference]

@@ -25,7 +25,7 @@ struct MovieModel: Codable, Sendable {
     let id: Int
     let name: String
     let description: String?
-    let releaseDate: String
+    let releaseDate: String?
     let image: ImageModel
     let studios: [StudioModel]?
 

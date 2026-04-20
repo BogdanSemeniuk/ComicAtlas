@@ -11,7 +11,7 @@ struct MovieDTO {
     let id: Int
     let name: String
     let description: String?
-    let releaseDate: String
+    let releaseDate: String?
     let iconUrl: String
     let smallUrl: String
     var studios: [String] = []

@@ -31,7 +31,7 @@ struct MovieDetailsModel: Codable, Sendable {
     let image: ImageModel
     let producers: [ReferenceModel]?
     let rating: String
-    let releaseDate: String
+    let releaseDate: String?
     let runtime: String
     let siteDetailUrl: String
     let studios: [ReferenceModel]?

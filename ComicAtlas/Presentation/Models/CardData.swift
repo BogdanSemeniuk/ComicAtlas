@@ -60,7 +60,7 @@ struct CardData: Identifiable {
         self.type = .issue
         self.itemId = issue.id
         self.id = "\(issue.id)\(type.rawValue)"
-        self.desctiption = issue.coverDate.toDate(format: .yyyyMMdd)?.toString(format: .monthYear)
+        self.desctiption = issue.coverDate?.toDate(format: .yyyyMMdd)?.toString(format: .monthYear)
     }
     
     init(_ movie: Movie) {
@@ -69,7 +69,7 @@ struct CardData: Identifiable {
         self.type = .movie
         self.itemId = movie.id
         self.id = "\(movie.id)\(type.rawValue)"
-        self.desctiption = movie.releaseDate
+        self.desctiption = movie.releaseDate?
             .toDate(format: .yyyyMMddHHmmss)?
             .toString(format: .monthYear) ?? "" + "\n" + movie.studios.joined(separator: ", ")
     }

@@ -19,7 +19,7 @@ struct VolumeDetailsDTO {
     let lastIssue: IssueReferenceDTO?
     let publisher: ReferenceDTO
     let siteDetailUrl: String
-    let startYear: String
+    let startYear: String?
     let iconUrl: String
     let smallUrl: String
 
