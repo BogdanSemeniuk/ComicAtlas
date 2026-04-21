@@ -10,6 +10,13 @@ import Foundation
 @Observable
 class HomeViewModel {
     var isLoading = false
+    var sortSelection: SortDescriptor = .default {
+        didSet {
+            guard sortSelection != oldValue else { return }
+            fetchingTask?.cancel()
+            sortSelectionDidChange()
+        }
+    }
     var pickerSelection: CollectionItem = .character {
         didSet {
             fetchingTask?.cancel()
@@ -24,6 +31,7 @@ class HomeViewModel {
     private var issues = [Issue]()
     private var movies = [Movie]()
     private var rememberedScrollTargetIDs = [CollectionItem: String]()
+    private var cachedSortDescriptors = [CollectionItem: SortDescriptor]()
     private let limit = 20
     private let characterRepository: CharacterRepository
     private let volumesRepository: VolumeRepository
@@ -90,12 +98,19 @@ class HomeViewModel {
     }
     
     private func pickerSelectionDidChange() {
-        cardsData = cachedCardsData(for: pickerSelection)
-        if cardsData.isEmpty {
+        guard cachedSortDescriptors[pickerSelection] == sortSelection else {
+            resetData(for: pickerSelection)
             fetchData()
-        } else {
-            pendingScrollTargetID = rememberedScrollTargetIDs[pickerSelection]
+            return
         }
+        
+        cardsData = cachedCardsData(for: pickerSelection)
+        pendingScrollTargetID = rememberedScrollTargetIDs[pickerSelection]
+    }
+    
+    private func sortSelectionDidChange() {
+        resetData(for: pickerSelection)
+        fetchData()
     }
     
     private func fetchSelectedData() async throws {
@@ -103,33 +118,38 @@ class HomeViewModel {
         case .character:
             let result = try await characterRepository.fetchCharacters(
                 limit: limit,
-                offset: characters.count
+                offset: characters.count,
+                sort: sortSelection
             )
             guard !Task.isCancelled else { return }
             characters.append(contentsOf: result)
         case .volume:
             let result = try await volumesRepository.fetchVolumes(
                 limit: limit,
-                offset: volumes.count
+                offset: volumes.count,
+                sort: sortSelection
             )
             guard !Task.isCancelled else { return }
             volumes.append(contentsOf: result)
         case .issue:
             let result = try await issuesRepository.fetchIssues(
                 limit: limit,
-                offset: issues.count
+                offset: issues.count,
+                sort: sortSelection
             )
             guard !Task.isCancelled else { return }
             issues.append(contentsOf: result)
         case .movie:
             let result = try await moviesRepository.fetchMovies(
                 limit: limit,
-                offset: movies.count
+                offset: movies.count,
+                sort: sortSelection
             )
             guard !Task.isCancelled else { return }
             movies.append(contentsOf: result)
         }
         
+        cachedSortDescriptors[pickerSelection] = sortSelection
         cardsData = cachedCardsData(for: pickerSelection)
     }
     
@@ -157,6 +177,24 @@ class HomeViewModel {
         case .movie:
             card.itemId == movies.last?.id
         }
+    }
+    
+    private func resetData(for selection: CollectionItem) {
+        switch SelectionState(selection) {
+        case .character:
+            characters.removeAll()
+        case .volume:
+            volumes.removeAll()
+        case .issue:
+            issues.removeAll()
+        case .movie:
+            movies.removeAll()
+        }
+        
+        cachedSortDescriptors[selection] = nil
+        rememberedScrollTargetIDs[selection] = nil
+        pendingScrollTargetID = nil
+        cardsData = selection == pickerSelection ? [] : cardsData
     }
 }
 

@@ -10,9 +10,9 @@ import Foundation
 struct CharacterRepositoryImpl: CharacterRepository {
     let api: APIClientProtocol
     
-    func fetchCharacters(limit: Int, offset: Int) async throws -> [Character] {
+    func fetchCharacters(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Character] {
         try await api.request(
-            APIEndpoints.characters(limit: limit, offset: offset),
+            APIEndpoints.characters(limit: limit, offset: offset, sort: sort),
             as: CharactersResponse.self
         )
         .characters

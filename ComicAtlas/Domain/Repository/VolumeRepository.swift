@@ -8,6 +8,6 @@
 import Foundation
 
 protocol VolumeRepository {
-    func fetchVolumes(limit: Int, offset: Int) async throws -> [Volume]
+    func fetchVolumes(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Volume]
     func fetchVolumeDetails(id: Int) async throws -> VolumeDetails
 }

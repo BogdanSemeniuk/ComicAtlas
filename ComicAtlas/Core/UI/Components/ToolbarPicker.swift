@@ -7,8 +7,17 @@
 
 import SwiftUI
 
-struct ToolbarPicker<T: CollectionItemRepresentable>: View where T.AllCases: RandomAccessCollection {
+struct ToolbarPicker<T: CollectionItemRepresentable, Label: View>: View where T.AllCases: RandomAccessCollection {
     @Binding var pickerSelection: T
+    var label: Label
+    
+    init(
+        pickerSelection: Binding<T>,
+        @ViewBuilder label: () -> Label
+    ) {
+        self.label = label()
+        self._pickerSelection = pickerSelection
+    }
     
     var body: some View {
         Menu {
@@ -21,11 +30,14 @@ struct ToolbarPicker<T: CollectionItemRepresentable>: View where T.AllCases: Ran
                 }
             }
         } label: {
-            Text(pickerSelection.description)
+            label
         }
     }
 }
 
 #Preview {
-    ToolbarPicker(pickerSelection: .constant(CollectionItem.character))
+    ToolbarPicker(
+        pickerSelection: .constant(CollectionItem.character),
+        label: { Text("Sort by:") }
+    )
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol MovieRepository {
-    func fetchMovies(limit: Int, offset: Int) async throws -> [Movie]
+    func fetchMovies(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Movie]
     func fetchMovieDetails(id: Int) async throws -> MovieDetails
 }

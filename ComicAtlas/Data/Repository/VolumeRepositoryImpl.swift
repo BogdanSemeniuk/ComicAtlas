@@ -10,9 +10,9 @@ import Foundation
 struct VolumeRepositoryImpl: VolumeRepository {
     let api: APIClientProtocol
     
-    func fetchVolumes(limit: Int, offset: Int) async throws -> [Volume] {
+    func fetchVolumes(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Volume] {
         try await api.request(
-            APIEndpoints.volumes(limit: limit, offset: offset),
+            APIEndpoints.volumes(limit: limit, offset: offset, sort: sort),
             as: VolumesResponse.self
         )
         .volumes

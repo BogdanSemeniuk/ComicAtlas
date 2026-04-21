@@ -20,14 +20,14 @@ private enum Constants {
 }
 
 enum APIEndpoints: Sendable {
-    case characters(limit: Int, offset: Int)
+    case characters(limit: Int, offset: Int, sort: SortDescriptor)
     case characterDetails(id: Int)
     case issueDetails(id: Int)
     case movieDetails(id: Int)
     case volumeDetails(id: Int)
-    case volumes(limit: Int, offset: Int)
-    case issues(limit: Int, offset: Int)
-    case movies(limit: Int, offset: Int)
+    case volumes(limit: Int, offset: Int, sort: SortDescriptor)
+    case issues(limit: Int, offset: Int, sort: SortDescriptor)
+    case movies(limit: Int, offset: Int, sort: SortDescriptor)
 }
 
 extension APIEndpoints: APIEndpointProtocol {
@@ -72,16 +72,14 @@ extension APIEndpoints: APIEndpointProtocol {
     
     var urlParams: [String: String]? {
         switch self {
-        case let .characters(limit, offset),
-            let .volumes(limit, offset),
-            let .issues(limit, offset),
-            let .movies(limit, offset):
-            [
-                "api_key": AppEnvironment.apiKey,
-                "format": Constants.formatJSON,
-                "limit": String(limit),
-                "offset": String(offset)
-            ]
+        case let .characters(limit, offset, sort):
+            listURLParams(limit: limit, offset: offset, sort: sort, item: .character)
+        case let .volumes(limit, offset, sort):
+            listURLParams(limit: limit, offset: offset, sort: sort, item: .volume)
+        case let .issues(limit, offset, sort):
+            listURLParams(limit: limit, offset: offset, sort: sort, item: .issue)
+        case let .movies(limit, offset, sort):
+            listURLParams(limit: limit, offset: offset, sort: sort, item: .movie)
         case .characterDetails, .issueDetails, .movieDetails, .volumeDetails:
             [
                 "api_key": AppEnvironment.apiKey,
@@ -95,5 +93,25 @@ extension APIEndpoints: APIEndpointProtocol {
         case .characters, .characterDetails, .issueDetails, .movieDetails, .volumeDetails, .volumes, .issues, .movies:
             nil
         }
+    }
+}
+
+private extension APIEndpoints {
+    func listURLParams(
+        limit: Int,
+        offset: Int,
+        sort: SortDescriptor,
+        item: CollectionItem
+    ) -> [String: String] {
+        var params = [
+            "api_key": AppEnvironment.apiKey,
+            "format": Constants.formatJSON,
+            "limit": String(limit),
+            "offset": String(offset)
+        ]
+        if let sortValue = sort.apiValue(for: item) {
+            params["sort"] = sortValue
+        }
+        return params
     }
 }

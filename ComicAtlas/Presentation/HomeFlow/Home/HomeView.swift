@@ -35,8 +35,17 @@ struct HomeView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolbarPicker(
+                    pickerSelection: $model.sortSelection,
+                    label: { Text("↑↓") }
+                )
+            }
             ToolbarItem(placement: .topBarTrailing) {
-                ToolbarPicker(pickerSelection: $model.pickerSelection)
+                ToolbarPicker(
+                    pickerSelection: $model.pickerSelection,
+                    label: { Text(model.pickerSelection.description) }
+                )
             }
         }
         

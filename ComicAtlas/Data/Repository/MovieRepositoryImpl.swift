@@ -10,9 +10,9 @@ import Foundation
 struct MovieRepositoryImpl: MovieRepository {
     let api: APIClientProtocol
 
-    func fetchMovies(limit: Int, offset: Int) async throws -> [Movie] {
+    func fetchMovies(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Movie] {
         try await api.request(
-            APIEndpoints.movies(limit: limit, offset: offset),
+            APIEndpoints.movies(limit: limit, offset: offset, sort: sort),
             as: MoviesResponse.self
         )
         .movies

@@ -10,9 +10,9 @@ import Foundation
 struct IssueRepositoryImpl: IssueRepository {
     let api: APIClientProtocol
 
-    func fetchIssues(limit: Int, offset: Int) async throws -> [Issue] {
+    func fetchIssues(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Issue] {
         try await api.request(
-            APIEndpoints.issues(limit: limit, offset: offset),
+            APIEndpoints.issues(limit: limit, offset: offset, sort: sort),
             as: IssuesResponse.self
         )
         .issues

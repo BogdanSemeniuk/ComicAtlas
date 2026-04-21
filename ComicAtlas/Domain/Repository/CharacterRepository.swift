@@ -8,6 +8,6 @@
 import Foundation
 
 protocol CharacterRepository {
-    func fetchCharacters(limit: Int, offset: Int) async throws -> [Character]
+    func fetchCharacters(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Character]
     func fetchCharacterDetails(id: Int) async throws -> CharacterDetails
 }

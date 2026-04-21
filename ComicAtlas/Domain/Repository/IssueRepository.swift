@@ -8,6 +8,6 @@
 import Foundation
 
 protocol IssueRepository {
-    func fetchIssues(limit: Int, offset: Int) async throws -> [Issue]
+    func fetchIssues(limit: Int, offset: Int, sort: SortDescriptor) async throws -> [Issue]
     func fetchIssueDetails(id: Int) async throws -> IssueDetails
 }
