@@ -124,23 +124,6 @@ struct AuthRepositoryTests {
         #expect(authService.receivedPassword == nil)
     }
     
-//    @Test
-//    func isAuthPublisherEmitStateAfterSuccessSignIn() async throws {
-//        let (sut, authService) = makeSUT()
-//        await #expect(throws: Never.self) {
-//            
-//        }
-//        
-//        await #expect(throws: TestError.expectedFailure) {
-//            try await sut.registerUser(email: email, password: password, name: name)
-//        }
-//        
-//        #expect(!authService.isAuthenticated)
-//        #expect(authService.registerCallCount == 1)
-//        #expect(authService.receivedEmail == nil)
-//        #expect(authService.receivedPassword == nil)
-//    }
-    
     private func makeSUT(
         isLoggedIn: Bool = false,
         shouldThrowError: Bool = false
