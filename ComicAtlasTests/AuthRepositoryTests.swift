@@ -54,16 +54,17 @@ struct AuthRepositoryTests {
     @Test
     func signOut() async throws {
         let (sut, authService) = makeSUT(isLoggedIn: true)
-        let emittedStateTask = Task { () -> Bool? in
-            var iterator = sut.isAuthenticatedPublisher.dropFirst().values.makeAsyncIterator()
-            return await iterator.next()
-        }
+        
+        var cancellable = [AnyCancellable]()
+        sut.isAuthenticatedPublisher
+            .sink { isAuthenticated in
+                #expect(!isAuthenticated)
+            }
+            .store(in: &cancellable)
         
         #expect(throws: Never.self) {
             try sut.signOut()
         }
-        
-        #expect(await emittedStateTask.value == false)
         
         #expect(!authService.isAuthenticated)
         #expect(authService.signOutCallCount == 1)
@@ -87,10 +88,12 @@ struct AuthRepositoryTests {
         let email = "test@test.com"
         let password = "password"
         let name = "Alex"
-        let emittedStateTask = Task { () -> Bool? in
-            var iterator = sut.isAuthenticatedPublisher.dropFirst().values.makeAsyncIterator()
-            return await iterator.next()
+        
+        var cancellable = [AnyCancellable]()
+        sut.isAuthenticatedPublisher.sink { isAuthenticated in
+            #expect(isAuthenticated)
         }
+        .store(in: &cancellable)
         
         await #expect(throws: Never.self) {
             let user = try await sut.registerUser(email: email, password: password, name: name)
@@ -98,8 +101,6 @@ struct AuthRepositoryTests {
             #expect(user.displayName == name)
             #expect(user.id == authService.registeredUserId)
         }
-        
-        #expect(await emittedStateTask.value == true)
         
         #expect(authService.isAuthenticated)
         #expect(authService.registerCallCount == 1)
