@@ -36,24 +36,22 @@ class SignInViewModel {
         self.navigationHandler = navigationHandler
     }
     
-    func signInAction() {
+    func signInAction() async {
         isLoading = true
-        Task {
-            defer { isLoading = false }
-            do {
-                try inputValidator.validateEmail(email)
-                try inputValidator.validatePassword(password)
-                try await authRepository.signIn(email: email, password: password)
-            } catch {
-                guard let error = error as? ValidationError else {
-                    self.error = error
-                    return
-                }
-                if error == .invalidEmail {
-                    emailError = error.localizedDescription
-                } else {
-                    passwordError = error.localizedDescription
-                }
+        defer { isLoading = false }
+        do {
+            try inputValidator.validateEmail(email)
+            try inputValidator.validatePassword(password)
+            try await authRepository.signIn(email: email, password: password)
+        } catch {
+            guard let error = error as? ValidationError else {
+                self.error = error
+                return
+            }
+            if error == .invalidEmail {
+                emailError = error.localizedDescription
+            } else {
+                passwordError = error.localizedDescription
             }
         }
     }

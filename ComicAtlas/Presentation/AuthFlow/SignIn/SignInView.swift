@@ -49,7 +49,9 @@ struct SignInView: View {
                 title: .SignIn.signInButton,
                 disabled: model.isSignInDisabled,
                 isLoading: model.isLoading,
-                action: model.signInAction
+                action: {
+                    Task { await model.signInAction() }
+                }
             )
         }
         .padding(Layout.horizontalPadding)
