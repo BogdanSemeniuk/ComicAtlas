@@ -13,7 +13,7 @@ struct ProfileFlowView: View {
     var body: some View {
         NavigationStack(path: $coordinator.path) {
             ProfileView(model: coordinator.profileViewModel)
-                .navigationDestination(for: ProfileFlowCoordinator.Route.self) { route in
+                .navigationDestination(for: ProfileFlowCoordinator.Route.self) { _ in
                     
                 }
         }

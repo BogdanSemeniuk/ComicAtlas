@@ -44,32 +44,30 @@ class SignUpViewModel {
         self.navigationHandler = navigationHandler
     }
     
-    func createAccountAction() {
+    func createAccountAction() async {
         isLoading = true
-        Task {
-            defer { isLoading = false }
-            do {
-                try inputValidator.validateEmail(email)
-                try inputValidator.validatePassword(password)
-                guard password == confirmPassword else { throw ValidationError.passwordsNotMatch }
-                try await authRepository.registerUser(
-                    email: email,
-                    password: password,
-                    name: fullName
-                )
-            } catch {
-                guard let error = error as? ValidationError else {
-                    self.error = error
-                    return
-                }
-                switch error {
-                case .invalidEmail:
-                    emailError = error.localizedDescription
-                case .passwordsNotMatch:
-                    confirmPasswordError = error.localizedDescription
-                default:
-                    passwordError = error.localizedDescription
-                }
+        defer { isLoading = false }
+        do {
+            try inputValidator.validateEmail(email)
+            try inputValidator.validatePassword(password)
+            guard password == confirmPassword else { throw ValidationError.passwordsNotMatch }
+            try await authRepository.registerUser(
+                email: email,
+                password: password,
+                name: fullName
+            )
+        } catch {
+            guard let error = error as? ValidationError else {
+                self.error = error
+                return
+            }
+            switch error {
+            case .invalidEmail:
+                emailError = error.localizedDescription
+            case .passwordsNotMatch:
+                confirmPasswordError = error.localizedDescription
+            default:
+                passwordError = error.localizedDescription
             }
         }
     }

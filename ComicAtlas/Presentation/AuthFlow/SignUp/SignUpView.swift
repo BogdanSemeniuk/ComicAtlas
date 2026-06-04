@@ -67,7 +67,11 @@ struct SignUpView: View {
                 title: .SignUp.createButton,
                 disabled: model.isSignInDisabled,
                 isLoading: model.isLoading,
-                action: model.createAccountAction
+                action: {
+                    Task {
+                        await model.createAccountAction()
+                    }
+                }
             )
         }
         .padding(Layout.horizontalPadding)
