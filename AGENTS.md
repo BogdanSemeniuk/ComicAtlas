@@ -81,4 +81,5 @@ If SwiftData is configured to use CloudKit:
 
 ## PR instructions
 
+- When asked to create or update a GitHub pull request description, always read and follow `.github/PR_DESCRIPTION_GUIDE.md`.
 - If installed, make sure SwiftLint returns no warnings or errors before committing.
