@@ -44,9 +44,8 @@ actor APIClientMock: APIClientProtocol {
     
     func request(_ endpoint: any APIEndpointProtocol) async throws {
         record(endpoint)
-        if let error {
-            throw error
-        }
+        guard let error else { return }
+        throw error
     }
     
     func requestRaw(_ endpoint: any APIEndpointProtocol) async throws -> (Data, URLResponse) {
@@ -55,7 +54,7 @@ actor APIClientMock: APIClientProtocol {
             throw error
         }
         let data = responseData ?? Data()
-        let url = endpoint.urlRequest?.url ?? URL(string: "https://example.com")!
+        let url = endpoint.urlRequest?.url ?? .init(string: "https://example.com")!
         let response = URLResponse(
             url: url,
             mimeType: nil,
