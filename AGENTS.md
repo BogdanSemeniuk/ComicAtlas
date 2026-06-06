@@ -1,85 +1,57 @@
-# Agent guide for Swift and SwiftUI
+# ComicAtlas Agent Guide
 
-This repository contains an Xcode project written with Swift and SwiftUI. Please follow the guidelines below so that the development experience is built on modern, safe API usage.
-
+ComicAtlas is an iOS app for browsing comic-related content, including characters, issues, volumes, and movies. It has authentication, profile, and home browsing flows, with a layered structure that separates app setup, domain logic, data access, and SwiftUI presentation.
 
 ## Role
 
-You are a **Senior iOS Engineer**, specializing in SwiftUI, SwiftData, and related frameworks. Your code must always adhere to Apple's Human Interface Guidelines and App Review guidelines.
+Act as a senior iOS engineer. Keep changes aligned with Apple's Human Interface Guidelines, App Review guidelines, and the existing architecture.
 
+## Tech Stack
 
-## Core instructions
+- iOS 26.0 or later; the project currently targets iOS 26.2.
+- Swift 5 with Swift concurrency and MainActor default actor isolation.
+- SwiftUI with Observation (`@Observable`) for shared state.
+- Firebase Auth integration.
+- Custom async/await networking and repository layers.
+- String catalogs (`.xcstrings`) for localization.
+- Swift Testing unit tests with mocks and JSON fixtures.
 
-- Target iOS 26.0 or later. (Yes, it definitely exists.)
-- Swift 5 or later, using modern Swift concurrency. Always choose async/await APIs over closure-based variants whenever they exist.
-- SwiftUI backed up by `@Observable` classes for shared data.
+## Project Structure
+
+- `ComicAtlas/App`: app entry point, root view, dependency injection, coordinators, navigation.
+- `ComicAtlas/Core`: shared config, extensions, formatting, UI components, styles, and constants.
+- `ComicAtlas/Data`: DTOs, API client, endpoints, auth services, and repository implementations.
+- `ComicAtlas/Domain`: domain models, repository protocols, and validation logic.
+- `ComicAtlas/Presentation`: SwiftUI screens and view models grouped by app flow.
+- `ComicAtlasTests`: unit tests, mocks, test support, and JSON response fixtures.
+
+## Coding Guidelines
+
+- Prefer modern SwiftUI, Observation, and async/await APIs.
+- Use `@Observable` for shared data, with `@State` for ownership and `@Bindable` / `@Environment` for passing state.
+- Write strict-concurrency-safe code. Avoid `DispatchQueue.main.async()` and use Swift concurrency instead.
+- Prefer modern APIs such as `NavigationStack`, `Tab`, `foregroundStyle`, `clipShape`, `Task.sleep(for:)`, `URL.documentsDirectory`, `appending(path:)`, and `FormatStyle`.
+- Avoid legacy patterns in new code: `ObservableObject`, `@Published`, `@StateObject`, `@ObservedObject`, `@EnvironmentObject`, `NavigationView`, `tabItem`, `foregroundColor`, `cornerRadius`, legacy `Formatter` subclasses, force unwraps, and force `try`.
+- Avoid UIKit in new SwiftUI code unless integration requires it.
+- Use `localizedStandardContains()` when filtering user-facing text.
+- Prefer small `View` structs for meaningful subviews, and keep view logic in view models or other testable types.
+- Use existing layout constants and design patterns before adding new spacing, padding, or styling conventions.
 - Do not introduce third-party frameworks without asking first.
-- Avoid UIKit unless requested.
 
+## SwiftData
 
-## Swift instructions
-- The default actor isolation is MainActor.
-- `@Observable` classes must be marked `@MainActor` unless the project has Main Actor default actor isolation. Flag any `@Observable` class missing this annotation.
-- All shared data should use `@Observable` classes with `@State` (for ownership) and `@Bindable` / `@Environment` (for passing).
-- Strongly prefer not to use `ObservableObject`, `@Published`, `@StateObject`, `@ObservedObject`, or `@EnvironmentObject` unless they are unavoidable, or if they exist in legacy/integration contexts when changing architecture would be complicated.
-- Assume strict Swift concurrency rules are being applied.
-- Prefer Swift-native alternatives to Foundation methods where they exist, such as using `replacing("hello", with: "world")` with strings rather than `replacingOccurrences(of: "hello", with: "world")`.
-- Prefer modern Foundation API, for example `URL.documentsDirectory` to find the app’s documents directory, and `appending(path:)` to append strings to a URL.
-- Never use C-style number formatting such as `Text(String(format: "%.2f", abs(myNumber)))`; always use `Text(abs(change), format: .number.precision(.fractionLength(2)))` instead.
-- Prefer static member lookup to struct instances where possible, such as `.circle` rather than `Circle()`, and `.borderedProminent` rather than `BorderedProminentButtonStyle()`.
-- Never use old-style Grand Central Dispatch concurrency such as `DispatchQueue.main.async()`. If behavior like this is needed, always use modern Swift concurrency.
-- Filtering text based on user-input must be done using `localizedStandardContains()` as opposed to `contains()`.
-- Avoid force unwraps and force `try` unless it is unrecoverable.
-- Never use legacy `Formatter` subclasses such as `DateFormatter`, `NumberFormatter`, or `MeasurementFormatter`. Always use the modern `FormatStyle` API instead. For example, to format a date, use `myDate.formatted(date: .abbreviated, time: .shortened)`. To parse a date from a string, use `Date(inputString, strategy: .iso8601)`. For numbers, use `myNumber.formatted(.number)` or custom format styles.
+If SwiftData is configured to use CloudKit, do not use `@Attribute(.unique)`. Model properties must have default values or be optional, and relationships must be optional.
 
-## SwiftUI instructions
+## Localization
 
-- Always use `foregroundStyle()` instead of `foregroundColor()`.
-- Always use `clipShape(.rect(cornerRadius:))` instead of `cornerRadius()`.
-- Always use the `Tab` API instead of `tabItem()`.
-- Never use `ObservableObject`; always prefer `@Observable` classes instead.
-- Never use the `onChange()` modifier in its 1-parameter variant; either use the variant that accepts two parameters or accepts none.
-- Never use `onTapGesture()` unless you specifically need to know a tap’s location or the number of taps. All other usages should use `Button`.
-- Never use `Task.sleep(nanoseconds:)`; always use `Task.sleep(for:)` instead.
-- Never use `UIScreen.main.bounds` to read the size of the available space.
-- Do not break views up using computed properties; place them into new `View` structs instead.
-- Do not force specific font sizes; prefer using Dynamic Type instead.
-- Use the `navigationDestination(for:)` modifier to specify navigation, and always use `NavigationStack` instead of the old `NavigationView`.
-- If using an image for a button label, always specify text alongside like this: `Button("Tap me", systemImage: "plus", action: myButtonAction)`.
-- When rendering SwiftUI views, always prefer using `ImageRenderer` to `UIGraphicsImageRenderer`.
-- Don’t apply the `fontWeight()` modifier unless there is good reason. If you want to make some text bold, always use `bold()` instead of `fontWeight(.bold)`.
-- Do not use `GeometryReader` if a newer alternative would work as well, such as `containerRelativeFrame()` or `visualEffect()`.
-- When making a `ForEach` out of an `enumerated` sequence, do not convert it to an array first. So, prefer `ForEach(x.enumerated(), id: \.element.id)` instead of `ForEach(Array(x.enumerated()), id: \.element.id)`.
-- When hiding scroll view indicators, use the `.scrollIndicators(.hidden)` modifier rather than using `showsIndicators: false` in the scroll view initializer.
-- Use the newest ScrollView APIs for item scrolling and positioning (e.g. `ScrollPosition` and `defaultScrollAnchor`); avoid older scrollView APIs like ScrollViewReader.
-- Place view logic into view models or similar, so it can be tested.
-- Avoid `AnyView` unless it is absolutely required.
-- Avoid specifying hard-coded values for padding and stack spacing unless requested.
-- Avoid using UIKit colors in SwiftUI code.
+When adding user-facing strings to existing `.xcstrings` catalogs, prefer symbol keys with `extractionState` set to `manual`, then access them through generated symbols such as `Text(.helloWorld)`. Offer to translate new keys into all languages supported by the project.
 
+## Testing
 
-## SwiftData instructions
-
-If SwiftData is configured to use CloudKit:
-
-- Never use `@Attribute(.unique)`.
-- Model properties must always either have default values or be marked as optional.
-- All relationships must be marked optional.
-
-
-## Project structure
-
-- Use a consistent project structure, with folder layout determined by app features.
-- Follow strict naming conventions for types, properties, methods, and SwiftData models.
-- Break different types up into different Swift files rather than placing multiple structs, classes, or enums into a single file.
-- Write unit tests for core application logic.
-- Only write UI tests if unit tests are not possible.
-- Add code comments and documentation comments as needed.
-- If the project requires secrets such as API keys, never include them in the repository.
-- If the project uses Localizable.xcstrings, prefer to add user-facing strings using symbol keys (e.g. helloWorld) in the string catalog with `extractionState` set to "manual", accessing them via generated symbols such as  `Text(.helloWorld)`. Offer to translate new keys into all languages supported by the project.
-
+Write or update unit tests for core logic, repositories, API endpoints, validators, and view models when behavior changes. Prefer UI tests only for critical user flows that cannot be covered well with unit tests.
 
 ## PR instructions
 
 - When asked to create or update a GitHub pull request description, always read and follow `.github/PR_DESCRIPTION_GUIDE.md`.
+- Use GitHub CLI (`gh`) to create or update pull request descriptions when it is available and authenticated.
 - If installed, make sure SwiftLint returns no warnings or errors before committing.
