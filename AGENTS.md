@@ -53,5 +53,6 @@ Write or update unit tests for core logic, repositories, API endpoints, validato
 ## PR instructions
 
 - When asked to create or update a GitHub pull request description, always read and follow `.github/PR_DESCRIPTION_GUIDE.md`.
+- When using GitHub CLI for pull request description workflows, request one reusable approval for `gh pr` commands instead of separate approvals for view, edit, and verification commands.
 - Use GitHub CLI (`gh`) to create or update pull request descriptions when it is available and authenticated.
 - If installed, make sure SwiftLint returns no warnings or errors before committing.
